@@ -1,0 +1,55 @@
+{
+  "characters": [
+    {
+      "id": "c1",
+      "src": "https://placehold.co/200x200/png?text=Hiker+Girl",
+      "label": "Sarah (Hiker)"
+    },
+    {
+      "id": "c2",
+      "src": "https://placehold.co/200x200/png?text=Tech+Guy",
+      "label": "Mike (Tech Reviewer)"
+    }
+  ],
+  "locations": [
+    {
+      "id": "l1",
+      "src": "https://placehold.co/300x200/png?text=Mountain+Peak",
+      "label": "Mountain Peak"
+    },
+    {
+      "id": "l2",
+      "src": "https://placehold.co/300x200/png?text=Modern+Office",
+      "label": "Tech Studio"
+    }
+  ],
+  "objects": [
+    {
+      "id": "o1",
+      "src": "https://placehold.co/200x200/png?text=EcoBottle",
+      "label": "EcoBottle 3000"
+    }
+  ],
+  "frames": [
+    {
+      "id": 1,
+      "description": "Opening shot: Stop buying plastic bottles.",
+      "img": "https://placehold.co/400x225/png?text=Scene+1"
+    },
+    {
+      "id": 2,
+      "description": "Product reveal with key lighting",
+      "img": "https://placehold.co/400x225/png?text=Scene+2"
+    },
+    {
+      "id": 3,
+      "description": "Feature demonstration in slow motion",
+      "img": "https://placehold.co/400x225/png?text=Scene+3"
+    },
+    {
+      "id": 4,
+      "description": "Closing shot: Upgrade Your Hydration",
+      "img": "https://placehold.co/400x225/png?text=Scene+4"
+    }
+  ]
+}

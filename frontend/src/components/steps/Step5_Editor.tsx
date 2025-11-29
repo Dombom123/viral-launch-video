@@ -12,12 +12,15 @@ interface Message {
 
 interface Step5Props {
   onNext: () => void;
+  onBack?: () => void;
+  projectId: string | null;
 }
 
-export default function Step5_Editor({ onNext }: Step5Props) {
+export default function Step5_Editor({ onNext, projectId }: Step5Props) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isRendering, setIsRendering] = useState(false);
   const [chatInput, setChatInput] = useState("");
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
@@ -26,6 +29,19 @@ export default function Step5_Editor({ onNext }: Step5Props) {
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ]);
+
+  useEffect(() => {
+    if (!projectId) return;
+    // Check video status to get URL
+    fetch(`http://localhost:8000/api/project/${projectId}/video-status`)
+        .then(res => res.json())
+        .then(data => {
+            if (data.videoUrl) {
+                setVideoUrl(data.videoUrl);
+            }
+        })
+        .catch(e => console.error(e));
+  }, [projectId]);
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -86,11 +102,19 @@ export default function Step5_Editor({ onNext }: Step5Props) {
          {/* Main Player */}
          <div className="flex-1 bg-black rounded-2xl border border-zinc-800 overflow-hidden relative flex flex-col shadow-2xl">
              <div className="flex-1 relative group">
-                 <img 
-                    src="https://placehold.co/1920x1080/18181b/FFF?text=Main+Preview" 
-                    className="w-full h-full object-contain opacity-80" 
-                    alt="Preview" 
-                 />
+                 {videoUrl ? (
+                     <video 
+                        src={videoUrl}
+                        className="w-full h-full object-contain"
+                        controls={false} // Custom controls
+                        autoPlay={false}
+                     />
+                 ) : (
+                    <div className="w-full h-full flex items-center justify-center text-zinc-500">
+                        <Loader2 className="animate-spin mr-2" /> Loading Video...
+                    </div>
+                 )}
+                 
                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                      {!isPlaying && <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center"><Play fill="white" className="text-white ml-1" /></div>}
                  </div>

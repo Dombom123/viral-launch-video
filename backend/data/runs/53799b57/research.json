@@ -1,0 +1,40 @@
+{
+  "productInfo": {
+    "name": "OneMap",
+    "description": "An authoritative, hyper-local geospatial mobile application that goes beyond standard navigation. It integrates detailed public transit timings, real-time traffic, land ownership data, school proximity queries, and property transaction prices into a single interface.",
+    "competitors": [
+      "Google Maps",
+      "Citymapper",
+      "PropertyGuru",
+      "Waze"
+    ]
+  },
+  "marketAnalysis": {
+    "trend": "The 'Local Cheat Code' Trend. Social media users are currently obsessed with apps and tools that give them an unfair advantage in daily life\u2014whether it's finding the cheapest rent, the driest route during rain, or the fastest bus.",
+    "insight": "While global competitors like Google Maps dominate general navigation, they lack granular local data (like specific property prices or sheltered walkways). The viral opportunity lies in positioning OneMap not just as a map, but as a 'Super App' for smart living and property intelligence."
+  },
+  "scripts": [
+    {
+      "id": 1,
+      "title": "The Real Estate Detective",
+      "hook": "Stop wondering how much your neighbor paid for their house. Here is how to find out in 3 seconds.",
+      "body": "Visual: Fast-paced screen recording of the OneMap app opening. The user zooms into a specific condo or HDB block. \n\nAudio (Voiceover): 'Most people use maps to drive, but smart people use OneMap to snoop. Click on a building, hit property info, and boom\u2014actual transaction prices.'\n\nVisual: Screen highlights the 'Property Information' tab showing recent sale prices. Cut to a reaction shot of someone looking shocked.",
+      "callToAction": "Download OneMap and check your area."
+    },
+    {
+      "id": 2,
+      "title": "The Rainy Day Hack",
+      "hook": "If you hate getting wet on your commute, you need to delete your old map app right now.",
+      "body": "Visual: Split screen. Top: Someone holding an umbrella getting soaked. Bottom: A screen recording of OneMap selecting the 'Sheltered' route option.\n\nAudio (Voiceover): 'Why walk in the rain when there is a map that literally shows you the dry route? OneMap tracks sheltered walkways so you show up to work looking fresh, not drowned.'\n\nVisual: The route highlights a covered path. User successfully arrives at a destination completely dry.",
+      "callToAction": "Stay dry with OneMap. Link in bio."
+    },
+    {
+      "id": 3,
+      "title": "Google Maps vs. OneMap",
+      "hook": "Three things this app can do that Google Maps simply can't.",
+      "body": "Visual: Rapid montage. 1. Showing exact land lot numbers. 2. Showing a radius circle for school registration distance. 3. Showing drone no-fly zones.\n\nAudio (Voiceover): 'Number one: It shows exact land boundaries and lot numbers. Number two: It calculates the exact 1km radius for school registrations. And number three: It tells you exactly where you can legally fly your drone.'\n\nVisual: Final shot of the app icon on a home screen.",
+      "callToAction": "Level up your navigation. Get OneMap."
+    }
+  ],
+  "project_id": "53799b57"
+}

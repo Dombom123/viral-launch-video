@@ -1,0 +1,70 @@
+{
+  "characters": [
+    {
+      "id": "c1",
+      "src": "placeholder",
+      "label": "Alex - The Commuter",
+      "visual_prompt": "Full body studio shot of a young professional male in his late 20s, wearing smart-casual office attire, a navy blue raincoat over a dress shirt, carrying a leather messenger bag. Neutral expression, standing confidently. High-resolution photography, isolated on a pure white background, 8k, commercial quality."
+    }
+  ],
+  "locations": [
+    {
+      "id": "l1",
+      "src": "placeholder",
+      "label": "Stormy City Street",
+      "visual_prompt": "A busy urban city sidewalk during a torrential downpour. Grey ominous clouds, puddles reflecting city lights on the asphalt, rain falling heavily, blurred city buildings in the background. Cinematic, moody, cold color palette."
+    },
+    {
+      "id": "l2",
+      "src": "placeholder",
+      "label": "Modern Sheltered Walkway",
+      "visual_prompt": "A pristine, modern covered pedestrian bridge or walkway in a city. Glass panels on the sides show rain outside, but the floor is perfectly dry. Warm, inviting artificial lighting, clean architectural lines, perspective shot looking forward."
+    }
+  ],
+  "objects": [
+    {
+      "id": "o1",
+      "src": "placeholder",
+      "label": "Smartphone with OneMap UI",
+      "visual_prompt": "A modern, bezel-less smartphone held upright. The screen displays a minimalist map application interface with a prominent route line highlighted in bright green and a UI button selected that reads 'Sheltered Route'. Isolated on white background, sharp focus, product photography."
+    },
+    {
+      "id": "o2",
+      "src": "placeholder",
+      "label": "Black Umbrella",
+      "visual_prompt": "A standard black compact umbrella. Open canopy, fabric texture visible. Isolated on white background, studio lighting."
+    }
+  ],
+  "frames": [
+    {
+      "id": 1,
+      "description": "The Hook: Close up of the frustration. Alex is miserable in the rain.",
+      "img": "placeholder",
+      "visual_prompt": "Close-up cinematic shot of Alex (c1) standing in the Stormy City Street (l1). He is soaking wet, hair plastered to his forehead, raindrops running down his face. He looks frustrated and annoyed, squinting through the heavy rain. High contrast, moody blue and grey tones, shallow depth of field focusing on his expression."
+    },
+    {
+      "id": 2,
+      "description": "Split Screen: Top shows the struggle, Bottom shows the solution (The Hack).",
+      "img": "placeholder",
+      "visual_prompt": "A split-screen composition. TOP HALF: A wide shot of Alex (c1) struggling against wind and rain on the Stormy City Street (l1), holding a Black Umbrella (o2) that is turning inside out. BOTTOM HALF: A top-down view of a hand holding the Smartphone (o1), with a finger pressing the 'Sheltered' toggle on the map interface. Visual contrast between the chaotic top and the organized, clean bottom."
+    },
+    {
+      "id": 3,
+      "description": "The Solution: POV of the dry route.",
+      "img": "placeholder",
+      "visual_prompt": "First-person POV shot walking down the Modern Sheltered Walkway (l2). Outside the glass walls, the rain is pouring hard, but the path ahead is dry and bright. An augmented reality style green navigation line is superimposed on the floor leading the way forward. Futuristic, clean, and satisfying."
+    },
+    {
+      "id": 4,
+      "description": "The Payoff: Arrival at destination completely dry.",
+      "img": "placeholder",
+      "visual_prompt": "Medium shot of Alex (c1) standing at the entrance of a modern office building. He is completely dry, hair perfectly styled, smiling confidently. He is closing his dry Black Umbrella (o2) with ease. Warm lighting, sharp focus, contrasting with the miserable first frame."
+    },
+    {
+      "id": 5,
+      "description": "CTA: OneMap branding.",
+      "img": "placeholder",
+      "visual_prompt": "A high-end 3D product render of the Smartphone (o1) floating in the center of the frame against a soft gradient blue background. The screen displays the OneMap logo and the text 'Arrive Dry'. Subtle rain droplets are suspended in the air around the phone but not touching it. Text overlay: 'Link in Bio'."
+    }
+  ]
+}

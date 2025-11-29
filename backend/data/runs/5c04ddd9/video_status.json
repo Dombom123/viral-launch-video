@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "progress": 100,
+  "total_clips": 3,
+  "completed_clips": 3,
+  "clips": [],
+  "playlist": [
+    "/uploads/5c04ddd9_clip_1.mp4",
+    "/uploads/5c04ddd9_clip_2.mp4",
+    "/uploads/5c04ddd9_clip_3.mp4"
+  ],
+  "video_url": "/uploads/5c04ddd9_clip_1.mp4"
+}

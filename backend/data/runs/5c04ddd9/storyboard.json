@@ -1,0 +1,60 @@
+{
+  "characters": [
+    {
+      "id": "c1",
+      "src": "/uploads/5c04ddd9_char_c1.png",
+      "label": "Confused renter - Alex, early 30s, looking puzzled",
+      "visual_prompt": "A young professional named Alex, early 30s, wearing a casual outfit (jeans and a t-shirt), standing and looking directly at the camera with a confused and frustrated expression. Light skin, short brown hair. Plain white background."
+    },
+    {
+      "id": "c2",
+      "src": "/uploads/5c04ddd9_char_c2.png",
+      "label": "Voiceover narrator - no visual representation required",
+      "visual_prompt": ""
+    }
+  ],
+  "locations": [
+    {
+      "id": "l1",
+      "src": "/uploads/5c04ddd9_loc_l1.png",
+      "label": "Condo exterior - Modern, medium-sized condo building",
+      "visual_prompt": "A modern, six-story condo building with large glass windows and a clean architectural design. Balconies are visible on some units. Sunny day. Clear blue sky. Well-maintained landscaping."
+    },
+    {
+      "id": "l2",
+      "src": "/uploads/5c04ddd9_loc_l2.png",
+      "label": "Apartment Viewing - Interior of a modern, empty apartment",
+      "visual_prompt": "Empty apartment with modern fixtures. Large window in the center of the frame. Minimalist decor. Neutral color palette of whites, greys, and light browns. Hardwood flooring."
+    }
+  ],
+  "objects": [
+    {
+      "id": "o1",
+      "src": "/uploads/5c04ddd9_obj_o1.png",
+      "label": "Smartphone with OneMap app open",
+      "visual_prompt": "A modern smartphone held vertically, displaying the OneMap app interface with the property layer activated. Focus on the screen, showcasing the map with building outlines and property information. White background."
+    }
+  ],
+  "frames": [
+    {
+      "id": 1,
+      "description": "Split screen: Top shows Alex looking confused at a condo; Bottom shows screen recording of OneMap App being opened.",
+      "img": "/uploads/5c04ddd9_frame_1.png",
+      "visual_prompt": "A split screen. Top half: Alex (c1) standing in front of a modern condo building (l1), looking up at it with a furrowed brow and a puzzled expression. The building is slightly blurred. Bottom half: A close-up screen recording of a hand (unseen) opening the OneMap app (o1) on a smartphone. The app icon is clearly visible. The background of the phone is a blurred image of Singapore. Dynamic lighting suggests movement."
+    },
+    {
+      "id": 2,
+      "description": "Fast-paced zoom into a building on the OneMap app, tapping a unit, and revealing transaction prices and rental rates.",
+      "img": "/uploads/5c04ddd9_frame_2.png",
+      "visual_prompt": "Close-up screen recording of the OneMap app (o1). Rapid zoom into a specific building on the map. A finger taps on a highlighted unit within the building. A pop-up window appears, displaying a list of recent transaction prices, square footage, and rental history in a clear, easy-to-read format. The map underneath is slightly blurred. Dynamic motion blur indicates the zoom and tap action."
+    },
+    {
+      "id": 3,
+      "description": "Renter now looks confident and assured",
+      "img": "/uploads/5c04ddd9_frame_3.png",
+      "visual_prompt": "Alex (c1) is now inside an apartment viewing (l2) looking at the space and smiling confidently. He is holding his smartphone in his hand looking at the OneMap app. Sunlight streams in from a large window in the background."
+    }
+  ],
+  "status": "completed",
+  "phase": "done"
+}

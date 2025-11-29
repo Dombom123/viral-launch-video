@@ -1,0 +1,55 @@
+{
+  "characters": [
+    {
+      "id": "c1",
+      "src": "https://placehold.co/200x200/png?text=Character+1",
+      "label": "Sarah, a young, adventurous tourist (20s), energetic and excited."
+    }
+  ],
+  "locations": [
+    {
+      "id": "l1",
+      "src": "https://placehold.co/300x200/png?text=Location+1",
+      "label": "Hidden Cafe: Tiong Bahru Bakery (Secret Location). Quaint, rustic interior, filled with plants."
+    },
+    {
+      "id": "l2",
+      "src": "https://placehold.co/300x200/png?text=Location+2",
+      "label": "Scenic Viewpoint: Mount Faber Peak. Panoramic view of Singapore skyline."
+    },
+    {
+      "id": "l3",
+      "src": "https://placehold.co/300x200/png?text=Location+3",
+      "label": "Historical Landmark: Fort Canning Park. Ancient ruins and lush greenery."
+    }
+  ],
+  "objects": [
+    {
+      "id": "o1",
+      "src": "https://placehold.co/200x200/png?text=Object",
+      "label": "Smartphone with OneMap App open, displaying locations."
+    }
+  ],
+  "frames": [
+    {
+      "id": 1,
+      "description": "Sarah, looking frustrated in a crowded tourist spot (e.g., Merlion Park). Cuts to her smiling and looking at her phone (OneMap App) with a surprised and excited expression. Text overlay: \"Tired of crowded tourist traps?\"",
+      "img": "https://placehold.co/400x225/png?text=Scene+1"
+    },
+    {
+      "id": 2,
+      "description": "Fast montage of Sarah exploring the Hidden Cafe (l1), Scenic Viewpoint (l2), and Historical Landmark (l3). Each scene shows her smiling and interacting with the environment. The OneMap App is briefly shown displaying the location of each spot.",
+      "img": "https://placehold.co/400x225/png?text=Scene+2"
+    },
+    {
+      "id": 3,
+      "description": "Close-up shot of the OneMap App on Sarah's phone, highlighting its features and location information. Overlays of each location address, name and brief description.",
+      "img": "https://placehold.co/400x225/png?text=Scene+3"
+    },
+    {
+      "id": 4,
+      "description": "Sarah smiling directly at the camera, holding up her phone showing the OneMap App icon. Text overlay: \"Download OneMap App now!\" Hashtags: #OneMapApp #Singapore #HiddenGems #ExploreSingapore",
+      "img": "https://placehold.co/400x225/png?text=Scene+4"
+    }
+  ]
+}

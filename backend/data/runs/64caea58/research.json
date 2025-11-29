@@ -1,0 +1,40 @@
+{
+  "productInfo": {
+    "name": "OneMap App",
+    "description": "An all-in-one authoritative digital map application that goes beyond standard navigation. It likely features specialized geospatial data such as property transaction prices, school catchment area radius queries, sheltered walking routes, and detailed public transport integration. It serves as a 'life hack' tool for urban residents.",
+    "competitors": [
+      "Google Maps",
+      "Citymapper",
+      "Waze",
+      "PropertyGuru (Real Estate aspect)"
+    ]
+  },
+  "marketAnalysis": {
+    "trend": "The 'Hidden Utility' & 'Adulting Hacks' Trend",
+    "insight": "Users are fatigued by standard navigation apps that only show routes. The current viral opportunity lies in 'Information Asymmetry'\u2014showing users data they didn't know was publicly accessible (like exact property prices of neighbors or precise school distances). Positioning the app not as a map, but as a 'Cheat Sheet for City Living,' drives higher save rates and shares."
+  },
+  "scripts": [
+    {
+      "id": 1,
+      "title": "The Real Estate Voyeur",
+      "hook": "Stop guessing how much your rich neighbor paid for their house. I found a way to see the receipt.",
+      "body": "Visual: Split screen. Top is a video of a fancy condo/house. Bottom is a screen recording of the OneMap App.\n\nAudio/VO: 'Everyone uses Google Maps, but they don't know about OneMap. Open the app, toggle the property layer, and boom.'\n\nVisual: Fast zoom into a map area showing price tags hovering over buildings. Tap one to show the transaction history.\n\nAudio/VO: 'You can see the exact transaction price, the floor area, and the date. It\u2019s public info, but nobody knows where to look.'",
+      "callToAction": "Download OneMap and check your neighborhood prices."
+    },
+    {
+      "id": 2,
+      "title": "The 'Dry Commute' Hack",
+      "hook": "It is POURING outside, but I didn't bring an umbrella. Here is why I don't care.",
+      "body": "Visual: POV shot looking out a window at heavy rain. Cut to user looking calm holding a phone.\n\nAudio/VO: 'Most apps just tell you the fastest way. OneMap tells you the *driest* way.'\n\nVisual: Screen recording selecting a destination. The cursor specifically clicks a filter button labeled 'Sheltered Route'.\n\nVisual: A highlighted path appears. Cut to a timelapse of the user walking through covered walkways/underpasses, arriving completely dry.\n\nAudio/VO: 'It navigates you exclusively through covered walkways and malls. No wet socks.'",
+      "callToAction": "Stop getting wet. Link in bio."
+    },
+    {
+      "id": 3,
+      "title": "The Parents' Panic Killer",
+      "hook": "If you are moving house to get your kid into a specific school, do NOT trust Google Maps.",
+      "body": "Visual: A stressed parent looking at a laptop with multiple tabs open. Text overlay: 'The 1km Rule'.\n\nAudio/VO: 'That 1km radius rule is strict. If you are 1 meter off, you lose priority. A straight line on a normal map isn't accurate enough.'\n\nVisual: Screen recording of OneMap's 'SchoolQuery' feature. User taps a school, and a precise, government-accurate red circle overlay appears around it.\n\nVisual: User types in an address and it says 'Within 1km'.\n\nAudio/VO: 'This is the official data. Don't risk your deposit on a guess.'",
+      "callToAction": "Check your radius on OneMap today."
+    }
+  ],
+  "project_id": "64caea58"
+}

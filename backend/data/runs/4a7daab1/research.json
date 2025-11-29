@@ -1,0 +1,32 @@
+{
+  "productInfo": {
+    "name": "Inferred Product (Mock)",
+    "description": "A placeholder product description since the AI generation failed or API key is missing.",
+    "competitors": [
+      "Competitor A",
+      "Competitor B",
+      "Competitor C"
+    ]
+  },
+  "marketAnalysis": {
+    "trend": "General Viral Trend",
+    "insight": "People love authentic content."
+  },
+  "scripts": [
+    {
+      "id": 1,
+      "title": "Mock Script 1",
+      "hook": "This is a fallback hook.",
+      "body": "Describe visual flow here.",
+      "callToAction": "Buy Now"
+    },
+    {
+      "id": 2,
+      "title": "Mock Script 2",
+      "hook": "Another fallback hook.",
+      "body": "Describe visual flow here.",
+      "callToAction": "Check it out"
+    }
+  ],
+  "project_id": "4a7daab1"
+}

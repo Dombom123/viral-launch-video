@@ -1,0 +1,54 @@
+{
+  "characters": [
+    {
+      "id": "c1",
+      "src": "placeholder",
+      "label": "Sarah, young professional in business casual attire",
+      "visual_prompt": "Young woman, Sarah, with slightly anxious expression, wearing business casual attire (blazer and blouse), shoulder-length brown hair, slightly frazzled looking, white background."
+    },
+    {
+      "id": "c2",
+      "src": "/uploads/a0a3bf2a_char_c2.png",
+      "label": "Meeting attendees, diverse group, professional attire",
+      "visual_prompt": "Diverse group of four people, two men and two women, professional business attire (suits, dresses), sitting around a conference table, slightly blurred, white background."
+    }
+  ],
+  "locations": [
+    {
+      "id": "l1",
+      "src": "placeholder",
+      "label": "Modern office meeting room with glass walls",
+      "visual_prompt": "Modern, brightly lit office meeting room. Glass walls, large conference table, ergonomic chairs, whiteboard, minimalist design, view into a busy but uncluttered office space beyond, blurred background."
+    },
+    {
+      "id": "l2",
+      "src": "/uploads/a0a3bf2a_loc_l2.png",
+      "label": "Smaller, unoccupied meeting room with a digital door scanner",
+      "visual_prompt": "Smaller, modern office meeting room, unoccupied, with a sleek digital door scanner mounted next to the door. Natural light, simple table and chairs, clean and inviting, slightly blurred background."
+    }
+  ],
+  "objects": [
+    {
+      "id": "o1",
+      "src": "/uploads/a0a3bf2a_obj_o1.png",
+      "label": "Smartphone displaying the Spaceti app interface",
+      "visual_prompt": "Smartphone displaying a clean, modern office map interface of the Spaceti app. The map shows available meeting rooms highlighted in green. Close up screen capture, white background."
+    }
+  ],
+  "frames": [
+    {
+      "id": 1,
+      "description": "Sarah nervously peeks into a glass meeting room, seeing a meeting in progress, and quickly walks away in the opposite direction.",
+      "img": "/uploads/a0a3bf2a_frame_1.png",
+      "visual_prompt": "POV shot from behind Sarah (c1) as she hesitantly peeks into l1. Her eyes are wide with surprise and a hint of panic. Through the glass walls of l1, a meeting with c2 is in full swing, adding to her visible discomfort. She's quickly turning and speed-walking away from the room, her back to the viewer. The focus is on Sarah's reaction and the crowded meeting room beyond the glass."
+    },
+    {
+      "id": 2,
+      "description": "Sarah confidently walks into the newly booked meeting room, scans her phone at the door, and sits down with relief.",
+      "img": "/uploads/a0a3bf2a_frame_2.png",
+      "visual_prompt": "Sarah (c1) confidently walking towards l2. She is holding o1, scanning it at the digital door scanner. A sense of relief is visible on her face. She enters l2 and sits down, letting out a slight sigh of relief. Soft, natural lighting in the room."
+    }
+  ],
+  "status": "completed",
+  "phase": "done"
+}

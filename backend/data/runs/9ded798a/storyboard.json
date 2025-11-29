@@ -1,0 +1,82 @@
+{
+  "characters": [
+    {
+      "id": "c1",
+      "src": "placeholder",
+      "label": "The Insider",
+      "visual_prompt": "A trendy, tech-savvy young adult male, late 20s, wearing a modern streetwear hoodie, holding a smartphone up, looking conspiratorial and excited, finger over lips in a 'shh' gesture, studio lighting, sharp focus, isolated on white background, 8k resolution, photorealistic."
+    }
+  ],
+  "locations": [
+    {
+      "id": "l1",
+      "src": "placeholder",
+      "label": "Luxury Residential District (Aerial)",
+      "visual_prompt": "High-angle satellite view of a lush, high-end residential neighborhood with large villas and swimming pools, bright daylight, crisp textures, photorealistic aerial photography style, 8k."
+    },
+    {
+      "id": "l2",
+      "src": "placeholder",
+      "label": "Digital City Interface",
+      "visual_prompt": "A futuristic 3D isometric map of a city, clean UI design, buildings are white and grey, streets are dark, optimized for data overlays, cinematic lighting."
+    }
+  ],
+  "objects": [
+    {
+      "id": "o1",
+      "src": "placeholder",
+      "label": "Smartphone with App UI",
+      "visual_prompt": "A sleek, modern bezel-less smartphone held by a hand, screen displaying a digital map application with a clean interface, isolated on white background, high-end product photography."
+    },
+    {
+      "id": "o2",
+      "src": "placeholder",
+      "label": "Data Floating UI Elements",
+      "visual_prompt": "Futuristic Augmented Reality UI pop-ups, displaying 'Price: $5M', 'Freehold', 'Land Size: 5000sqft', glowing neon blue and green text boxes, semi-transparent backgrounds, isolated on white background."
+    }
+  ],
+  "frames": [
+    {
+      "id": 1,
+      "description": "Close up of The Insider looking into the camera, whispering the hook.",
+      "img": "placeholder",
+      "visual_prompt": "Close-up shot of character c1 (The Insider) leaning into the camera lens, holding a smartphone (o1) near his face, finger over lips, dramatic lighting casting a slight shadow over eyes to create mystery, depth of field blurring the background."
+    },
+    {
+      "id": 2,
+      "description": "Fast zoom transition from space/clouds down to the Luxury Residential District.",
+      "img": "placeholder",
+      "visual_prompt": "Motion-blurred zoom effect crashing down from clouds into location l1 (Luxury Residential District), speed lines on edges, satellite imagery style, shifting from 2D map to 3D reality."
+    },
+    {
+      "id": 3,
+      "description": "POV of phone screen selecting a plot of land. The map transforms from a standard view to a detailed cadastral map.",
+      "img": "placeholder",
+      "visual_prompt": "POV shot holding object o1 (Smartphone), screen displays location l2 (Digital City Interface). A finger taps a specific building, and the building glows gold. The surrounding area is desaturated to highlight the selection."
+    },
+    {
+      "id": 4,
+      "description": "Augmented Reality data explosion. Detailed info cards pop up over the building.",
+      "img": "placeholder",
+      "visual_prompt": "Cinematic 3D render of a luxury house from location l1. Floating around it are object o2 (Data Floating UI Elements) showing 'Ownership: Private', 'Last Transacted: $4.2M'. The data connects to the house with thin glowing lines. Iron Man HUD style."
+    },
+    {
+      "id": 5,
+      "description": "Heat map overlay spreading across the city district.",
+      "img": "placeholder",
+      "visual_prompt": "Wide shot of location l2 (Digital City Interface). A gradient heat map overlay spreads across the buildings\u2014red for high value, blue for lower value. The buildings are translucent 3D models. Visualizing big data."
+    },
+    {
+      "id": 6,
+      "description": "The 'God Mode' visual metaphor. The user holding the city in their hand.",
+      "img": "placeholder",
+      "visual_prompt": "Surreal composite image. A giant hand (belonging to c1) holding a glowing miniature version of the city (l2) in the palm. Soft god-rays shining down from above. Text overlay: 'GOD MODE' in bold, cinematic font."
+    },
+    {
+      "id": 7,
+      "description": "Final CTA. The Insider pointing to the bio/description.",
+      "img": "placeholder",
+      "visual_prompt": "Medium shot of character c1 (The Insider) smiling confidently, holding the phone (o1) forward showing the app logo, while pointing upward/to the side with the other hand indicating 'Link in Bio'. Bright, high-key studio lighting."
+    }
+  ]
+}

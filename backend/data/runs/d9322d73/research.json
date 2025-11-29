@@ -1,0 +1,41 @@
+{
+  "productInfo": {
+    "name": "OneMap",
+    "description": "The authoritative national map application of Singapore developed by the Singapore Land Authority (SLA). It provides hyper-local data including detailed routing (bus/train), sheltered walkways, property prices, school catchment areas (1km radius), and land ownership information that global competitors often miss.",
+    "competitors": [
+      "Google Maps",
+      "Citymapper",
+      "Waze",
+      "Apple Maps",
+      "PropertyGuru (Feature overlap)"
+    ]
+  },
+  "marketAnalysis": {
+    "trend": "Hyper-local 'Life Hacks' and 'Hidden Features'",
+    "insight": "While Google Maps dominates general navigation, users are increasingly frustrated by its lack of local nuance (e.g., covered walkways during rain, exact HDB block numbers, or official school distances). The viral opportunity lies in positioning OneMap not just as a map, but as a 'Cheat Code' for living in Singapore."
+  },
+  "scripts": [
+    {
+      "id": 1,
+      "title": "The 'Rainy Day' Hack",
+      "hook": "I bet you didn't know you can walk from here to here... without getting a single drop of rain on you.",
+      "body": "Visual: Split screen. Top shows a person looking miserable holding a broken umbrella in the rain. Bottom shows a screen recording of the OneMap App.\n\nAudio/Voiceover: 'Stop trusting Google Maps when it rains. Open OneMap, type your destination, and hit this button specifically: SHELTERED ROUTE.'\n\nVisual: Zoom in on the 'Sheltered' icon in the route settings. The map path changes color to show covered walkways and void decks.\n\nAudio: 'It literally guides you through HDB void decks and connectors so you stay dry. It\u2019s a literal life saver during monsoon season.'",
+      "callToAction": "Download OneMap before the next storm hits."
+    },
+    {
+      "id": 2,
+      "title": "The Parent/Property Cheat Code",
+      "hook": "If you are moving house or registering for Primary 1, stop guessing the 1km distance.",
+      "body": "Visual: Fast-paced montage of a stressed parent looking at papers. Cut to the OneMap interface showing the 'SchoolQuery' tool.\n\nAudio: 'Real estate agents hate when you know this. Go to OneMap and click Services > SchoolQuery.'\n\nVisual: Screen recording showing the user dropping a pin on a specific condo/block. A precise circle appears highlighting every school within 1km and 2km.\n\nAudio: 'This is the OFFICIAL data the government uses. Don't risk your ballot chance on a rough estimate from other apps.'",
+      "callToAction": "Check your radius on OneMap right now."
+    },
+    {
+      "id": 3,
+      "title": "The 'Nosy Neighbor' Feature",
+      "hook": "Want to know exactly how much your neighbor paid for their house? purely for... research?",
+      "body": "Visual: The creator looking suspicious/cheeky at the camera. Cut to OneMap zoomed in on a specific building.\n\nAudio: 'You don't need a property agent login. Open OneMap, tap on any building, and select Property Information.'\n\nVisual: Screen recording showing a popup list of recent transaction prices and rental rates for that specific block.\n\nAudio: 'You can see the actual transaction data for free. Perfect for negotiating your rent or just being kaypoh (nosy).'",
+      "callToAction": "Link in bio to get the app."
+    }
+  ],
+  "project_id": "d9322d73"
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Settings, RefreshCw, Rocket, Activity, CheckCircle, Zap } from 'lucide-react';
+import { Settings, RefreshCw, Rocket, Activity, CheckCircle, Zap, ArrowLeft } from 'lucide-react';
 import Step1_Upload from './steps/Step1_Upload';
 import Step2_Research from './steps/Step2_Research';
 import Step3_Storyboard from './steps/Step3_Storyboard';
@@ -18,6 +18,7 @@ const STEPS = [
 
 export default function Wizard() {
   const [currentStep, setCurrentStep] = useState(1);
+  const [projectId, setProjectId] = useState<string | null>(null);
 
   const handleNext = () => {
     if (currentStep < STEPS.length) {
@@ -25,9 +26,16 @@ export default function Wizard() {
     }
   };
 
+  const handleBack = () => {
+    if (currentStep > 1) {
+      setCurrentStep(prev => prev - 1);
+    }
+  };
+
   const handleReset = () => {
     if (confirm("Are you sure you want to start over? All progress will be lost.")) {
         setCurrentStep(1);
+        setProjectId(null);
     }
   };
 
@@ -126,16 +134,33 @@ export default function Wizard() {
         </aside>
 
         {/* Right Main Area */}
-        <main className="flex-1 relative bg-[#09090b] flex flex-col">
+        <main className="flex-1 relative bg-[#09090b] flex flex-col min-h-0">
+          {/* Back Button - shown on steps 2+ */}
+          {currentStep > 1 && (
+            <div className="absolute top-4 left-4 z-10">
+              <button
+                onClick={handleBack}
+                className="flex items-center gap-2 px-3 py-2 text-sm text-zinc-400 hover:text-white bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg backdrop-blur-sm transition-all"
+              >
+                <ArrowLeft size={16} />
+                Back
+              </button>
+            </div>
+          )}
+          
           {/* Content Container */}
-          <div className="flex-1 overflow-y-auto p-10 flex items-center justify-center">
-             <div className="w-full max-w-6xl animate-in fade-in slide-in-from-bottom-4 duration-500">
-                {currentStep === 1 && <Step1_Upload onNext={handleNext} />}
-                {currentStep === 2 && <Step2_Research onNext={handleNext} />}
-                {currentStep === 3 && <Step3_Storyboard onNext={handleNext} />}
-                {currentStep === 4 && <Step4_VideoGen onNext={() => setCurrentStep(5)} />}
-                {currentStep === 5 && <Step5_Editor onNext={handleNext} />}
-                {currentStep === 6 && <Step6_Launch />}
+          <div className="flex-1 overflow-y-auto p-8">
+             <div className="w-full max-w-6xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
+                {currentStep === 1 && (
+                  <div className="min-h-full flex items-center justify-center">
+                    <Step1_Upload onNext={handleNext} setProjectId={setProjectId} />
+                  </div>
+                )}
+                {currentStep === 2 && <Step2_Research onNext={handleNext} onBack={handleBack} projectId={projectId} />}
+                {currentStep === 3 && <Step3_Storyboard onNext={handleNext} onBack={handleBack} projectId={projectId} />}
+                {currentStep === 4 && <Step4_VideoGen onNext={() => setCurrentStep(5)} onBack={handleBack} projectId={projectId} />}
+                {currentStep === 5 && <Step5_Editor onNext={handleNext} onBack={handleBack} projectId={projectId} />}
+                {currentStep === 6 && <Step6_Launch onBack={handleBack} projectId={projectId} />}
              </div>
           </div>
 

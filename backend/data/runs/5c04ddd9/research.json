@@ -1,0 +1,40 @@
+{
+  "productInfo": {
+    "name": "OneMap",
+    "description": "An authoritative, hyper-local mapping and navigation application (likely based on the Singapore Land Authority's OneMap). It goes beyond basic navigation by providing granular geospatial data, including precise property transaction prices, school catchment areas (1km radius), sheltered walkways, and detailed public transit integration.",
+    "competitors": [
+      "Google Maps",
+      "Citymapper",
+      "Waze",
+      "Apple Maps"
+    ]
+  },
+  "marketAnalysis": {
+    "trend": "The 'Hidden Utility' & 'Local Life Hacks' Trend",
+    "insight": "Social media users are currently fatigued by generic lifestyle content and crave 'high-utility' tools that give them an information advantage. While global giants like Google Maps dominate navigation, they lack granular local context (e.g., covered walkways for rain, exact land ownership, or school eligibility). Positioning OneMap not just as a map, but as a 'Data Superpower' for real estate and daily commuting, taps into the viral desire for 'insider knowledge.'"
+  },
+  "scripts": [
+    {
+      "id": 1,
+      "title": "The Real Estate Detective",
+      "hook": "Stop guessing property prices. Here is how you see exactly what your neighbor paid.",
+      "body": "Visual: Split screen. Top shows a confused person looking at a property listing app. Bottom shows a screen recording of the OneMap app opening the 'Property Query' tool.\n\nAudio (Voiceover): 'Real estate apps show you the asking price, but this app shows you the *real* transaction price. Just click on a building, hit property query, and boom\u2014historical data instantly. Don't negotiate blind.'",
+      "callToAction": "Download OneMap and check your building now."
+    },
+    {
+      "id": 2,
+      "title": "The 'Don't Get Wet' Commute Hack",
+      "hook": "I bet Google Maps can't do THIS.",
+      "body": "Visual: Fast cut of someone getting soaked in the rain using a generic map app. Cut to OneMap interface selecting the 'Sheltered Walkway' layer. Green lines appear all over the map connecting a subway station to a home.\n\nAudio (Voiceover): 'It\u2019s raining season, and you\u2019re still walking in the open? OneMap actually highlights every single sheltered walkway in the city. Navigate dry, not just fast.'",
+      "callToAction": "Link in bio to stay dry."
+    },
+    {
+      "id": 3,
+      "title": "The Parent's Secret Weapon",
+      "hook": "Moving house? Do NOT sign the lease until you check this ONE feature.",
+      "body": "Visual: A stressed parent looking at a map. Screen recording zooms into OneMap's 'SchoolQuery' feature. The user taps a school, and a precise red circle (1km radius) and blue circle (2km radius) appear over the map.\n\nAudio (Voiceover): 'Being one meter outside the zone changes everything. OneMap gives you the official, authoritative radius for school registration. Don't trust the forums, trust the data.'",
+      "callToAction": "Check your radius on OneMap today."
+    }
+  ],
+  "project_id": "5c04ddd9"
+}

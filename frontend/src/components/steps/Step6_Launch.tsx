@@ -1,8 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CheckCircle, Download, Share2, Copy, Youtube, Twitter, Instagram } from 'lucide-react';
 
-export default function Step6_Launch() {
+interface Step6Props {
+    onBack?: () => void;
+    projectId: string | null;
+}
+
+export default function Step6_Launch({ projectId }: Step6Props) {
   const [copied, setCopied] = useState(false);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!projectId) return;
+    // Check video status to get URL
+    fetch(`http://localhost:8000/api/project/${projectId}/video-status`)
+        .then(res => res.json())
+        .then(data => {
+            if (data.videoUrl) {
+                setVideoUrl(data.videoUrl);
+            }
+        })
+        .catch(e => console.error(e));
+  }, [projectId]);
 
   const handleCopy = () => {
     setCopied(true);
@@ -24,12 +43,11 @@ export default function Step6_Launch() {
 
       {/* Final Video Preview */}
       <div className="w-full max-w-xl aspect-video bg-black rounded-2xl border border-zinc-800 overflow-hidden shadow-2xl mb-8 relative group shrink-0">
-         <img src="https://placehold.co/1280x720/000000/FFF?text=FINAL+CUT" className="w-full h-full object-cover" />
-         <div className="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center cursor-pointer">
-               <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[16px] border-l-white border-b-[10px] border-b-transparent ml-1"></div>
-            </div>
-         </div>
+         {videoUrl ? (
+            <video src={videoUrl} className="w-full h-full object-cover" controls />
+         ) : (
+             <img src="https://placehold.co/1280x720/000000/FFF?text=FINAL+CUT" className="w-full h-full object-cover" />
+         )}
       </div>
 
       <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md shrink-0">

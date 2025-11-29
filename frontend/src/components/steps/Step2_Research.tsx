@@ -1,19 +1,55 @@
 import React, { useState, useEffect } from 'react';
 import { Loader2, Check, FileText, Sparkles, TrendingUp, Target } from 'lucide-react';
-import { researchData } from '@/lib/mockData';
 
 interface Step2Props {
   onNext: () => void;
+  onBack?: () => void;
+  projectId: string | null;
 }
 
-export default function Step2_Research({ onNext }: Step2Props) {
+export default function Step2_Research({ onNext, projectId }: Step2Props) {
   const [loading, setLoading] = useState(true);
   const [selectedScript, setSelectedScript] = useState<number | null>(null);
+  const [data, setData] = useState<any>(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
-    return () => clearTimeout(timer);
-  }, []);
+    if (!projectId) return;
+
+    const fetchResearch = async () => {
+      try {
+        const response = await fetch(`http://localhost:8000/api/project/${projectId}/research`, {
+          method: 'POST',
+        });
+        const result = await response.json();
+        if (result.data) {
+            setData(result.data);
+        }
+      } catch (error) {
+        console.error('Error fetching research:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchResearch();
+  }, [projectId]);
+
+  const handleApprove = async () => {
+      if (!selectedScript || !projectId || !data) return;
+      
+      const script = data.scripts.find((s: any) => s.id === selectedScript);
+      
+      try {
+          await fetch(`http://localhost:8000/api/project/${projectId}/select-script`, {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify(script)
+          });
+          onNext();
+      } catch(e) {
+          console.error('Error saving selection:', e);
+      }
+  };
 
   if (loading) {
     return (
@@ -32,8 +68,10 @@ export default function Step2_Research({ onNext }: Step2Props) {
     );
   }
 
+  if (!data) return null;
+
   return (
-    <div className="w-full max-w-4xl mx-auto pb-20">
+    <div className="w-full max-w-4xl mx-auto py-6">
       <div className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="bg-zinc-900 p-5 rounded-xl border border-zinc-800">
           <h3 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
@@ -42,14 +80,14 @@ export default function Step2_Research({ onNext }: Step2Props) {
           <div className="space-y-3">
              <div>
                <p className="text-xs text-zinc-500 mb-1">Product Name</p>
-               <p className="text-sm text-zinc-200 font-medium">{researchData.productInfo.name}</p>
+               <p className="text-sm text-zinc-200 font-medium">{data.productInfo.name}</p>
              </div>
              <div>
                <p className="text-xs text-zinc-500 mb-1">Core Value Prop</p>
-               <p className="text-sm text-zinc-300">{researchData.productInfo.description}</p>
+               <p className="text-sm text-zinc-300">{data.productInfo.description}</p>
              </div>
              <div className="flex flex-wrap gap-2 mt-2">
-               {researchData.productInfo.competitors.map(c => (
+               {data.productInfo.competitors.map((c: string) => (
                  <span key={c} className="bg-zinc-800 text-zinc-400 px-2 py-1 rounded text-[10px] border border-zinc-700">{c}</span>
                ))}
              </div>
@@ -63,9 +101,9 @@ export default function Step2_Research({ onNext }: Step2Props) {
           <div className="h-full flex flex-col justify-center">
             <div className="bg-blue-500/10 p-3 rounded-lg border border-blue-500/20 mb-2">
               <p className="text-xs text-blue-400 font-medium mb-1">Dominant Trend</p>
-              <p className="text-sm text-zinc-200">{researchData.marketAnalysis.trend}</p>
+              <p className="text-sm text-zinc-200">{data.marketAnalysis.trend}</p>
             </div>
-            <p className="text-xs text-zinc-500 italic">"{researchData.marketAnalysis.insight}"</p>
+            <p className="text-xs text-zinc-500 italic">"{data.marketAnalysis.insight}"</p>
           </div>
         </div>
       </div>
@@ -75,7 +113,7 @@ export default function Step2_Research({ onNext }: Step2Props) {
       </h2>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        {researchData.scripts.map((script) => (
+        {data.scripts.map((script: any) => (
           <div 
             key={script.id}
             onClick={() => setSelectedScript(script.id)}
@@ -117,7 +155,7 @@ export default function Step2_Research({ onNext }: Step2Props) {
 
       <div className="text-center">
         <button
-          onClick={onNext}
+          onClick={handleApprove}
           disabled={!selectedScript}
           className={`px-6 py-2.5 rounded-lg font-medium text-sm transition-all
             ${selectedScript 

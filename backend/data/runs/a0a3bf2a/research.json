@@ -1,0 +1,39 @@
+{
+  "productInfo": {
+    "name": "Spaceti",
+    "description": "A holistic smart building and workplace app designed to optimize hybrid work environments. It features desk and meeting room booking, parking reservation, indoor navigation, and environmental analytics (air quality/temperature) to improve employee experience and space efficiency.",
+    "competitors": [
+      "Robin",
+      "Envoy",
+      "Condeco"
+    ]
+  },
+  "marketAnalysis": {
+    "trend": "The 'Return to Office' Friction vs. The Hybrid Lifestyle",
+    "insight": "Employees are currently resisting RTO mandates due to the inconvenience. The viral angle isn't 'efficiency' for the company, but 'convenience' and 'wellness' for the user. Framing the app as a tool that guarantees a good seat, fresh air, and zero stress makes the office feel like a high-end coworking space rather than a cubicle farm."
+  },
+  "scripts": [
+    {
+      "id": 1,
+      "title": "The 'Social Anxiety' Saver",
+      "hook": "POV: You walked into a meeting thinking the room was empty... but it wasn't.",
+      "body": "Visual: [0-3s] A person nervously peeking into a glass meeting room, realizing people are in there, and awkwardly speed-walking away. \nVisual: [3-8s] Cut to them pulling out their phone. Close up on Spaceti interface. Tapping 'Book Meeting Room'. The map shows a green (open) room nearby. \nVisual: [8-12s] Person walks confidently to the new room, scans phone at the door, and sits down with a sigh of relief. Text overlay: 'No more guessing.'",
+      "callToAction": "Make your office awkward-proof with Spaceti."
+    },
+    {
+      "id": 2,
+      "title": "Romanticize Your 9-to-5",
+      "hook": "Stop sitting in the dark corner of the office. Let's upgrade your view.",
+      "body": "Visual: [0-4s] Aesthetic, high-quality shot of a coffee cup being placed on a desk. Lighting is bad/dim. \nVisual: [4-9s] Screen recording of the Spaceti App. User selects 'Desk Booking', filters for 'Window Seat' or checks the 'Heatmap' to find a quiet zone. \nVisual: [9-13s] Fast transition to a bright, sunlit desk with a great view. User sets up their laptop. Visual of checking 'Air Quality' on the app\u2014it's excellent. \nAudio: Chill Lofi beat.",
+      "callToAction": "Book the best seat in the house. Link in bio."
+    },
+    {
+      "id": 3,
+      "title": "The Parking Wars Solution",
+      "hook": "If you drive to work, you know the morning parking panic. Here is how to fix it.",
+      "body": "Visual: [0-3s] Dashboard camera view of a car driving in circles in a parking garage. Text overlay: '7:55 AM - Still looking.' \nVisual: [3-8s] Cut to the night before. Person lying in bed, taps phone. Spaceti App -> 'Reserve Parking Spot #42'. \nVisual: [8-12s] Morning shot: The car drives straight into spot #42. The barrier lifts automatically via license plate recognition (or app scan). \nVisual: [12-15s] Person walks into the office building smiling.",
+      "callToAction": "Never fight for a parking spot again. Try Spaceti."
+    }
+  ],
+  "project_id": "a0a3bf2a"
+}

@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { Upload, CheckCircle, Film } from 'lucide-react';
+import { Upload, CheckCircle, Film, Loader2 } from 'lucide-react';
 
 interface Step1Props {
   onNext: () => void;
+  setProjectId: (id: string) => void;
 }
 
-export default function Step1_Upload({ onNext }: Step1Props) {
+export default function Step1_Upload({ onNext, setProjectId }: Step1Props) {
   const [isDragging, setIsDragging] = useState(false);
   const [file, setFile] = useState<File | null>(null);
+  const [isUploading, setIsUploading] = useState(false);
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
@@ -29,6 +31,34 @@ export default function Step1_Upload({ onNext }: Step1Props) {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setFile(e.target.files[0]);
+    }
+  };
+
+  const handleUpload = async () => {
+    if (!file) return;
+
+    setIsUploading(true);
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+      const response = await fetch('http://localhost:8000/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error('Upload failed');
+      }
+
+      const data = await response.json();
+      setProjectId(data.project_id);
+      onNext();
+    } catch (error) {
+      console.error('Error uploading file:', error);
+      alert('Failed to upload file. Please try again.');
+    } finally {
+      setIsUploading(false);
     }
   };
 
@@ -77,15 +107,22 @@ export default function Step1_Upload({ onNext }: Step1Props) {
 
       <div className="mt-8 w-full flex justify-center">
         <button
-          onClick={onNext}
-          disabled={!file}
-          className={`px-8 py-3 rounded-full font-medium text-sm transition-all w-full max-w-xs
-            ${file 
+          onClick={handleUpload}
+          disabled={!file || isUploading}
+          className={`px-8 py-3 rounded-full font-medium text-sm transition-all w-full max-w-xs flex items-center justify-center gap-2
+            ${file && !isUploading
               ? 'bg-primary hover:bg-primary/90 text-black shadow-[0_0_20px_rgba(138,206,0,0.3)] hover:shadow-[0_0_30px_rgba(138,206,0,0.5)]' 
               : 'bg-zinc-800 text-zinc-500 cursor-not-allowed'}
           `}
         >
-          {file ? 'Analyze & Extract Metadata' : 'Upload to Continue'}
+          {isUploading ? (
+            <>
+              <Loader2 size={16} className="animate-spin" />
+              Uploading & Analyzing...
+            </>
+          ) : (
+            file ? 'Analyze & Extract Metadata' : 'Upload to Continue'
+          )}
         </button>
       </div>
     </div>

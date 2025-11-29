@@ -1,0 +1,40 @@
+{
+  "productInfo": {
+    "name": "OneMap App",
+    "description": "A mobile application providing comprehensive mapping and location-based services, potentially including features like real-time traffic, amenities search, route planning, and government services integration.",
+    "competitors": [
+      "Google Maps",
+      "Apple Maps",
+      "Waze",
+      "Citymapper"
+    ]
+  },
+  "marketAnalysis": {
+    "trend": "Use of location-based services and hyper-local information is increasing. Visual walkthroughs and tutorials of apps are popular on social media, especially when highlighting time-saving and problem-solving capabilities.",
+    "insight": "Focus on highlighting unique features of OneMap App that differentiate it from competitors and cater to specific user needs. Short, visually engaging content that demonstrates ease of use and practical applications will perform well."
+  },
+  "scripts": [
+    {
+      "id": 1,
+      "title": "OneMap App: Secret Singapore Spots YOU Need To Know!",
+      "hook": "Tired of crowded tourist traps? I found the coolest hidden gems in Singapore using THIS app!",
+      "body": "VISUAL: Fast cuts showcasing various unique places found using the OneMap App. (e.g., hidden cafes, scenic viewpoints, interesting historical sites). AUDIO: Upbeat, trending music. Voiceover: \"Forget the usual spots! OneMap App led me to these incredible places. Check out this hidden cafe with amazing coffee [show location on OneMap]. Or this stunning viewpoint overlooking the city [show location]. And even this little-known historical landmark [show location]. OneMap is packed with hidden gems!\"",
+      "callToAction": "Download OneMap App now and start exploring Singapore like a local! #OneMapApp #Singapore #HiddenGems #ExploreSingapore"
+    },
+    {
+      "id": 2,
+      "title": "Avoid Traffic Jams Like a PRO! (OneMap App Hack)",
+      "hook": "Stuck in traffic AGAIN? I've got a secret weapon... this app SAVED my commute!",
+      "body": "VISUAL: (1) Timelapse of heavy traffic. (2) Screen recording of using OneMap App to find alternative routes. (3) Fast-forwarded footage of a smooth, jam-free drive. AUDIO: Sound effects of honking cars transitioning to calm music. Voiceover: \"Traffic driving you crazy? OneMap App's real-time traffic updates and route planning helped me avoid this mess! Check out how easy it is to find alternative routes and save time. No more traffic jams for me!\"",
+      "callToAction": "Download OneMap App and say goodbye to traffic! Link in bio. #OneMapApp #TrafficHacks #CommuteLife #SingaporeTraffic"
+    },
+    {
+      "id": 3,
+      "title": "Last-Minute Plans? OneMap App to the Rescue!",
+      "hook": "Spontaneous weekend plans? I used this app to find EVERYTHING I needed!",
+      "body": "VISUAL: Quick cuts of someone looking indecisive, then using OneMap App to search for amenities (restaurants, ATMs, petrol stations, pharmacies). Showcasing the app's search and filter functionality. Transition to footage of enjoying the chosen activity. AUDIO: Playful, energetic music. Voiceover: \"Decided on a last-minute outing? OneMap App is my go-to! Need a nearby restaurant? Done! Searching for the closest ATM? Easy! Forgot to fill up the gas tank? OneMap has me covered! It's the perfect app for spontaneous adventures!\"",
+      "callToAction": "Download OneMap App for all your last-minute needs! #OneMapApp #SpontaneousAdventures #WeekendVibes #PlanYourDay"
+    }
+  ],
+  "project_id": "43357f26"
+}
