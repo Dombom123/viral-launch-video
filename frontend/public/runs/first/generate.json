@@ -1,0 +1,29 @@
+{
+    "project_title": "aiCanto Launch Video",
+    "concept": {
+        "title": "Rusty’s Writer’s Block",
+        "genre": "3D Animated Short / Product Demo",
+        "style": "High-end 3D Animation (Pixar/Illumination style)",
+        "premise": "The video visualizes the lonely, chaotic struggle of creativity. We follow a frantic screenwriter who is overwhelmed by ideas until he uses aiCanto. The software's AI agents are represented as literal holographic teammates in his room, turning a solitary struggle into a collaborative party."
+    },
+    "character": {
+        "name": "Rusty the Raccoon",
+        "personality": "The 'manic creative.' High energy but zero focus. Prone to dramatic sighs, chugging espresso from a tiny mug, and pacing around the room.",
+        "role": "Rusty represents the user's pain point. He interacts with the software not just by typing, but by physically gesturing to the holographic projections of the aiCanto agents.",
+        "image": "https://github.com/Dombom123/viral-launch-video/blob/main/frontend/public/sample-inputs/character1.png?raw=true"
+    },
+    "storyboard": [
+        {
+            "scene_number": 1,
+            "scene_title": "The Creative Slump",
+            "action_description": "We open on a cluttered, dimly lit home office. Rusty is slumped over his laptop, defeated. Piles of crumpled paper litter the floor. He bangs his head gently against the keyboard. A 'Writer's Block' cloud hangs over him. He is lonely and stuck.",
+            "image": "https://github.com/Dombom123/viral-launch-video/blob/main/frontend/public/sample-inputs/scene1.png?raw=true"
+        },
+        {
+            "scene_number": 2,
+            "scene_title": "The Spark",
+            "action_description": "Rusty looks up, eyes widening. A glowing orb appears on his screen. He reaches out, and the room transforms. The clutter disappears, replaced by a sleek, futuristic workspace.",
+            "image": "https://github.com/Dombom123/viral-launch-video/blob/main/frontend/public/sample-inputs/scene1.png?raw=true"
+        }
+    ]
+}
