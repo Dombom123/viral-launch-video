@@ -31,7 +31,7 @@ interface Message {
   timestamp: string;
 }
 
-export default function Editor() {
+export default function Editor(props: { runId: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const pixiAppRef = useRef<PIXI.Application | null>(null);
   const pixiEditorRef = useRef<PixiEditor | null>(null);
@@ -66,9 +66,26 @@ export default function Editor() {
 
   // Initialize state
   useEffect(() => {
-    // Parse the sample input to ensure it matches our schema (optional validation step)
-    setTimeline({ items: (sampleInput as unknown as Timeline).items.filter((item) => item.type === "video") });
-  }, [setTimeline]);
+    (async () => {
+      const response = await fetch(
+        `/runs/${props.runId}/video_generation.json`,
+      );
+      const data = await response.json();
+      console.log("data", data);
+      let startTime = 0;
+      const videos = data.generated_clips.map((clip: any) => {
+        const s = startTime;
+        startTime += clip.duration;
+        return {
+          type: "video",
+          src: clip.video_url.split('/public')[1],
+          duration: clip.duration,
+          startTime: s,
+        };
+      });
+      setTimeline({ items: videos });
+    })();
+  }, [setTimeline, props.runId]);
 
   // Scroll to bottom of chat
   useEffect(() => {
@@ -155,7 +172,7 @@ export default function Editor() {
     }
   }, [timeline]);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (!chatInput.trim()) return;
 
     const newMessage: Message = {
@@ -171,20 +188,94 @@ export default function Editor() {
     setMessages((prev) => [...prev, newMessage]);
     setChatInput("");
 
-    // Simulate AI Response
-    setTimeout(() => {
-      const aiMsg: Message = {
-        id: Date.now() + 1,
-        role: "assistant",
-        content:
-          "Understood. I'm regenerating the transition between scene 2 and 3 to be smoother.",
-        timestamp: new Date().toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        }),
+    const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+
+    // If no API key, fallback to simulation
+    if (!apiKey || !pixiEditorRef.current) {
+      setTimeout(() => {
+        const aiMsg: Message = {
+          id: Date.now() + 1,
+          role: "assistant",
+          content: apiKey
+            ? "Editor not ready."
+            : "Please set NEXT_PUBLIC_GEMINI_API_KEY to enable AI edits.",
+          timestamp: new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
+        };
+        setMessages((prev) => [...prev, aiMsg]);
+      }, 1000);
+      return;
+    }
+
+    // AI Refinement Flow
+    setIsRendering(true);
+    const loadingMsgId = Date.now() + 1;
+    setMessages((prev) => [
+      ...prev,
+      // {
+      //   id: loadingMsgId,
+      //   role: "assistant",
+      //   content: "Processing your request...",
+      //   timestamp: new Date().toLocaleTimeString([], {
+      //     hour: "2-digit",
+      //     minute: "2-digit",
+      //   }),
+      // },
+    ]);
+
+    try {
+      const currentOverlays = timeline?.items.filter(
+        (i) => i.type === "overlay",
+        // biome-ignore lint/suspicious/noExplicitAny: type compatibility
+      ) as any[];
+
+      const newOverlays = await OverlayGenerator.generate(
+        pixiEditorRef.current,
+        apiKey,
+        {
+          userPrompt: newMessage.content,
+          currentOverlays: currentOverlays,
+        },
+      );
+
+      // Update timeline with new overlays
+      const currentItems = timeline?.items || [];
+      const videoItems = currentItems.filter((i) => i.type === "video");
+      const updatedTimeline = {
+        items: [...videoItems, ...newOverlays],
       };
-      setMessages((prev) => [...prev, aiMsg]);
-    }, 1000);
+
+      setTimeline(updatedTimeline);
+
+      // Replace loading message with success
+      setMessages((prev) =>
+        prev.map((msg) =>
+          msg.id === loadingMsgId
+            ? {
+              ...msg,
+              content: `I've updated the overlays based on your feedback: "${newMessage.content}"`,
+            }
+            : msg,
+        ),
+      );
+    } catch (error) {
+      console.error("AI Edit failed", error);
+      setMessages((prev) =>
+        prev.map((msg) =>
+          msg.id === loadingMsgId
+            ? {
+              ...msg,
+              content:
+                "Sorry, I couldn't apply those changes. Please try again.",
+            }
+            : msg,
+        ),
+      );
+    } finally {
+      setIsRendering(false);
+    }
   };
 
   const handleGenerateOverlays = async () => {
@@ -212,7 +303,8 @@ export default function Editor() {
       {
         id: Date.now(),
         role: "assistant",
-        content: "Analyzing audio and generating overlays... This may take a moment.",
+        content:
+          "Analyzing audio and generating overlays... This may take a moment.",
         timestamp: new Date().toLocaleTimeString([], {
           hour: "2-digit",
           minute: "2-digit",
@@ -466,9 +558,11 @@ export default function Editor() {
               disabled={isRendering}
               className="px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-bold rounded-md shadow-sm transition-colors flex items-center gap-1.5 border border-zinc-700"
             >
-              <Sparkles size={12} className={isRendering ? "animate-pulse" : ""} />
+              <Sparkles
+                size={12}
+                className={isRendering ? "animate-pulse" : ""}
+              />
               Generate Overlays
-
             </button>
             <button
               type="button"
