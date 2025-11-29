@@ -1,0 +1,74 @@
+{
+  "selected_script": {
+    "id": "script_test_01",
+    "title": "The Innovation Story",
+    "hook": "Your workflow is about to change forever.",
+    "tone": "Inspiring & Professional",
+    "assets": {
+      "characters": [
+        {
+          "name": "Professional User",
+          "visual_prompt": "Mid-30s professional in modern office attire, confident expression."
+        }
+      ],
+      "objects": [
+        {
+          "name": "TestWidget Device",
+          "visual_prompt": "Sleek modern device with glowing indicators and premium finish."
+        },
+        {
+          "name": "Legacy System",
+          "visual_prompt": "Outdated cluttered desk setup with multiple screens showing errors."
+        }
+      ],
+      "environments": [
+        {
+          "name": "Modern Office",
+          "visual_prompt": "Clean minimalist office with natural lighting and green plants."
+        },
+        {
+          "name": "Home Office",
+          "visual_prompt": "Cozy home workspace with warm lighting and personal touches."
+        }
+      ]
+    },
+    "scenes": [
+      {
+        "scene_id": 1,
+        "visual": "Split screen: cluttered old setup vs clean new workflow",
+        "audio": "Remember when your desk looked like this?",
+        "assets": {
+          "objects": [
+            "Legacy System"
+          ],
+          "environment": "Modern Office"
+        }
+      },
+      {
+        "scene_id": 2,
+        "visual": "TestWidget Device activating with smooth animation",
+        "audio": "Meet TestWidget Pro. Your new command center.",
+        "assets": {
+          "objects": [
+            "TestWidget Device"
+          ],
+          "environment": "Modern Office"
+        }
+      },
+      {
+        "scene_id": 3,
+        "visual": "User working seamlessly across devices",
+        "audio": "One tap. Everything synced. Everywhere.",
+        "assets": {
+          "characters": [
+            "Professional User"
+          ],
+          "objects": [
+            "TestWidget Device"
+          ],
+          "environment": "Home Office"
+        }
+      }
+    ]
+  }
+}

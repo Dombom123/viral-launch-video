@@ -1,0 +1,70 @@
+{
+  "script_id": "script_test_01",
+  "assets": {
+    "characters": [
+      {
+        "id": "char_01",
+        "name": "Alex",
+        "image_url": "/runs/first/characters/char_01.png",
+        "status": "approved"
+      }
+    ],
+    "objects": [
+      {
+        "id": "testwidget-device",
+        "name": "TestWidget Device",
+        "image_url": "/runs/first/objects/testwidget-device.png",
+        "status": "approved"
+      },
+      {
+        "id": "legacy-system",
+        "name": "Legacy System",
+        "image_url": "/runs/first/objects/legacy-system.png",
+        "status": "approved"
+      }
+    ],
+    "environments": [
+      {
+        "id": "env_01",
+        "name": "Modern Open-Plan Office",
+        "image_url": "/runs/first/environments/env_01.png",
+        "status": "approved"
+      },
+      {
+        "id": "env_02",
+        "name": "Professional Home Studio",
+        "image_url": "/runs/first/environments/env_02.png",
+        "status": "approved"
+      },
+      {
+        "id": "env_03",
+        "name": "Creative Innovation Lab",
+        "image_url": "/runs/first/environments/env_03.png",
+        "status": "approved"
+      }
+    ]
+  },
+  "storyboard_frames": [
+    {
+      "frame_id": 1,
+      "scene_id": 1,
+      "description": "Split screen: cluttered old setup vs clean new workflow",
+      "image_url": "/runs/first/frames/scene-1.png",
+      "audio_prompt": "Remember when your desk looked like this?"
+    },
+    {
+      "frame_id": 2,
+      "scene_id": 2,
+      "description": "TestWidget Device activating with smooth animation",
+      "image_url": "/runs/first/frames/scene-2.png",
+      "audio_prompt": "Meet TestWidget Pro. Your new command center."
+    },
+    {
+      "frame_id": 3,
+      "scene_id": 3,
+      "description": "User working seamlessly across devices",
+      "image_url": "/runs/first/frames/scene-3.png",
+      "audio_prompt": "One tap. Everything synced. Everywhere."
+    }
+  ]
+}

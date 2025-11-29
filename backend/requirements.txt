@@ -1,8 +1,13 @@
 # ADK and AI dependencies
 google-generativeai
 google-cloud-aiplatform
-# adk-python # Uncomment when available or use specific source
 python-dotenv
 fastapi
 uvicorn
+pydantic-ai
+pydantic-graph
+
+# Testing dependencies
+pytest>=7.0.0
+httpx>=0.24.0
 
