@@ -7,10 +7,11 @@ from .models import (
     SceneOutput,
     GeneratedClip,
 )
-from .pipeline import run_pipeline
+from .pipeline import run_pipeline, run_storyboard_pipeline_from_data
 
 __all__ = [
     "run_pipeline",
+    "run_storyboard_pipeline_from_data",
     "VideoGenerationInput",
     "Concept",
     "Character",

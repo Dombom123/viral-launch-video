@@ -39,7 +39,7 @@ class GenerateScenesNode(BaseNode[VideoGenerationState]):
             # Generate unique video ID
             import uuid
 
-            video_id = f"scene_{scene.scene_number}_{uuid.uuid4().hex[:8]}"
+            video_id = f"scene_{scene.scene_number}"
 
             # Run blocking Veo client call in a separate thread
             import asyncio
