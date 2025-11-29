@@ -1,0 +1,184 @@
+{
+	"items": [
+		{
+			"type": "video",
+			"src": "/sample_video/part1.mp4",
+			"duration": 15.77,
+			"startTime": 0
+		},
+		{
+			"type": "video",
+			"src": "/sample_video/part2.mp4",
+			"duration": 7.61,
+			"startTime": 15.77
+		},
+		{
+			"type": "video",
+			"src": "/sample_video/part3.mp4",
+			"duration": 7.92,
+			"startTime": 23.38
+		},
+		{
+			"type": "video",
+			"src": "/sample_video/part4.mp4",
+			"duration": 7.87,
+			"startTime": 31.3
+		},
+		{
+			"type": "video",
+			"src": "/sample_video/part5.mp4",
+			"duration": 8.38,
+			"startTime": 39.17
+		},
+		{
+			"type": "overlay",
+			"startTime": 1,
+			"duration": 4,
+			"layout": [
+				{
+					"type": "text",
+					"text": "Viral Launch",
+					"position": "center",
+					"size": "large",
+					"color": "#ffffff",
+					"backgroundColor": "transparent"
+				}
+			]
+		},
+		{
+			"type": "overlay",
+			"startTime": 6,
+			"duration": 3,
+			"layout": [
+				{
+					"type": "text",
+					"text": "Step 1: Upload",
+					"position": "bottom",
+					"size": "medium",
+					"color": "#ff00ff",
+					"backgroundColor": "#ffffff"
+				}
+			]
+		},
+		{
+			"type": "overlay",
+			"startTime": 16,
+			"duration": 5,
+			"layout": [
+				{
+					"type": "text",
+					"text": "Step 2: Research",
+					"position": "top",
+					"size": "small",
+					"color": "#ffffff",
+					"backgroundColor": "#ff00ff"
+				}
+			]
+		},
+		{
+			"type": "overlay",
+			"startTime": 24,
+			"duration": 4,
+			"layout": [
+				{
+					"type": "text",
+					"text": "Step 3: Storyboard",
+					"position": "center",
+					"size": "medium",
+					"color": "#ff0000",
+					"backgroundColor": "transparent"
+				}
+			]
+		},
+		{
+			"type": "overlay",
+			"startTime": 32,
+			"duration": 4,
+			"layout": [
+				{
+					"type": "text",
+					"text": "Step 4: Generate",
+					"position": "bottom",
+					"size": "large",
+					"color": "#00ff00",
+					"backgroundColor": "#ff00ff"
+				}
+			]
+		},
+		{
+			"type": "overlay",
+			"startTime": 40,
+			"duration": 4,
+			"layout": [
+				{
+					"type": "text",
+					"text": "Step 5: Edit",
+					"position": "top",
+					"size": "medium",
+					"color": "#0000ff",
+					"backgroundColor": "transparent"
+				}
+			]
+		},
+		{
+			"type": "overlay",
+			"startTime": 10,
+			"duration": 3,
+			"layout": [
+				{
+					"type": "text",
+					"text": "Amazing Quality",
+					"position": "bottom",
+					"size": "small",
+					"color": "#ffff00",
+					"backgroundColor": "#ff00ff"
+				}
+			]
+		},
+		{
+			"type": "overlay",
+			"startTime": 20,
+			"duration": 3,
+			"layout": [
+				{
+					"type": "text",
+					"text": "Fast Processing",
+					"position": "center",
+					"size": "large",
+					"color": "#ffffff",
+					"backgroundColor": "transparent"
+				}
+			]
+		},
+		{
+			"type": "overlay",
+			"startTime": 28,
+			"duration": 3,
+			"layout": [
+				{
+					"type": "text",
+					"text": "AI Powered",
+					"position": "top",
+					"size": "medium",
+					"color": "#ff00ff",
+					"backgroundColor": "#ffffff"
+				}
+			]
+		},
+		{
+			"type": "overlay",
+			"startTime": 44,
+			"duration": 3,
+			"layout": [
+				{
+					"type": "text",
+					"text": "Get Started Now",
+					"position": "center",
+					"size": "large",
+					"color": "#ffffff",
+					"backgroundColor": "#ff0000"
+				}
+			]
+		}
+	]
+}
