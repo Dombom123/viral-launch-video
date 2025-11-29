@@ -36,8 +36,9 @@ class VeoClient:
 
             # Generate video using Veo model
             response = self.client.models.generate_video(
-                model="veo-3.1",  # Veo 3.1 model identifier
-                **generation_config,
+                model="veo-3.1-generate-preview",  # Veo 3.1 model identifier
+                prompt=prompt,
+                image=image_url,
             )
 
             # Extract the video URL from the response

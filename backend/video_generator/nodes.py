@@ -16,13 +16,13 @@ class ValidateInputNode(BaseNode[VideoGenerationState]):
 class GenerateScenesNode(BaseNode[VideoGenerationState]):
     async def run(self, ctx: VideoGenerationState) -> "FinalizeNode":
         print("Generating scenes...")
-        input_data = ctx.input_data
+        input_data = ctx.state.input_data
         character_desc = (
             f"{input_data.character.name}: {input_data.character.personality}"
         )
 
         # Initialize VeoClient with API key from state
-        veo_client = VeoClient(api_key=ctx.api_key)
+        veo_client = VeoClient(api_key=ctx.state.api_key)
 
         for i, scene in enumerate(input_data.storyboard):
             print(f"Processing Scene {scene.scene_number}: {scene.scene_title}")
@@ -47,7 +47,8 @@ class GenerateScenesNode(BaseNode[VideoGenerationState]):
 class FinalizeNode(BaseNode[VideoGenerationState]):
     async def run(self, ctx: VideoGenerationState) -> End:
         print("Finalizing project...")
-        ctx.project_output = ProjectOutput(
-            project_title=ctx.input_data.project_title, scenes=ctx.generated_scenes
+        ctx.state.project_output = ProjectOutput(
+            project_title=ctx.state.input_data.project_title,
+            scenes=ctx.state.generated_scenes,
         )
-        return End(ctx.project_output)
+        return End(ctx.state.project_output)
