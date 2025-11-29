@@ -13,15 +13,29 @@ export interface PixiEditorContext {
 
 export class PixiEditor {
 	private app: PIXI.Application;
+
+	public getApp() {
+		return this.app;
+	}
+
 	private videoContainer: PIXI.Container;
 	private overlayContainer: PIXI.Container;
 	private videoElements: Map<
 		string,
 		{ video: HTMLVideoElement; texture: PIXI.Texture }
 	> = new Map();
+
+	public getVideoElements() {
+		return this.videoElements;
+	}
+
 	private videoSprite: PIXI.Sprite | null = null;
 	private currentVideoSrc: string | null = null;
 	private timeline: Timeline;
+
+	public getTimeline() {
+		return this.timeline;
+	}
 
 	private lastUpdatedTime: number = 0;
 
@@ -57,8 +71,13 @@ export class PixiEditor {
 		}
 	}
 
-	public update(currentTime: number, isPlaying: boolean, wasSeeked: boolean) {
-		if (currentTime === this.lastUpdatedTime) return;
+	public update(
+		currentTime: number,
+		isPlaying: boolean,
+		wasSeeked: boolean,
+		force: boolean = false,
+	) {
+		if (!force && currentTime === this.lastUpdatedTime) return;
 		this.lastUpdatedTime = currentTime;
 		this.handleVideoRendering(currentTime, isPlaying, wasSeeked);
 		this.handleOverlays(currentTime);
