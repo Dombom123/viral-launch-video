@@ -38,6 +38,7 @@ export class PixiEditor {
 	}
 
 	private lastUpdatedTime: number = 0;
+	private currentActiveItem: TimelineItemVideo | null = null;
 
 	constructor(app: PIXI.Application, timeline: Timeline) {
 		this.app = app;
@@ -57,10 +58,14 @@ export class PixiEditor {
 		for (const item of this.timeline.items) {
 			if (item.type !== "video" || this.videoElements.has(item.src)) continue;
 
+			const blob = await fetch(item.src).then((res) => res.blob());
+			const newUrl = URL.createObjectURL(blob);
+
 			const asset = await PIXI.Assets.load({
-				src: item.src,
+				src: newUrl,
 				parser: "loadVideo",
 			});
+
 			const video = asset.source as PIXI.VideoSource;
 			video.resource.muted = false;
 
@@ -109,6 +114,7 @@ export class PixiEditor {
 		wasSeeked: boolean,
 	) {
 		const activeVideoItem = this.findActiveVideoItem(currentTime);
+		this.currentActiveItem = activeVideoItem || null;
 
 		if (activeVideoItem) {
 			const videoEl = this.videoElements.get(activeVideoItem.src);
@@ -237,6 +243,19 @@ export class PixiEditor {
 	public updateTimeline(timeline: Timeline) {
 		this.timeline = timeline;
 		this.initVideoElements();
+	}
+
+	public getCurrentTime(): number | null {
+		if (!this.currentActiveItem) return null;
+		const videoEl = this.videoElements.get(this.currentActiveItem.src);
+		if (!videoEl) return null;
+
+		const video = videoEl.video;
+		// Check if video is actually playing and progressing
+		if (!video.paused && !video.seeking && video.readyState >= 2) {
+			return this.currentActiveItem.startTime + video.currentTime;
+		}
+		return null;
 	}
 
 	public destroy() {

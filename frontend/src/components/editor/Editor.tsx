@@ -133,7 +133,15 @@ export default function Editor(props: { runId: string }) {
 
         // 1. Update Time State
         if (state.isPlaying) {
-          const newTime = state.currentTime + app.ticker.deltaMS / 1000;
+          let newTime = state.currentTime + app.ticker.deltaMS / 1000;
+
+          if (pixiEditorRef.current) {
+            const videoTime = pixiEditorRef.current.getCurrentTime();
+            if (videoTime !== null) {
+              newTime = videoTime;
+            }
+          }
+
           if (newTime >= state.duration) {
             state.pause();
             state.setTime(state.duration);
