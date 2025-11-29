@@ -1,64 +1,72 @@
 {
   "selected_script": {
-    "id": "script_01",
-    "title": "The Microscope Reveal",
-    "hook": "You are drinking 10,000 bacteria right now.",
-    "tone": "Shock & Awe",
+    "id": "script_test_01",
+    "title": "The Innovation Story",
+    "hook": "Your workflow is about to change forever.",
+    "tone": "Inspiring & Professional",
     "assets": {
       "characters": [
         {
-          "name": "Tech User",
-          "visual_prompt": "Young adult, diverse, wearing smart casual tech wear, looking concerned then relieved."
+          "name": "Professional User",
+          "visual_prompt": "Mid-30s professional in modern office attire, confident expression."
         }
       ],
       "objects": [
         {
-          "name": "Dirty Bottle",
-          "visual_prompt": "Close up of a worn plastic water bottle rim with visible grime and texture."
+          "name": "TestWidget Device",
+          "visual_prompt": "Sleek modern device with glowing indicators and premium finish."
         },
         {
-          "name": "EcoBottle 3000",
-          "visual_prompt": "Sleek matte black smart water bottle with a glowing blue LED ring on the cap."
+          "name": "Legacy System",
+          "visual_prompt": "Outdated cluttered desk setup with multiple screens showing errors."
         }
       ],
       "environments": [
         {
-          "name": "Dark Lab",
-          "visual_prompt": "Dark moody laboratory setting with blue rim lighting, microscope in background."
+          "name": "Modern Office",
+          "visual_prompt": "Clean minimalist office with natural lighting and green plants."
         },
         {
-          "name": "Modern Loft",
-          "visual_prompt": "Clean, minimalist apartment kitchen with concrete counters and natural light."
+          "name": "Home Office",
+          "visual_prompt": "Cozy home workspace with warm lighting and personal touches."
         }
       ]
     },
     "scenes": [
       {
         "scene_id": 1,
-        "visual": "Extreme macro shot of dirty bottle rim. Text overlay: 'YOUR BOTTLE IS ALIVE'",
-        "audio": "Stop. Look at your water bottle rim.",
+        "visual": "Split screen: cluttered old setup vs clean new workflow",
+        "audio": "Remember when your desk looked like this?",
         "assets": {
-          "objects": ["Dirty Bottle"],
-          "environment": "Dark Lab"
+          "objects": [
+            "Legacy System"
+          ],
+          "environment": "Modern Office"
         }
       },
       {
         "scene_id": 2,
-        "visual": "EcoBottle 3000 cap glowing Blue. Split screen vs bacteria.",
-        "audio": "This is the solution.",
+        "visual": "TestWidget Device activating with smooth animation",
+        "audio": "Meet TestWidget Pro. Your new command center.",
         "assets": {
-          "objects": ["EcoBottle 3000"],
-          "environment": "Dark Lab"
+          "objects": [
+            "TestWidget Device"
+          ],
+          "environment": "Modern Office"
         }
       },
       {
         "scene_id": 3,
-        "visual": "Finger taps cap. Bacteria disintegrate.",
-        "audio": "One tap. 99.9% eliminated.",
+        "visual": "User working seamlessly across devices",
+        "audio": "One tap. Everything synced. Everywhere.",
         "assets": {
-          "characters": ["Tech User"],
-          "objects": ["EcoBottle 3000"],
-          "environment": "Modern Loft"
+          "characters": [
+            "Professional User"
+          ],
+          "objects": [
+            "TestWidget Device"
+          ],
+          "environment": "Home Office"
         }
       }
     ]

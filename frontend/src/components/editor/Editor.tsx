@@ -13,9 +13,9 @@ import {
   User,
   Volume2,
 } from "lucide-react";
-import Image from "next/image";
 import * as PIXI from "pixi.js";
 import { useEffect, useRef, useState } from "react";
+import { OverlayGenerator } from "./OverlayGenerator";
 import { PixiEditor } from "./PixiEditor";
 import sampleInput from "./sample_input.json";
 import { useEditorStore } from "./state";
@@ -67,7 +67,7 @@ export default function Editor() {
   // Initialize state
   useEffect(() => {
     // Parse the sample input to ensure it matches our schema (optional validation step)
-    setTimeline(sampleInput as unknown as Timeline);
+    setTimeline({ items: (sampleInput as unknown as Timeline).items.filter((item) => item.type === "video") });
   }, [setTimeline]);
 
   // Scroll to bottom of chat
@@ -187,27 +187,109 @@ export default function Editor() {
     }, 1000);
   };
 
+  const handleGenerateOverlays = async () => {
+    if (!pixiEditorRef.current) return;
+
+    const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+    if (!apiKey) {
+      const msg: Message = {
+        id: Date.now(),
+        role: "assistant",
+        content:
+          "Please set NEXT_PUBLIC_GEMINI_API_KEY in your .env file to generate overlays.",
+        timestamp: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+      };
+      setMessages((prev) => [...prev, msg]);
+      return;
+    }
+
+    setIsRendering(true);
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: Date.now(),
+        role: "assistant",
+        content: "Analyzing audio and generating overlays... This may take a moment.",
+        timestamp: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+      },
+    ]);
+
+    try {
+      const newOverlays = await OverlayGenerator.generate(
+        pixiEditorRef.current,
+        apiKey,
+      );
+
+      if (newOverlays.length === 0) {
+        throw new Error("No overlays were generated.");
+      }
+
+      // Merge with existing timeline (keeping videos, removing old overlays if we want to replace, or just appending)
+      // For now, let's remove existing overlays to avoid duplicates if run multiple times
+      const currentItems = timeline?.items || [];
+      const videoItems = currentItems.filter((i) => i.type === "video");
+      const updatedTimeline = {
+        items: [...videoItems, ...newOverlays],
+      };
+      console.log("updatedTimeline", updatedTimeline);
+
+      setTimeline(updatedTimeline);
+
+      const msg: Message = {
+        id: Date.now(),
+        role: "assistant",
+        content: `Generated ${newOverlays.length} overlays based on the audio!`,
+        timestamp: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+      };
+      setMessages((prev) => [...prev, msg]);
+    } catch (error) {
+      console.error("Overlay generation failed", error);
+      const msg: Message = {
+        id: Date.now(),
+        role: "assistant",
+        content: "Failed to generate overlays. Please try again.",
+        timestamp: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+      };
+      setMessages((prev) => [...prev, msg]);
+    } finally {
+      setIsRendering(false);
+    }
+  };
+
   const handleRender = async () => {
     if (!pixiEditorRef.current) return;
     setIsRendering(true);
 
     try {
+      // Video Export
       const mp4Buffer = await VideoExporter.export(pixiEditorRef.current, {
         fps: 30,
         duration: 5, // Preview first 5 seconds
         onProgress: (p) => {
-          console.log(`Rendering: ${(p * 100).toFixed(0)}%`);
+          console.log(`Rendering Video: ${(p * 100).toFixed(0)}%`);
         },
       });
 
-      const blob = new Blob([mp4Buffer as unknown as BlobPart], {
+      const videoBlob = new Blob([mp4Buffer as unknown as BlobPart], {
         type: "video/mp4",
       });
-      const url = URL.createObjectURL(blob);
+      const videoUrl = URL.createObjectURL(videoBlob);
 
       // download the video
       const a = document.createElement("a");
-      a.href = url;
+      a.href = videoUrl;
       a.download = `viral_${Date.now()}.mp4`;
       a.click();
       a.remove();
@@ -218,7 +300,7 @@ export default function Editor() {
         role: "assistant",
         content: "Render complete! Here is a 5-second preview of your video.",
         type: "video_render",
-        videoUrl: url,
+        videoUrl: videoUrl,
         timestamp: new Date().toLocaleTimeString([], {
           hour: "2-digit",
           minute: "2-digit",
@@ -380,6 +462,16 @@ export default function Editor() {
           <div className="flex gap-2">
             <button
               type="button"
+              onClick={handleGenerateOverlays}
+              disabled={isRendering}
+              className="px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-bold rounded-md shadow-sm transition-colors flex items-center gap-1.5 border border-zinc-700"
+            >
+              <Sparkles size={12} className={isRendering ? "animate-pulse" : ""} />
+              Generate Overlays
+
+            </button>
+            <button
+              type="button"
               onClick={handleRender}
               disabled={isRendering}
               className="px-3 py-1.5 bg-primary hover:bg-primary/90 text-black text-xs font-bold rounded-md shadow-sm transition-colors flex items-center gap-1.5"
@@ -437,10 +529,8 @@ export default function Editor() {
                   <div className="mt-2 w-full bg-black rounded-xl border border-zinc-700 overflow-hidden relative group">
                     <video
                       src={msg.videoUrl}
-                      alt="Rendered video preview"
                       width={300}
                       height={170}
-                      unoptimized
                       className="w-full aspect-video object-cover opacity-80 group-hover:opacity-100 transition-opacity"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
