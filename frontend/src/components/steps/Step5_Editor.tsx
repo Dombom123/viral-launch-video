@@ -112,7 +112,7 @@ export default function Step5_Editor({ onNext }: Step5Props) {
   return (
     <div className="w-full h-full flex gap-6">
       {/* LEFT: Canvas / Preview */}
-      <Editor />
+      <Editor runId={'first'} />
       {/* RIGHT: Copilot / Chat */}
       <div className="hidden flex-1 bg-zinc-900 rounded-2xl border border-zinc-800 flex flex-col overflow-hidden shadow-xl">
         <div className="p-4 border-b border-zinc-800 bg-zinc-900 flex justify-between items-center">

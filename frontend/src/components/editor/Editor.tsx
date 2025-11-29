@@ -31,7 +31,7 @@ interface Message {
   timestamp: string;
 }
 
-export default function Editor() {
+export default function Editor(props: { runId: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const pixiAppRef = useRef<PIXI.Application | null>(null);
   const pixiEditorRef = useRef<PixiEditor | null>(null);
@@ -66,9 +66,26 @@ export default function Editor() {
 
   // Initialize state
   useEffect(() => {
-    // Parse the sample input to ensure it matches our schema (optional validation step)
-    setTimeline({ items: (sampleInput as unknown as Timeline).items.filter((item) => item.type === "video") });
-  }, [setTimeline]);
+    (async () => {
+      const response = await fetch(
+        `/runs/${props.runId}/video_generation.json`,
+      );
+      const data = await response.json();
+      console.log("data", data);
+      let startTime = 0;
+      const videos = data.generated_clips.map((clip: any) => {
+        const s = startTime;
+        startTime += clip.duration;
+        return {
+          type: "video",
+          src: clip.video_url.split('/public')[1],
+          duration: clip.duration,
+          startTime: s,
+        };
+      });
+      setTimeline({ items: videos });
+    })();
+  }, [setTimeline, props.runId]);
 
   // Scroll to bottom of chat
   useEffect(() => {
@@ -250,7 +267,8 @@ export default function Editor() {
           msg.id === loadingMsgId
             ? {
               ...msg,
-              content: "Sorry, I couldn't apply those changes. Please try again.",
+              content:
+                "Sorry, I couldn't apply those changes. Please try again.",
             }
             : msg,
         ),
@@ -285,7 +303,8 @@ export default function Editor() {
       {
         id: Date.now(),
         role: "assistant",
-        content: "Analyzing audio and generating overlays... This may take a moment.",
+        content:
+          "Analyzing audio and generating overlays... This may take a moment.",
         timestamp: new Date().toLocaleTimeString([], {
           hour: "2-digit",
           minute: "2-digit",
@@ -539,9 +558,11 @@ export default function Editor() {
               disabled={isRendering}
               className="px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-bold rounded-md shadow-sm transition-colors flex items-center gap-1.5 border border-zinc-700"
             >
-              <Sparkles size={12} className={isRendering ? "animate-pulse" : ""} />
+              <Sparkles
+                size={12}
+                className={isRendering ? "animate-pulse" : ""}
+              />
               Generate Overlays
-
             </button>
             <button
               type="button"
