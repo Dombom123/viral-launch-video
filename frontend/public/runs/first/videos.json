@@ -1,26 +1,26 @@
 [
   {
     "id": "clip_01",
-    "title": "Scene 1: Chaos",
+    "title": "Scene 1: Digital Chaos",
     "url": "/sample-inputs/scene_1.mp4",
     "thumbnail": "/runs/first/frames/scene-1.png",
-    "duration": 4.0,
-    "description": "Panicked rep surrounded by notifications"
+    "duration": 5.0,
+    "description": "Panicked rep surrounded by exploding notifications"
   },
   {
-    "id": "clip_02", 
-    "title": "Scene 2: Zen Capybara",
+    "id": "clip_02",
+    "title": "Scene 2: Enter the Capybara",
     "url": "/sample-inputs/scene_2.mp4",
     "thumbnail": "/runs/first/frames/scene-2.png",
     "duration": 5.0,
-    "description": "Capybara calmly using Boards"
+    "description": "Zen Capybara calmly using Boards amidst chaos"
   },
   {
     "id": "clip_03",
-    "title": "Scene 3: Resolution",
-    "url": "/sample-inputs/scene_1.mp4",
+    "title": "Scene 3: Find Your Zen",
+    "url": "/sample-inputs/scene_3.mp4",
     "thumbnail": "/runs/first/frames/scene-3.png",
-    "duration": 4.0,
-    "description": "Capybara winks, everyone calm"
+    "duration": 5.0,
+    "description": "Capybara winks, peace restored"
   }
 ]
