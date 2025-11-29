@@ -434,9 +434,9 @@ export default function Editor(props: { runId: string }) {
             <div ref={containerRef} className="w-full h-full bg-black">
               <canvas ref={canvasRef} className="w-full h-full " />
             </div>
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="absolute inset-0 flex items-center justify-center">
               {!isPlaying && (
-                <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                <div onClick={() => play()} className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
                   <Play fill="white" className="text-white ml-1" />
                 </div>
               )}
