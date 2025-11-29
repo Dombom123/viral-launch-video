@@ -1,159 +1,36 @@
 {
-  "project_context": {
-    "product_name": "EcoBottle 3000",
-    "brand_voice": "Futuristic & Sustainable",
-    "target_audience": "Tech-Savvy Hikers",
-    "viral_angle": "Tech vs. Nature"
+  "source_video": "/sample-inputs/Boards App Walkthrough.mp4",
+  "productInfo": {
+    "name": "Boards",
+    "description": "Boards empowers sales and marketing professionals to instantly access and share organized, on-brand content directly from their mobile keyboard across any messaging or social app.",
+    "targetAudience": "Sales & Marketing Professionals, Sales & Marketing Managers",
+    "competitors": []
   },
-  "generated_scripts": [
+  "marketAnalysis": {
+    "trend": "Most content management solutions are desktop-centric or lack deep mobile keyboard integration for instant, in-app sharing.",
+    "insight": "Identify common pain points for sales and marketing professionals regarding mobile content access and sharing.; Find examples of successful mobile-first productivity tool ads, especially those leveraging in-app keyboard functionality."
+  },
+  "scripts": [
     {
-      "id": "script_01",
-      "title": "The Microscope Reveal",
-      "hook": "You are drinking 10,000 bacteria right now.",
-      "tone": "Shock & Awe",
-      "assets": {
-        "characters": [
-          {
-            "name": "Tech User",
-            "visual_prompt": "Young adult, diverse, wearing smart casual tech wear, looking concerned then relieved."
-          }
-        ],
-        "objects": [
-          {
-            "name": "Dirty Bottle",
-            "visual_prompt": "Close up of a worn plastic water bottle rim with visible grime and texture."
-          },
-          {
-            "name": "EcoBottle 3000",
-            "visual_prompt": "Sleek matte black smart water bottle with a glowing blue LED ring on the cap."
-          }
-        ],
-        "environments": [
-          {
-            "name": "Dark Lab",
-            "visual_prompt": "Dark moody laboratory setting with blue rim lighting, microscope in background."
-          },
-          {
-            "name": "Modern Loft",
-            "visual_prompt": "Clean, minimalist apartment kitchen with concrete counters and natural light."
-          }
-        ]
-      },
-      "scenes": [
-        {
-          "scene_id": 1,
-          "visual": "Extreme macro shot of dirty bottle rim. Text overlay: 'YOUR BOTTLE IS ALIVE'",
-          "audio": "Stop. Look at your water bottle rim."
-        },
-        {
-          "scene_id": 2,
-          "visual": "EcoBottle 3000 cap glowing Blue. Split screen vs bacteria.",
-          "audio": "This is the solution."
-        },
-        {
-          "scene_id": 3,
-          "visual": "Finger taps cap. Bacteria disintegrate.",
-          "audio": "One tap. 99.9% eliminated."
-        }
-      ]
+      "id": 1,
+      "title": "The Hamster's Existential Keyboard Crisis",
+      "hook": "My sales rep forgot the link AGAIN. My tiny hamster heart can't take this!",
+      "body": "A tiny hamster in a business suit dramatically weeps into a miniature espresso cup as a human sales rep fumbles for content on their phone. Suddenly, Boards appears, and the hamster's tears turn into an epic, triumphant roar, confetti exploding around it.",
+      "callToAction": "Boards: Don't make the hamster cry."
     },
     {
-      "id": "script_02",
-      "title": "Sounds of Purity",
-      "hook": "The sound of perfect hydration.",
-      "tone": "ASMR / Satisfying",
-      "assets": {
-        "characters": [
-          {
-            "name": "Hiker",
-            "visual_prompt": "Fit individual in 30s, wearing high-end outdoor gear, looking peaceful."
-          }
-        ],
-        "objects": [
-          {
-            "name": "EcoBottle 3000 (White)",
-            "visual_prompt": "Pristine glacial white smart bottle, water droplets on surface."
-          }
-        ],
-        "environments": [
-          {
-            "name": "Misty Forest",
-            "visual_prompt": "Dense pine forest at sunrise, shafts of light cutting through mist."
-          },
-          {
-            "name": "Mountain Stream",
-            "visual_prompt": "Crystal clear water flowing over smooth river stones, cinematic focus."
-          }
-        ]
-      },
-      "scenes": [
-        {
-          "scene_id": 1,
-          "visual": "Misty forest morning. Birds chirping.",
-          "audio": "(Nature sounds)"
-        },
-        {
-          "scene_id": 2,
-          "visual": "Filling EcoBottle from crystal clear stream.",
-          "audio": "(Crisp water sounds)"
-        },
-        {
-          "scene_id": 3,
-          "visual": "Cap click. Electric hum.",
-          "audio": "(Humming sound)"
-        }
-      ]
+      "id": 2,
+      "title": "Corgi's Content Crusade: No Barks for Bad Boards!",
+      "hook": "Woof woof! Your content strategy is... ruff. Let Professor Paws show you.",
+      "body": "A highly intellectual Corgi wearing spectacles and a tiny tweed jacket lectures a room full of bewildered human sales managers about inconsistent content. It then flawlessly demonstrates Boards, barking approvals when content is consistent and giving disapproving growls at a 'bad' old workflow.",
+      "callToAction": "Learn from Professor Paws. Get Boards."
     },
     {
-      "id": "script_03",
-      "title": "Stop Wasting Money",
-      "hook": "Spending $5 a day on water?",
-      "tone": "Educational / Energetic",
-      "assets": {
-        "characters": [
-          {
-            "name": "Frustrated Commuter",
-            "visual_prompt": "Business casual attire, looking annoyed at a receipt."
-          }
-        ],
-        "objects": [
-          {
-            "name": "Plastic Waste",
-            "visual_prompt": "Pile of crushed single-use plastic water bottles."
-          },
-          {
-            "name": "Money",
-            "visual_prompt": "Stylized dollar bills flying away or burning."
-          }
-        ],
-        "environments": [
-          {
-            "name": "City Street",
-            "visual_prompt": "Busy urban street corner with a trash can overflowing."
-          },
-          {
-            "name": "Comparison Space",
-            "visual_prompt": "Clean studio background split down the middle for comparison."
-          }
-        ]
-      },
-      "scenes": [
-        {
-          "scene_id": 1,
-          "visual": "Fast montage of buying expensive water.",
-          "audio": "You're throwing money away."
-        },
-        {
-          "scene_id": 2,
-          "visual": "EcoBottle filling from tap. Gold glow effect.",
-          "audio": "Turn tap water into gold."
-        },
-        {
-          "scene_id": 3,
-          "visual": "Side by side: 1 EcoBottle vs 100 plastic bottles.",
-          "audio": "Save the planet. Save your wallet."
-        }
-      ]
+      "id": 3,
+      "title": "The Capybara's Chill: Surviving the Digital Deluge",
+      "hook": "The internet is a wild place. My Zen is stronger than your chaotic DMs.",
+      "body": "A capybara wearing tiny sunglasses sits serenely amidst a whirlwind of frantic notifications, flashing screens, and a human sales rep panicking. The capybara, unperturbed, calmly uses Boards on its tiny smartphone, effortlessly sharing content across multiple chaotic apps, maintaining peak chill.",
+      "callToAction": "Find your Zen. Get Boards now."
     }
   ]
 }

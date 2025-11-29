@@ -4,23 +4,29 @@
     {
       "clip_id": "clip_01",
       "frame_id": 1,
-      "duration": 4.0,
-      "video_url": "/sample-inputs/clip_01_dirty_rim.mp4",
-      "thumbnail_url": "/sample-inputs/scene1.png"
+      "duration": 5.0,
+      "video_url": "/sample-inputs/scene_1.mp4",
+      "thumbnail_url": "/runs/first/frames/scene-1.png",
+      "description": "Chaos scene - Panicked rep surrounded by notifications",
+      "audio_prompt": "Chaotic soundscape: phone rings, notification pings, stressed muttering"
     },
     {
       "clip_id": "clip_02",
       "frame_id": 2,
-      "duration": 3.0,
-      "video_url": "/sample-inputs/clip_02_split_screen.mp4",
-      "thumbnail_url": "/sample-inputs/scene2.png"
+      "duration": 5.0,
+      "video_url": "/sample-inputs/scene_2.mp4",
+      "thumbnail_url": "/runs/first/frames/scene-2.png",
+      "description": "Reveal - Zen Capybara calmly using Boards",
+      "audio_prompt": "Sudden shift to calm lo-fi chillhop music"
     },
     {
       "clip_id": "clip_03",
       "frame_id": 3,
       "duration": 5.0,
-      "video_url": "/sample-inputs/clip_03_purify.mp4",
-      "thumbnail_url": "/sample-inputs/scene3.png"
+      "video_url": "/sample-inputs/scene_3.mp4",
+      "thumbnail_url": "/runs/first/frames/scene-3.png",
+      "description": "Resolution - Capybara winks, everyone is calm",
+      "audio_prompt": "Find your Zen. Get Boards now."
     }
   ]
 }

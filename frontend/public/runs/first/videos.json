@@ -1,12 +1,26 @@
 [
-	{
-		"id": "1",
-		"title": "Video 1",
-		"url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-	},
-	{
-		"id": "2",
-		"title": "Video 2",
-		"url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-	}
+  {
+    "id": "clip_01",
+    "title": "Scene 1: Chaos",
+    "url": "/sample-inputs/scene_1.mp4",
+    "thumbnail": "/runs/first/frames/scene-1.png",
+    "duration": 4.0,
+    "description": "Panicked rep surrounded by notifications"
+  },
+  {
+    "id": "clip_02", 
+    "title": "Scene 2: Zen Capybara",
+    "url": "/sample-inputs/scene_2.mp4",
+    "thumbnail": "/runs/first/frames/scene-2.png",
+    "duration": 5.0,
+    "description": "Capybara calmly using Boards"
+  },
+  {
+    "id": "clip_03",
+    "title": "Scene 3: Resolution",
+    "url": "/sample-inputs/scene_1.mp4",
+    "thumbnail": "/runs/first/frames/scene-3.png",
+    "duration": 4.0,
+    "description": "Capybara winks, everyone calm"
+  }
 ]

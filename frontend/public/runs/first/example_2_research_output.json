@@ -1,67 +1,79 @@
 {
   "selected_script": {
-    "id": "script_01",
-    "title": "The Microscope Reveal",
-    "hook": "You are drinking 10,000 bacteria right now.",
-    "tone": "Shock & Awe",
+    "id": "script_03",
+    "title": "The Capybara's Chill: Surviving the Digital Deluge",
+    "hook": "The internet is a wild place. My Zen is stronger than your chaotic DMs.",
+    "tone": "Serene Chaos",
     "assets": {
       "characters": [
         {
-          "name": "Tech User",
-          "visual_prompt": "Young adult, diverse, wearing smart casual tech wear, looking concerned then relieved."
+          "name": "Zen Capybara",
+          "visual_prompt": "A large, calm capybara wearing tiny, stylish sunglasses, with an utterly unbothered expression."
+        },
+        {
+          "name": "Panicked Sales Rep",
+          "visual_prompt": "A human sales rep, dishevelled, multiple phones ringing, tabs open on a laptop, sweat beading, on the verge of a meltdown."
         }
       ],
       "objects": [
         {
-          "name": "Dirty Bottle",
-          "visual_prompt": "Close up of a worn plastic water bottle rim with visible grime and texture."
+          "name": "Tiny Smartphone",
+          "visual_prompt": "A miniature smartphone, perfectly scaled for a capybara's paw, displaying the Boards keyboard."
         },
         {
-          "name": "EcoBottle 3000",
-          "visual_prompt": "Sleek matte black smart water bottle with a glowing blue LED ring on the cap."
+          "name": "Multiple Flashing Screens",
+          "visual_prompt": "Laptop screens, tablet screens, all showing various chaotic social media and messaging app interfaces."
+        },
+        {
+          "name": "Exploding Notifications",
+          "visual_prompt": "Visual effects of chat bubbles, alerts, and emojis rapidly popping up around the scene."
         }
       ],
       "environments": [
         {
-          "name": "Dark Lab",
-          "visual_prompt": "Dark moody laboratory setting with blue rim lighting, microscope in background."
+          "name": "Overwhelmed Home Office",
+          "visual_prompt": "A cluttered desk in a home office, wires everywhere, half-eaten snacks, general disarray."
         },
         {
-          "name": "Modern Loft",
-          "visual_prompt": "Clean, minimalist apartment kitchen with concrete counters and natural light."
+          "name": "Digital Vortex Background",
+          "visual_prompt": "A swirling, colorful, abstract background representing the internet's chaos."
         }
       ]
     },
     "scenes": [
       {
-        "scene_id": 1,
-        "visual": "Extreme macro shot of dirty bottle rim. Text overlay: 'YOUR BOTTLE IS ALIVE'",
-        "audio": "Stop. Look at your water bottle rim.",
-        "assets": {
-          "objects": ["Dirty Bottle"],
-          "environment": "Dark Lab"
-        }
+        "scene_id": "01",
+        "visual": "Panicked Sales Rep is surrounded by multiple flashing screens and exploding notifications. They are visibly stressed, trying to respond to several apps at once, failing miserably.",
+        "audio": "Chaotic soundscape: multiple phone rings, notification pings, frantic typing, stressed muttering.",
+        "assets": [
+          "Panicked Sales Rep",
+          "Multiple Flashing Screens",
+          "Exploding Notifications",
+          "Overwhelmed Home Office"
+        ]
       },
       {
-        "scene_id": 2,
-        "visual": "EcoBottle 3000 cap glowing Blue. Split screen vs bacteria.",
-        "audio": "This is the solution.",
-        "assets": {
-          "objects": ["EcoBottle 3000"],
-          "environment": "Dark Lab"
-        }
+        "scene_id": "02",
+        "visual": "PULL BACK to reveal Zen Capybara sitting serenely in the foreground, wearing sunglasses, calmly tapping on a tiny smartphone. It opens Boards from its keyboard and effortlessly shares a detailed product video into a chat app on its tiny screen.",
+        "audio": "Sudden shift to calm, lo-fi chillhop music. Gentle keyboard taps.",
+        "assets": [
+          "Zen Capybara",
+          "Tiny Smartphone",
+          "Exploding Notifications",
+          "Digital Vortex Background"
+        ]
       },
       {
-        "scene_id": 3,
-        "visual": "Finger taps cap. Bacteria disintegrate.",
-        "audio": "One tap. 99.9% eliminated.",
-        "assets": {
-          "characters": ["Tech User"],
-          "objects": ["EcoBottle 3000"],
-          "environment": "Modern Loft"
-        }
+        "scene_id": "03",
+        "visual": "Capybara looks directly at the camera, gives a slow, knowing wink, and takes a sip from a tiny, invisible coconut drink. The Panicked Sales Rep in the background suddenly looks calm, having also discovered Boards.",
+        "audio": "Chillhop continues. Sound of a refreshing sip. Voiceover (calm, deep voice): 'The chaos can wait. Your content can't.'",
+        "assets": [
+          "Zen Capybara",
+          "Panicked Sales Rep",
+          "Tiny Smartphone",
+          "Digital Vortex Background"
+        ]
       }
     ]
   }
 }
-

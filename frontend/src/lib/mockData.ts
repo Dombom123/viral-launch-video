@@ -1,35 +1,35 @@
 export const researchData = {
   productInfo: {
-    name: "EcoBottle 3000",
-    description: "The world's first self-cleaning water bottle powered by solar energy.",
-    targetAudience: "Hikers, Tech Enthusiasts, Eco-conscious millenials",
-    competitors: ["HydroFlask", "Larq", "Swell"]
+    name: "Boards",
+    description: "Mobile keyboard app for sales pros to instantly share organized content across any messaging platform.",
+    targetAudience: "Sales Professionals, Marketing Teams, Account Managers",
+    competitors: ["Notion", "Salesforce", "HubSpot"]
   },
   marketAnalysis: {
-    trend: "High demand for sustainable tech accessories.",
-    insight: "Viral videos in this space often feature satisfying cleaning demos and nature backdrops."
+    trend: "Sales enablement tools that integrate directly into daily workflows.",
+    insight: "Absurd humor + cute animals = viral gold. Gen-Z loves chaotic energy with a message."
   },
   scripts: [
     {
       id: 1,
-      title: "The Urban Explorer",
-      hook: "Stop drinking dirty water.",
-      body: "Showcasing the bottle in a gritty city environment, then cleaning itself instantly with a satisfying UV light pulse.",
-      callToAction: "Clean water, anywhere. EcoBottle 3000."
+      title: "The Hamster's Existential Crisis",
+      hook: "My sales rep forgot the link AGAIN. My tiny hamster heart can't take this!",
+      body: "A tiny hamster in a business suit dramatically weeps into a miniature espresso cup as a human fumbles for content. Boards appears, and the hamster's tears turn into an epic triumphant roar with confetti.",
+      callToAction: "Don't make the hamster cry. Get Boards."
     },
     {
       id: 2,
-      title: "Nature's Best Friend",
-      hook: "Leave no trace, take only hydration.",
-      body: "A hiker drinking from a stream, then using the bottle. Cinematic drone shots of mountains. ASMR sounds of water.",
-      callToAction: "Adventure ready. EcoBottle 3000."
+      title: "Corgi's Content Crusade",
+      hook: "Woof woof! Your content strategy is... ruff. Let Professor Paws show you.",
+      body: "A highly intellectual Corgi in spectacles and a tweed jacket lectures bewildered sales managers about inconsistent content. It demonstrates Boards, barking approvals at good content.",
+      callToAction: "Learn from Professor Paws. Get Boards."
     },
     {
       id: 3,
-      title: "Tech Breakdown",
-      hook: "This is not just a bottle.",
-      body: "Fast-paced editing showing the internal components, solar charging animation, and the science behind the UV purification.",
-      callToAction: "Drink smarter. EcoBottle 3000."
+      title: "The Capybara's Chill",
+      hook: "The internet is a wild place. My Zen is stronger than your chaotic DMs.",
+      body: "A capybara in tiny sunglasses sits serenely amidst frantic notifications while a panicked sales rep melts down. The capybara calmly uses Boards, maintaining peak chill.",
+      callToAction: "Find your Zen. Get Boards now."
     }
   ]
 };

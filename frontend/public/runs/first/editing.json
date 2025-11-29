@@ -1,0 +1,25 @@
+{
+  "timeline": [
+    { "type": "video", "clip_id": "clip_01", "start_time": 0.0, "end_time": 4.0 },
+    { "type": "video", "clip_id": "clip_02", "start_time": 4.0, "end_time": 7.0 },
+    { "type": "video", "clip_id": "clip_03", "start_time": 7.0, "end_time": 12.0 }
+  ],
+  "audio_tracks": [
+    { "type": "voiceover", "url": "/sample-inputs/voiceover_full.mp3", "volume": 1.0 },
+    { "type": "music", "url": "/sample-inputs/music_tension.mp3", "volume": 0.3 }
+  ],
+  "edit_history": [
+    {
+      "timestamp": "2024-05-20T14:45:00Z",
+      "action": "reorder",
+      "details": "Swapped scene 2 and 3"
+    },
+    {
+      "timestamp": "2024-05-20T14:48:00Z",
+      "action": "trim",
+      "details": "Shortened clip_01 by 1 second"
+    }
+  ],
+  "current_render_url": "/sample-inputs/render_v1.mp4"
+}
+

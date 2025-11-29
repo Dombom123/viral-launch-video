@@ -157,6 +157,39 @@ def sample_research_output() -> Dict[str, Any]:
     }
 
 
+@pytest.fixture
+def minimal_research_output() -> Dict[str, Any]:
+    """Minimal research output for fast testing - only 1 character + 1 scene = 2 images total."""
+    return {
+        "selected_script": {
+            "id": "script_minimal_01",
+            "title": "Quick Test",
+            "hook": "Test hook.",
+            "tone": "Test",
+            "assets": {
+                "characters": [
+                    {
+                        "name": "Test User",
+                        "visual_prompt": "Simple test character."
+                    }
+                ],
+                "objects": [],
+                "environments": []
+            },
+            "scenes": [
+                {
+                    "scene_id": 1,
+                    "visual": "Test scene with character",
+                    "audio": "Test audio prompt",
+                    "assets": {
+                        "characters": ["Test User"]
+                    }
+                }
+            ]
+        }
+    }
+
+
 class TestStep1Upload:
     """Step 1: Video Upload / Brief Creation Tests"""
 
@@ -218,8 +251,11 @@ class TestStep3Storyboard:
         # In real implementation, would return 404 for missing storyboard
         assert response.status_code in [200, 404]
 
-    def test_create_storyboard_mock(self, client, setup_test_run, sample_research_output):
-        """Test creating storyboard via API (mock mode)."""
+    def test_create_storyboard_mock(self, client, setup_test_run, minimal_research_output, monkeypatch):
+        """Test creating storyboard via API (mock mode) - uses minimal data for speed."""
+        # Force mock mode for fast testing
+        monkeypatch.setenv("FORCE_MOCK", "1")
+        
         run_dir = setup_test_run
         
         # First, save research output to the expected location for 'first' run
@@ -228,9 +264,9 @@ class TestStep3Storyboard:
         first_run_dir.mkdir(parents=True, exist_ok=True)
         research_output_path = first_run_dir / "research_output.json"
         
-        # Save research output
+        # Save minimal research output for faster testing
         with open(research_output_path, "w", encoding="utf-8") as f:
-            json.dump(sample_research_output, f, indent=2)
+            json.dump(minimal_research_output, f, indent=2)
         
         # Call storyboard generation API
         response = client.post("/runs/test/storyboard")
