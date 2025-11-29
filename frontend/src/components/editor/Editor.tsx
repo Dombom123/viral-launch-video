@@ -76,9 +76,13 @@ export default function Editor(props: { runId: string }) {
       const videos = data.generated_clips.map((clip: any) => {
         const s = startTime;
         startTime += clip.duration;
+        // Handle both /public/... paths and direct paths like /sample-inputs/...
+        const videoSrc = clip.video_url.includes('/public') 
+          ? clip.video_url.split('/public')[1] 
+          : clip.video_url;
         return {
           type: "video",
-          src: clip.video_url.split('/public')[1],
+          src: videoSrc,
           duration: clip.duration,
           startTime: s,
         };

@@ -1,0 +1,111 @@
+{
+  "product_analysis": {
+    "name": "EcoBottle 3000",
+    "category": "Sustainable Tech / Outdoor Gear",
+    "key_features": [
+      "Solar-powered UV self-cleaning",
+      "Double-walled insulation",
+      "Digital temperature display"
+    ],
+    "target_audience": [
+      "Tech-savvy hikers",
+      "Urban commuters",
+      "Health-conscious millennials"
+    ],
+    "viral_angle": "The 'Satisfying Clean' + 'Tech Magic' intersection"
+  },
+  "generated_scripts": [
+    {
+      "id": "script_urban_tech",
+      "title": "The City Nomad",
+      "tone": "High-energy, gritty, cyberpunk aesthetic",
+      "visual_style": "Neon lights, fast cuts, macro shots of water droplets",
+      "music_vibe": "Phonk / Bass-heavy electronic",
+      "hook_text": "Your water bottle is filthy. Watch this.",
+      "storyline": [
+        {
+          "scene_number": 1,
+          "duration": 3,
+          "visual_description": "Close-up macro shot of a dirty plastic water bottle rim under harsh fluorescent light. Text overlay: 'Gross.'",
+          "audio_script": "Stop drinking from a petri dish.",
+          "assets_needed": {
+            "objects": ["Dirty Plastic Bottle"],
+            "locations": ["Subway Station"]
+          }
+        },
+        {
+          "scene_number": 2,
+          "duration": 4,
+          "visual_description": "Hand places the matte black EcoBottle 3000 on a concrete surface. A blue UV ring light pulses on the cap.",
+          "audio_script": "EcoBottle 3000 neutralizes 99% of bacteria in 60 seconds.",
+          "assets_needed": {
+            "objects": ["EcoBottle 3000 (Black)"],
+            "locations": ["Concrete Surface"]
+          }
+        },
+        {
+          "scene_number": 3,
+          "duration": 3,
+          "visual_description": "Split screen: Left side dirty water under microscope, Right side clear water under microscope after UV blast.",
+          "audio_script": "Solar powered. Self cleaning.",
+          "assets_needed": {
+            "objects": ["Microscope View"],
+            "locations": ["Lab Setting"]
+          }
+        },
+        {
+          "scene_number": 4,
+          "duration": 5,
+          "visual_description": "Character (Sarah, 20s, streetwear) takes a sip while walking through a rainy city street at night. Satisfied expression.",
+          "audio_script": "Drink cleaner. Live louder.",
+          "assets_needed": {
+            "characters": ["Sarah (Streetwear)"],
+            "objects": ["EcoBottle 3000"],
+            "locations": ["Rainy City Street"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "script_nature_zen",
+      "title": "Pure Source",
+      "tone": "Calm, ASMR, Cinematic nature documentary style",
+      "visual_style": "Golden hour lighting, slow motion, 4k drone shots",
+      "music_vibe": "Lo-fi beats / Ambient nature sounds",
+      "hook_text": "Water as nature intended.",
+      "storyline": [
+        {
+          "scene_number": 1,
+          "duration": 4,
+          "visual_description": "Wide drone shot of a pristine mountain lake at sunrise. Mist rolling over the water.",
+          "audio_script": "(Sound of flowing water) You wouldn't put tap water in a Ferrari.",
+          "assets_needed": {
+            "locations": ["Mountain Lake"]
+          }
+        },
+        {
+          "scene_number": 2,
+          "duration": 4,
+          "visual_description": "Close up: Hand dipping the EcoBottle into a clear stream. The UV light activates (CGI glow).",
+          "audio_script": "Why put it in your body?",
+          "assets_needed": {
+            "objects": ["EcoBottle 3000 (White)"],
+            "locations": ["Stream"]
+          }
+        },
+        {
+          "scene_number": 3,
+          "duration": 4,
+          "visual_description": "Character (Mike, 30s, hiker gear) sitting on a rock, drinking. He looks at the digital temp display: '45°F'.",
+          "audio_script": "Always cold. Always pure. Powered by the sun.",
+          "assets_needed": {
+            "characters": ["Mike (Hiker)"],
+            "objects": ["EcoBottle 3000"],
+            "locations": ["Mountain Peak"]
+          }
+        }
+      ]
+    }
+  ]
+}
+

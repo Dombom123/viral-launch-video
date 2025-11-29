@@ -1,0 +1,18 @@
+{
+  "project_id": "#8X29-A",
+  "project_name": "EcoBottle Launch V1",
+  "created_at": "2024-05-20T14:00:00Z",
+  "source_material": {
+    "filename": "EcoBottle_Raw_Footage.mp4",
+    "duration": 124,
+    "resolution": "1920x1080",
+    "file_path": "/uploads/raw/EcoBottle_Raw_Footage.mp4"
+  },
+  "user_input": {
+    "brand_voice": "Futuristic, Sustainable, High-Tech",
+    "target_audience": "Tech-savvy hikers and urban commuters",
+    "product_name": "EcoBottle 3000",
+    "key_features": ["UV Self-Cleaning", "Temperature Display", "Solar Charging"]
+  }
+}
+

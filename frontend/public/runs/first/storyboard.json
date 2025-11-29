@@ -1,39 +1,51 @@
 {
-  "script_id": "script_test_01",
+  "script_id": "script_03",
   "assets": {
     "characters": [
       {
         "id": "char_01",
-        "name": "Tech User",
+        "name": "Zen Capybara",
         "image_url": "/runs/first/characters/char_01.png",
+        "status": "approved"
+      },
+      {
+        "id": "char_02",
+        "name": "Panicked Sales Rep",
+        "image_url": "/runs/first/characters/char_02.png",
         "status": "approved"
       }
     ],
     "objects": [
       {
-        "id": "obj_01",
-        "name": "EcoBottle 3000",
-        "image_url": "/runs/first/objects/obj_01.png",
+        "id": "testwidget-device",
+        "name": "Tiny Capybara Smartphone",
+        "image_url": "/runs/first/objects/testwidget-device.png",
         "status": "approved"
       },
       {
-        "id": "obj_02",
-        "name": "Dirty Bottle",
-        "image_url": "/runs/first/objects/obj_02.png",
+        "id": "legacy-system",
+        "name": "Chaos Notification Explosion",
+        "image_url": "/runs/first/objects/legacy-system.png",
         "status": "approved"
       }
     ],
     "environments": [
       {
         "id": "env_01",
-        "name": "Dark Lab",
+        "name": "Overwhelmed Home Office",
         "image_url": "/runs/first/environments/env_01.png",
         "status": "approved"
       },
       {
         "id": "env_02",
-        "name": "Modern Loft",
+        "name": "Digital Vortex",
         "image_url": "/runs/first/environments/env_02.png",
+        "status": "approved"
+      },
+      {
+        "id": "env_03",
+        "name": "Zen Oasis Corner",
+        "image_url": "/runs/first/environments/env_03.png",
         "status": "approved"
       }
     ]
@@ -42,23 +54,23 @@
     {
       "frame_id": 1,
       "scene_id": 1,
-      "description": "Extreme macro shot of dirty bottle rim.",
-      "image_url": "/runs/first/frames/frame1.png",
-      "audio_prompt": "Stop. Look at your water bottle rim."
+      "description": "Chaos scene - Panicked rep surrounded by notifications",
+      "image_url": "/runs/first/frames/scene-1.png",
+      "audio_prompt": "Chaotic soundscape: phone rings, notification pings, stressed muttering"
     },
     {
       "frame_id": 2,
       "scene_id": 2,
-      "description": "EcoBottle 3000 cap glowing Blue vs bacteria.",
-      "image_url": "/runs/first/frames/frame2.png",
-      "audio_prompt": "This is the solution."
+      "description": "Reveal - Zen Capybara calmly using Boards",
+      "image_url": "/runs/first/frames/scene-2.png",
+      "audio_prompt": "Sudden shift to calm lo-fi chillhop music"
     },
     {
       "frame_id": 3,
       "scene_id": 3,
-      "description": "Finger taps cap. Bacteria disintegrate.",
-      "image_url": "/runs/first/frames/frame3.png",
-      "audio_prompt": "One tap. 99.9% eliminated."
+      "description": "Resolution - Capybara winks, everyone is calm",
+      "image_url": "/runs/first/frames/scene-3.png",
+      "audio_prompt": "Find your Zen. Get Boards now."
     }
   ]
 }

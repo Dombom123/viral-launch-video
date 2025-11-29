@@ -1,159 +1,260 @@
 {
-  "project_context": {
-    "product_name": "EcoBottle 3000",
-    "brand_voice": "Futuristic & Sustainable",
-    "target_audience": "Tech-Savvy Hikers",
-    "viral_angle": "Tech vs. Nature"
-  },
-  "generated_scripts": [
-    {
-      "id": "script_01",
-      "title": "The Microscope Reveal",
-      "hook": "You are drinking 10,000 bacteria right now.",
-      "tone": "Shock & Awe",
-      "assets": {
-        "characters": [
-          {
-            "name": "Tech User",
-            "visual_prompt": "Young adult, diverse, wearing smart casual tech wear, looking concerned then relieved."
-          }
+  "source_video": "/sample-inputs/Boards App Walkthrough.mp4",
+  "walkthrough_analysis": {
+    "product_overview": {
+      "working_name": "Boards",
+      "category": "Mobile Sales & Marketing Content Keyboard",
+      "one_sentence_pitch": "Boards empowers sales and marketing professionals to instantly access and share organized, on-brand content directly from their mobile keyboard across any messaging or social app.",
+      "maturity_guess": "mature"
+    },
+    "target_users": [
+      {
+        "segment_name": "Sales & Marketing Professionals",
+        "persona_summary": "I'm a sales or marketing rep, often communicating with prospects and customers on social media or messaging apps, needing quick access to accurate product info, scripts, and media.",
+        "jobs_to_be_done": [
+          "Respond quickly to customer inquiries with accurate information.",
+          "Share product catalogs, videos, and testimonials easily.",
+          "Maintain consistent brand messaging across all interactions.",
+          "Reduce time spent searching for content."
         ],
-        "objects": [
-          {
-            "name": "Dirty Bottle",
-            "visual_prompt": "Close up of a worn plastic water bottle rim with visible grime and texture."
-          },
-          {
-            "name": "EcoBottle 3000",
-            "visual_prompt": "Sleek matte black smart water bottle with a glowing blue LED ring on the cap."
-          }
+        "key_pains": [
+          "Slow response times due to searching for content.",
+          "Inconsistent messaging from different team members.",
+          "Difficulty sharing rich media (images, videos, PDFs) quickly on mobile.",
+          "Losing potential sales opportunities due to delayed or incomplete information."
         ],
-        "environments": [
-          {
-            "name": "Dark Lab",
-            "visual_prompt": "Dark moody laboratory setting with blue rim lighting, microscope in background."
-          },
-          {
-            "name": "Modern Loft",
-            "visual_prompt": "Clean, minimalist apartment kitchen with concrete counters and natural light."
-          }
+        "key_desires": [
+          "To be perceived as highly responsive and professional.",
+          "To close deals faster and more efficiently.",
+          "To have all necessary sales/marketing assets at their fingertips.",
+          "To feel empowered and organized in their daily customer interactions."
         ]
       },
-      "scenes": [
+      {
+        "segment_name": "Sales & Marketing Managers",
+        "persona_summary": "I manage a team of sales or marketing professionals and need to ensure message quality, team efficiency, and a streamlined sales cycle.",
+        "jobs_to_be_done": [
+          "Ensure consistent messaging and quality across the team.",
+          "Improve team efficiency and productivity.",
+          "Speed up the overall sales cycle.",
+          "Onboard new team members quickly with access to approved content.",
+          "Distribute new marketing collateral or sales promotions to the team instantly."
+        ],
+        "key_pains": [
+          "Inconsistent brand messaging from individual team members.",
+          "Slow team adoption of new marketing materials or sales strategies.",
+          "Lack of visibility into what content is being used.",
+          "Inefficient content distribution and updates for the team."
+        ],
+        "key_desires": [
+          "To achieve higher team performance and sales targets.",
+          "To maintain brand integrity and quality in all customer interactions.",
+          "To foster a highly collaborative and efficient team environment.",
+          "To reduce training time for new hires on content usage."
+        ]
+      }
+    ],
+    "core_value_props": [
+      {
+        "name": "Instant Content Access",
+        "description": "Access all your sales and marketing content (scripts, images, videos, PDFs, links) directly from your phone's keyboard.",
+        "why_it_mattered": "Eliminates time wasted searching for information, allowing for immediate, informed responses that can close deals faster and improve customer experience."
+      },
+      {
+        "name": "Universal Messaging Integration",
+        "description": "Works across all major messaging and social media apps (WhatsApp, Messenger, Instagram, TikTok, etc.).",
+        "why_it_mattered": "Provides seamless access to content wherever customer conversations happen, ensuring consistency and professionalism regardless of the platform."
+      },
+      {
+        "name": "Centralized Team Content Management",
+        "description": "Managers can create, organize, and update content boards, which sync in real-time across all team members' devices.",
+        "why_it_mattered": "Ensures brand consistency, improves team efficiency, speeds up the sales cycle, and simplifies onboarding by providing a single source of truth for all sales and marketing assets."
+      },
+      {
+        "name": "Organized Content Structure",
+        "description": "Content can be organized into boards and sub-folders, just like structuring a business.",
+        "why_it_mattered": "Makes large volumes of content manageable and easy to navigate, allowing users to find exactly what they need quickly and intuitively."
+      }
+    ],
+    "feature_timeline": {
+      "aha_moments": [
         {
-          "scene_id": 1,
-          "visual": "Extreme macro shot of dirty bottle rim. Text overlay: 'YOUR BOTTLE IS ALIVE'",
-          "audio": "Stop. Look at your water bottle rim."
+          "timestamp_sec": 3,
+          "description": "Introduction of the core concept: marketing/sales content directly in the phone's keyboard.",
+          "user_reaction_hypothesis": "Ah, this solves the 'always searching' problem! I can have all my content here.",
+          "ad_hook_potential": "high"
         },
         {
-          "scene_id": 2,
-          "visual": "EcoBottle 3000 cap glowing Blue. Split screen vs bacteria.",
-          "audio": "This is the solution."
+          "timestamp_sec": 15,
+          "description": "Demonstration of inserting a 'Product Catalog' into a chat from the keyboard.",
+          "user_reaction_hypothesis": "Wow, that's so fast! No more copying and pasting or navigating away.",
+          "ad_hook_potential": "high"
         },
         {
-          "scene_id": 3,
-          "visual": "Finger taps cap. Bacteria disintegrate.",
-          "audio": "One tap. 99.9% eliminated."
+          "timestamp_sec": 28,
+          "description": "Visual showing compatibility with numerous messaging/social apps (Facebook, WhatsApp, Instagram, TikTok, LinkedIn, etc.).",
+          "user_reaction_hypothesis": "It works everywhere I talk to customers! This is truly integrated.",
+          "ad_hook_potential": "medium"
+        },
+        {
+          "timestamp_sec": 130,
+          "description": "User switches to Boards keyboard, navigates to 'Make-up Board', accesses 'FAQs' folder, and inserts a pre-written response.",
+          "user_reaction_hypothesis": "This is incredibly fast and efficient for answering common questions. So much time saved!",
+          "ad_hook_potential": "high"
+        },
+        {
+          "timestamp_sec": 137,
+          "description": "User attaches an image and a video from the Boards keyboard into the chat.",
+          "user_reaction_hypothesis": "Not just text, but rich media too! This makes my responses so much more engaging and complete.",
+          "ad_hook_potential": "high"
+        },
+        {
+          "timestamp_sec": 151,
+          "description": "Demonstration of sharing a content board with other team members via email or invite link.",
+          "user_reaction_hypothesis": "Great for team collaboration! We can all share the same approved content.",
+          "ad_hook_potential": "medium"
+        },
+        {
+          "timestamp_sec": 210,
+          "description": "Visual representation of content syncing across mobile and desktop devices for multiple team members in real-time.",
+          "user_reaction_hypothesis": "Seamless collaboration and consistency. Everyone is always on the same page with the latest content.",
+          "ad_hook_potential": "high"
+        },
+        {
+          "timestamp_sec": 224,
+          "description": "Manager sends a 'New Promotion Update' announcement to the entire team, appearing as a mobile notification.",
+          "user_reaction_hypothesis": "Finally, a way to ensure my team gets critical updates instantly and consistently. No more excuses for outdated info.",
+          "ad_hook_potential": "high"
+        }
+      ],
+      "friction_points": [
+        {
+          "timestamp_sec": 0,
+          "description": "Initial intro screen with just the product name 'Boards'.",
+          "ad_editing_suggestion": "Cut or speed up significantly. Start directly with the problem or the core concept."
+        },
+        {
+          "timestamp_sec": 30,
+          "description": "Showing the app download and sign-up process.",
+          "ad_editing_suggestion": "Condense to a quick flash or montage of download/install icons. This is standard and not a unique selling point."
+        },
+        {
+          "timestamp_sec": 40,
+          "description": "Detailed step-by-step creation of a board, including naming and emoji selection.",
+          "ad_editing_suggestion": "Speed up this segment or use quick cuts to show the *result* of organization rather than the *process* of inputting each item."
+        },
+        {
+          "timestamp_sec": 111,
+          "description": "Screen showing 'All your boards will appear here' is purely informational UI.",
+          "ad_editing_suggestion": "Cut this short or integrate it quickly with a shot showing many boards already created."
+        },
+        {
+          "timestamp_sec": 204,
+          "description": "Highlighting 'robust editing' and 'larger scale boards' on desktop, but the visual just shows a static desktop app.",
+          "ad_editing_suggestion": "If this is a key differentiator, show actual robust editing or a complex board being managed on desktop. Otherwise, simplify or cut."
         }
       ]
     },
-    {
-      "id": "script_02",
-      "title": "Sounds of Purity",
-      "hook": "The sound of perfect hydration.",
-      "tone": "ASMR / Satisfying",
-      "assets": {
-        "characters": [
-          {
-            "name": "Hiker",
-            "visual_prompt": "Fit individual in 30s, wearing high-end outdoor gear, looking peaceful."
-          }
-        ],
-        "objects": [
-          {
-            "name": "EcoBottle 3000 (White)",
-            "visual_prompt": "Pristine glacial white smart bottle, water droplets on surface."
-          }
-        ],
-        "environments": [
-          {
-            "name": "Misty Forest",
-            "visual_prompt": "Dense pine forest at sunrise, shafts of light cutting through mist."
-          },
-          {
-            "name": "Mountain Stream",
-            "visual_prompt": "Crystal clear water flowing over smooth river stones, cinematic focus."
-          }
-        ]
-      },
-      "scenes": [
-        {
-          "scene_id": 1,
-          "visual": "Misty forest morning. Birds chirping.",
-          "audio": "(Nature sounds)"
-        },
-        {
-          "scene_id": 2,
-          "visual": "Filling EcoBottle from crystal clear stream.",
-          "audio": "(Crisp water sounds)"
-        },
-        {
-          "scene_id": 3,
-          "visual": "Cap click. Electric hum.",
-          "audio": "(Humming sound)"
-        }
+    "usage_contexts": [
+      "Responding to customer inquiries on social media (Facebook, Instagram, TikTok).",
+      "Chatting with prospects on messaging apps (WhatsApp, Messenger, Telegram).",
+      "Sending product information and media via LinkedIn messages.",
+      "Onboarding new sales or marketing team members.",
+      "Distributing new marketing campaigns or sales promotions to a team.",
+      "Managing and organizing sales and marketing collateral for personal or team use."
+    ],
+    "emotional_and_identity_analysis": {
+      "fantasies": [
+        "I'm the most responsive and knowledgeable person on my team, always having the perfect answer ready.",
+        "My sales cycle is dramatically shorter because I can provide all necessary information instantly.",
+        "My entire sales and marketing team operates like a well-oiled machine, always on message and perfectly aligned.",
+        "I can scale my personalized outreach without sacrificing quality or speed, making every customer feel valued.",
+        "I'm a cutting-edge professional, leveraging the latest tech to outperform competitors and grow my business."
+      ],
+      "identity_archetypes": [
+        "The Responsive Pro",
+        "The Efficient Closer",
+        "The Strategic Team Leader",
+        "The Organized Hustler",
+        "The Digital-First Marketer/Salesperson"
+      ],
+      "confirmation_lines": [
+        "I can finally say I am always prepared for any customer question.",
+        "By using Boards, I ensure my team communicates with consistent excellence.",
+        "I'm no longer wasting time searching; I'm spending it selling and connecting.",
+        "My customer interactions are now seamless and impactful.",
+        "I've streamlined my entire content workflow, empowering my team to achieve more."
       ]
     },
-    {
-      "id": "script_03",
-      "title": "Stop Wasting Money",
-      "hook": "Spending $5 a day on water?",
-      "tone": "Educational / Energetic",
-      "assets": {
-        "characters": [
-          {
-            "name": "Frustrated Commuter",
-            "visual_prompt": "Business casual attire, looking annoyed at a receipt."
-          }
+    "differentiation_hypotheses": [
+      "Most content management solutions are desktop-centric or lack deep mobile keyboard integration for instant, in-app sharing.",
+      "Unlike generic mobile keyboards, Boards is specifically designed for sales and marketing content, offering robust organization and team collaboration features.",
+      "The real-time syncing and update notification system for teams provides a level of content control and alignment often missing in ad-hoc mobile sharing methods."
+    ],
+    "ad_angle_ideas": [
+      {
+        "angle_name": "Instant Answers, Instant Sales",
+        "core_promise": "Never miss a beat or a sale. Get instant access to all your sales content right from your keyboard.",
+        "best_channels": [
+          "TikTok",
+          "Instagram Reels",
+          "YouTube Shorts"
         ],
-        "objects": [
-          {
-            "name": "Plastic Waste",
-            "visual_prompt": "Pile of crushed single-use plastic water bottles."
-          },
-          {
-            "name": "Money",
-            "visual_prompt": "Stylized dollar bills flying away or burning."
-          }
-        ],
-        "environments": [
-          {
-            "name": "City Street",
-            "visual_prompt": "Busy urban street corner with a trash can overflowing."
-          },
-          {
-            "name": "Comparison Space",
-            "visual_prompt": "Clean studio background split down the middle for comparison."
-          }
+        "suggested_formats": [
+          "Fast-paced POV montage of a salesperson quickly responding to multiple chats with Boards.",
+          "Before/After showing struggle vs. ease."
         ]
       },
-      "scenes": [
-        {
-          "scene_id": 1,
-          "visual": "Fast montage of buying expensive water.",
-          "audio": "You're throwing money away."
-        },
-        {
-          "scene_id": 2,
-          "visual": "EcoBottle filling from tap. Gold glow effect.",
-          "audio": "Turn tap water into gold."
-        },
-        {
-          "scene_id": 3,
-          "visual": "Side by side: 1 EcoBottle vs 100 plastic bottles.",
-          "audio": "Save the planet. Save your wallet."
-        }
-      ]
-    }
-  ]
+      {
+        "angle_name": "Team Alignment, Elevated Results",
+        "core_promise": "Empower your entire team with consistent, on-brand content, ensuring quality and efficiency at scale.",
+        "best_channels": [
+          "LinkedIn",
+          "YouTube (longer form)",
+          "Facebook"
+        ],
+        "suggested_formats": [
+          "Screen recording walkthrough focusing on team features (sharing, updates) with manager voiceover.",
+          "Testimonial from a sales manager."
+        ]
+      },
+      {
+        "angle_name": "Your Mobile Office, Supercharged",
+        "core_promise": "Transform your phone into a powerful sales and marketing hub, keeping all your essential content one tap away.",
+        "best_channels": [
+          "Facebook",
+          "Instagram",
+          "Google Display Network"
+        ],
+        "suggested_formats": [
+          "Lifestyle shots of a busy professional using Boards on the go, seamlessly integrated into their day.",
+          "Quick feature highlight montage."
+        ]
+      }
+    ],
+    "research_goals_for_agent": [
+      "Identify common pain points for sales and marketing professionals regarding mobile content access and sharing.",
+      "Find examples of successful mobile-first productivity tool ads, especially those leveraging in-app keyboard functionality.",
+      "Research effective ad strategies for B2B SaaS tools targeting sales and marketing teams.",
+      "Look for competitor analysis on similar 'content keyboard' or 'sales enablement' apps and their marketing angles.",
+      "Gather insights on the most impactful messaging for improving team efficiency and sales cycle speed."
+    ],
+    "research_queries_for_agent": [
+      "mobile sales enablement tools marketing strategy",
+      "best practices for B2B mobile app ads",
+      "sales team content sharing pain points",
+      "how to improve sales response time mobile",
+      "ads for productivity apps with keyboard integration",
+      "competitors of Boards app",
+      "content management for direct sellers social media",
+      "team collaboration tools marketing examples"
+    ],
+    "risks_and_constraints": [
+      "Ads must not overstate the AI capabilities; content is manually curated.",
+      "The product requires initial setup (creating boards, adding content) which might be a barrier; ads should manage expectations around this.",
+      "Ensure ads clearly communicate the 'keyboard' aspect to avoid confusion with standard content management systems.",
+      "Avoid implying that Boards replaces CRM or full sales automation tools; it's a content access layer.",
+      "Do not promise guaranteed sales increases, but focus on the enablement for faster, more effective communication."
+    ]
+  }
 }

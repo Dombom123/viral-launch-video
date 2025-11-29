@@ -3,8 +3,9 @@ from __future__ import annotations
 import json
 import os
 import shutil
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Tuple
 
 import google.generativeai as genai
 from fastapi import HTTPException
@@ -174,72 +175,132 @@ def generate_storyboard(run_id: str, research: Research) -> Storyboard:
     for d in (char_dir, env_dir, obj_dir, frame_dir):
         d.mkdir(parents=True, exist_ok=True)
 
-    # Characters via LLM (first)
-    characters: List[LLMCharacter] = generate_characters(research)
-    character_assets: List[StoryboardAsset] = []
+    # PHASE 1: Parallel LLM calls for characters and environments
+    print("[storyboard] Phase 1: Generating characters and environments in parallel...")
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        characters_future = executor.submit(generate_characters, research)
+        environments_future = executor.submit(generate_environments, research)
+        characters: List[LLMCharacter] = characters_future.result()
+        environments: List[LLMEnvironment] = environments_future.result()
+    print(f"[storyboard] Got {len(characters)} characters, {len(environments)} environments")
+
+    # PHASE 2: Parallel image generation for ALL assets
+    # Prepare all image generation tasks
+    image_tasks: List[Tuple[str, str, str, Path, dict]] = []
+    
+    # Character images
     for char in characters:
-        image_path = generate_image(
+        image_tasks.append((
+            "character",
+            char.id,
             f"Portrait: {char.name}. {char.role}. {char.description}.",
             char_dir / f"{char.id}.png",
-        )
+            {"name": char.name},
+        ))
+    
+    # Object images
+    for obj in script.assets.objects:
+        oid = _slugify(obj.name)
+        image_tasks.append((
+            "object",
+            oid,
+            f"Product object: {obj.name}. {obj.visual_prompt}. Studio lighting, product shot.",
+            obj_dir / f"{oid}.png",
+            {"name": obj.name},
+        ))
+    
+    # Environment images
+    for env in environments:
+        image_tasks.append((
+            "environment",
+            env.id,
+            f"Environment: {env.name}. {env.description}.",
+            env_dir / f"{env.id}.png",
+            {"name": env.name},
+        ))
+    
+    # Frame images
+    for idx, scene in enumerate(script.scenes, start=1):
+        image_tasks.append((
+            "frame",
+            str(idx),
+            f"Storyboard frame for scene {scene.scene_id}: {scene.visual}",
+            frame_dir / f"scene-{scene.scene_id}.png",
+            {"scene_id": scene.scene_id, "visual": scene.visual, "audio": scene.audio},
+        ))
+
+    print(f"[storyboard] Phase 2: Generating {len(image_tasks)} images in parallel...")
+    
+    # Execute all image generations in parallel
+    results: Dict[str, Dict[str, Any]] = {}
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        future_to_task = {
+            executor.submit(generate_image, prompt, dest): (task_type, task_id, extra)
+            for task_type, task_id, prompt, dest, extra in image_tasks
+        }
+        for future in as_completed(future_to_task):
+            task_type, task_id, extra = future_to_task[future]
+            try:
+                image_path = future.result()
+                results[f"{task_type}_{task_id}"] = {"image_url": image_path, **extra}
+                print(f"[storyboard] ✓ Generated {task_type} {task_id}")
+            except Exception as exc:
+                print(f"[storyboard] ✗ Failed {task_type} {task_id}: {exc}")
+                raise
+
+    print("[storyboard] Phase 3: Assembling storyboard...")
+    
+    # Assemble character assets
+    character_assets: List[StoryboardAsset] = []
+    for char in characters:
+        result = results[f"character_{char.id}"]
         character_assets.append(
             StoryboardAsset(
                 id=char.id,
-                name=char.name,
-                image_url=image_path,
+                name=result["name"],
+                image_url=result["image_url"],
                 status="approved",
             )
         )
 
-    # Objects from script assets (second)
+    # Assemble object assets
     object_assets: List[StoryboardAsset] = []
     for obj in script.assets.objects:
         oid = _slugify(obj.name)
-        image_path = generate_image(
-            f"Product object: {obj.name}. {obj.visual_prompt}. Studio lighting, product shot.",
-            obj_dir / f"{oid}.png",
-        )
+        result = results[f"object_{oid}"]
         object_assets.append(
             StoryboardAsset(
                 id=oid,
-                name=obj.name,
-                image_url=image_path,
+                name=result["name"],
+                image_url=result["image_url"],
                 status="approved",
             )
         )
 
-    # Environments via LLM (third)
-    environments: List[LLMEnvironment] = generate_environments(research)
+    # Assemble environment assets
     environment_assets: List[StoryboardAsset] = []
     for env in environments:
-        image_path = generate_image(
-            f"Environment: {env.name}. {env.description}.",
-            env_dir / f"{env.id}.png",
-        )
+        result = results[f"environment_{env.id}"]
         environment_assets.append(
             StoryboardAsset(
                 id=env.id,
-                name=env.name,
-                image_url=image_path,
+                name=result["name"],
+                image_url=result["image_url"],
                 status="approved",
             )
         )
 
-    # Scenes to frames (after all assets exist)
+    # Assemble storyboard frames
     storyboard_frames: List[StoryboardFrame] = []
     for idx, scene in enumerate(script.scenes, start=1):
-        # Optional: generate a frame image; use scene id in filename
-        frame_image_path = generate_image(
-            f"Storyboard frame for scene {scene.scene_id}: {scene.visual}",
-            frame_dir / f"scene-{scene.scene_id}.png",
-        )
+        result = results[f"frame_{idx}"]
         storyboard_frames.append(
             StoryboardFrame(
                 frame_id=idx,
-                scene_id=scene.scene_id,
-                description=scene.visual,
-                image_url=frame_image_path,
-                audio_prompt=scene.audio,
+                scene_id=result["scene_id"],
+                description=result["visual"],
+                image_url=result["image_url"],
+                audio_prompt=result["audio"],
             )
         )
 
@@ -249,6 +310,7 @@ def generate_storyboard(run_id: str, research: Research) -> Storyboard:
         "environments": environment_assets,
     }
 
+    print("[storyboard] ✓ Storyboard generation complete!")
     return Storyboard(
         script_id=script.id,
         assets=assets,
@@ -258,6 +320,9 @@ def generate_storyboard(run_id: str, research: Research) -> Storyboard:
 
 def choose_generator() -> bool:
     """Return True if Gemini is configured and should be used; otherwise fallback to mock."""
+    # Allow forcing mock mode for testing
+    if os.getenv("FORCE_MOCK", "").lower() in ("1", "true", "yes"):
+        return False
     return bool(os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY"))
 
 
