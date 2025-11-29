@@ -22,7 +22,7 @@ export default function Step3_Storyboard({ onNext }: Step3Props) {
         <div className="lg:col-span-1 space-y-6">
            <div>
               <h3 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
-                <Wand2 size={14} className="text-orange-500" /> Cast Generation
+                <Wand2 size={14} className="text-primary" /> Cast Generation
               </h3>
               <div className="grid grid-cols-2 gap-3">
                 {storyboardData.characters.map((char) => (
@@ -35,7 +35,7 @@ export default function Step3_Storyboard({ onNext }: Step3Props) {
                       onClick={() => handleRegenerate(char.id)}
                       className="absolute top-2 right-2 p-1.5 bg-black/50 hover:bg-black backdrop-blur-sm rounded-md text-zinc-400 hover:text-white transition-colors opacity-0 group-hover:opacity-100"
                     >
-                      <RefreshCw size={12} className={regenerating === char.id ? 'animate-spin text-orange-500' : ''} />
+                      <RefreshCw size={12} className={regenerating === char.id ? 'animate-spin text-primary' : ''} />
                     </button>
                   </div>
                 ))}
@@ -57,7 +57,7 @@ export default function Step3_Storyboard({ onNext }: Step3Props) {
                        onClick={() => handleRegenerate(loc.id)}
                        className="absolute top-2 right-2 p-1.5 bg-black/50 hover:bg-black backdrop-blur-sm rounded-md text-zinc-400 hover:text-white transition-colors opacity-0 group-hover:opacity-100"
                     >
-                      <RefreshCw size={12} className={regenerating === loc.id ? 'animate-spin text-orange-500' : ''} />
+                      <RefreshCw size={12} className={regenerating === loc.id ? 'animate-spin text-primary' : ''} />
                     </button>
                   </div>
                 ))}

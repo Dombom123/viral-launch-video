@@ -98,11 +98,11 @@ export default function Step5_Editor({ onNext }: Step5Props) {
                  {/* Overlay Controls */}
                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                     <div className="flex items-center gap-4">
-                       <button onClick={() => setIsPlaying(!isPlaying)} className="text-white hover:text-orange-500 transition-colors">
+                       <button onClick={() => setIsPlaying(!isPlaying)} className="text-white hover:text-primary transition-colors">
                           {isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" />}
                        </button>
                        <div className="flex-1 h-1 bg-zinc-700 rounded-full overflow-hidden">
-                          <div className="w-1/3 h-full bg-orange-500"></div>
+                          <div className="w-1/3 h-full bg-primary"></div>
                        </div>
                        <span className="text-xs font-mono text-zinc-300">00:05 / 00:15</span>
                        <Volume2 size={18} className="text-zinc-400" />
@@ -130,12 +130,12 @@ export default function Step5_Editor({ onNext }: Step5Props) {
       <div className="flex-1 bg-zinc-900 rounded-2xl border border-zinc-800 flex flex-col overflow-hidden shadow-xl">
          <div className="p-4 border-b border-zinc-800 bg-zinc-900 flex justify-between items-center">
             <div className="flex items-center gap-2">
-               <div className="w-8 h-8 bg-gradient-to-tr from-orange-500 to-pink-500 rounded-lg flex items-center justify-center text-white">
+               <div className="w-8 h-8 bg-gradient-to-tr from-primary to-emerald-500 rounded-lg flex items-center justify-center text-black">
                   <Sparkles size={16} fill="currentColor" />
                </div>
                <div>
                   <h3 className="text-sm font-bold text-zinc-100">Editor Copilot</h3>
-                  <p className="text-[10px] text-zinc-500 flex items-center gap-1"><span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span> Online</p>
+                  <p className="text-[10px] text-zinc-500 flex items-center gap-1"><span className="w-1.5 h-1.5 bg-primary rounded-full"></span> Online</p>
                </div>
             </div>
             <div className="flex gap-2">
@@ -149,7 +149,7 @@ export default function Step5_Editor({ onNext }: Step5Props) {
                </button>
                <button 
                  onClick={onNext}
-                 className="px-3 py-1.5 bg-green-600 hover:bg-green-500 text-white text-xs font-bold rounded-md shadow-sm transition-colors flex items-center gap-1.5"
+                 className="px-3 py-1.5 bg-primary hover:bg-primary/90 text-black text-xs font-bold rounded-md shadow-sm transition-colors flex items-center gap-1.5"
                >
                  <Rocket size={12} fill="currentColor" />
                  Final Launch
@@ -161,13 +161,13 @@ export default function Step5_Editor({ onNext }: Step5Props) {
          <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-zinc-950/30">
             {messages.map((msg) => (
               <div key={msg.id} className={`flex gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}>
-                 <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${msg.role === 'assistant' ? 'bg-zinc-800 text-orange-500' : 'bg-zinc-700 text-zinc-300'}`}>
+                 <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${msg.role === 'assistant' ? 'bg-zinc-800 text-primary' : 'bg-zinc-700 text-zinc-300'}`}>
                     {msg.role === 'assistant' ? <Bot size={16} /> : <User size={16} />}
                  </div>
                  <div className={`flex flex-col gap-1 max-w-[85%] ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
                     <div className={`p-3 rounded-2xl text-sm leading-relaxed ${
                        msg.role === 'user' 
-                         ? 'bg-blue-600 text-white rounded-tr-sm' 
+                         ? 'bg-primary text-black rounded-tr-sm' 
                          : 'bg-zinc-800 text-zinc-200 rounded-tl-sm border border-zinc-700'
                     }`}>
                        {msg.content}
@@ -194,7 +194,7 @@ export default function Step5_Editor({ onNext }: Step5Props) {
             ))}
             {isRendering && (
                <div className="flex gap-3">
-                  <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center shrink-0 text-orange-500">
+                  <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center shrink-0 text-primary">
                      <Bot size={16} />
                   </div>
                   <div className="bg-zinc-800 p-3 rounded-2xl rounded-tl-sm border border-zinc-700 flex items-center gap-2">
@@ -221,7 +221,7 @@ export default function Step5_Editor({ onNext }: Step5Props) {
                <button 
                  onClick={handleSendMessage}
                  disabled={!chatInput.trim()}
-                 className="p-1.5 bg-orange-600 text-white rounded-lg hover:bg-orange-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg shadow-orange-900/20"
+                 className="p-1.5 bg-primary text-black rounded-lg hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg shadow-primary/20"
                >
                   <Send size={16} />
                </button>
