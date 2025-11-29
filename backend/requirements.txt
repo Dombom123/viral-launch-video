@@ -1,0 +1,8 @@
+# ADK and AI dependencies
+google-generativeai
+google-cloud-aiplatform
+# adk-python # Uncomment when available or use specific source
+python-dotenv
+fastapi
+uvicorn
+
