@@ -23,7 +23,10 @@ class GenerateScenesNode(BaseNode[VideoGenerationState]):
         )
 
         # Initialize VeoClient with API key from state
-        veo_client = VeoClient(api_key=ctx.state.api_key)
+        veo_client = VeoClient(
+            api_key=ctx.state.api_key,
+            image_base_path=ctx.state.image_base_path,
+        )
 
         async def process_scene(scene) -> SceneOutput:
             print(f"Processing Scene {scene.scene_number}: {scene.scene_title}")

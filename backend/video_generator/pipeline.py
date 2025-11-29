@@ -1,4 +1,4 @@
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 from pydantic_graph import Graph
 from .state import VideoGenerationState
@@ -21,7 +21,10 @@ video_generation_graph = Graph(
 
 
 async def run_pipeline(
-    input_data: VideoGenerationInput, api_key: str, output_dir: str = None
+    input_data: VideoGenerationInput,
+    api_key: str,
+    output_dir: Optional[str] = None,
+    image_base_path: Optional[str] = None,
 ) -> ProjectOutput:
     """
     Runs the video generation pipeline.
@@ -35,7 +38,10 @@ async def run_pipeline(
         ProjectOutput: The result containing generated clips.
     """
     state = VideoGenerationState(
-        input_data=input_data, api_key=api_key, output_dir=output_dir
+        input_data=input_data,
+        api_key=api_key,
+        output_dir=output_dir,
+        image_base_path=image_base_path,
     )
     # Start the graph execution with the initial node
     result = await video_generation_graph.run(ValidateInputNode(), state=state)
@@ -45,7 +51,8 @@ async def run_pipeline(
 async def run_storyboard_pipeline_from_data(
     storyboard_input: StoryboardInput,
     api_key: str,
-    output_dir: str | None = None,
+    output_dir: Optional[str] = None,
+    image_base_path: Optional[str] = None,
 ) -> StoryboardVideoGenerationOutput:
     """
     High-level helper that takes storyboard.json-shaped data, runs the
@@ -107,7 +114,10 @@ async def run_storyboard_pipeline_from_data(
 
     # Run the core pipeline
     project_result = await run_pipeline(
-        input_model, api_key=api_key, output_dir=output_dir
+        input_model,
+        api_key=api_key,
+        output_dir=output_dir,
+        image_base_path=image_base_path,
     )
 
     print("\nPipeline finished successfully!")

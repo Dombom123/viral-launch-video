@@ -71,7 +71,9 @@ class StoryboardFrame(BaseModel):
     frame_id: int
     scene_id: int
     description: str
-    image_url: HttpUrl
+    # Can be a web URL or a path like "/runs/first/frames/frame1.png"
+    image_url: str
+    # Optional audio prompt that will be combined into the scene prompt
     audio_prompt: str
 
 
