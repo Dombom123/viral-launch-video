@@ -22,15 +22,5 @@
       "video_url": "/sample-inputs/clip_03_purify.mp4",
       "thumbnail_url": "/sample-inputs/scene3.png"
     }
-  ],
-  "background_music": {
-    "track_name": "Cyberpunk Tension",
-    "url": "/sample-inputs/music_tension.mp3",
-    "duration": 30
-  },
-  "voiceover": {
-    "url": "/sample-inputs/voiceover_full.mp3",
-    "speaker": "Deep Tech Voice"
-  }
+  ]
 }
-
