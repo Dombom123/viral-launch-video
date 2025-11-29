@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "generated_clips": [
+    {
+      "clip_id": "clip_01",
+      "frame_id": 1,
+      "duration": 8.0,
+      "video_url": "../frontend/public/sample-inputs/scene_1.mp4",
+      "thumbnail_url": "https://raw.githubusercontent.com/Dombom123/viral-launch-video/refs/heads/main/frontend/public/sample-inputs/scene1.png"
+    },
+    {
+      "clip_id": "clip_02",
+      "frame_id": 2,
+      "duration": 8.0,
+      "video_url": "../frontend/public/sample-inputs/scene_2.mp4",
+      "thumbnail_url": "https://raw.githubusercontent.com/Dombom123/viral-launch-video/refs/heads/main/frontend/public/sample-inputs/scene2.png"
+    }
+  ]
+}
