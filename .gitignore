@@ -11,3 +11,11 @@ venv/
 .vscode/
 .idea/
 
+# Node
+node_modules/
+npm-debug.log
+.next/
+out/
+build/
+.vercel
+*.tsbuildinfo
