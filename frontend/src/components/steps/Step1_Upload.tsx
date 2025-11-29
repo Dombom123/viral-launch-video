@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Upload, FileVideo, CheckCircle } from 'lucide-react';
+import { Upload, CheckCircle, Film } from 'lucide-react';
 
 interface Step1Props {
   onNext: () => void;
@@ -33,17 +33,19 @@ export default function Step1_Upload({ onNext }: Step1Props) {
   };
 
   return (
-    <div className="max-w-2xl mx-auto text-center">
-      <h2 className="text-3xl font-bold mb-4">Upload Your Walkthrough</h2>
-      <p className="text-gray-500 mb-8">Start by uploading a raw video walkthrough of your product.</p>
+    <div className="flex flex-col items-center justify-center h-full max-w-xl mx-auto">
+      <div className="text-center mb-10">
+        <h2 className="text-3xl font-bold text-zinc-100 mb-3 tracking-tight">Upload Source Material</h2>
+        <p className="text-zinc-500 text-sm">Start by uploading a raw video, walkthrough, or gameplay footage.</p>
+      </div>
 
       <div
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
-        className={`border-4 border-dashed rounded-xl p-12 flex flex-col items-center justify-center transition-colors cursor-pointer
-          ${isDragging ? 'border-blue-500 bg-blue-50' : 'border-gray-300 hover:border-gray-400'}
-          ${file ? 'bg-green-50 border-green-500' : ''}
+        className={`w-full aspect-video rounded-2xl border-2 border-dashed flex flex-col items-center justify-center transition-all cursor-pointer group relative overflow-hidden
+          ${isDragging ? 'border-orange-500 bg-orange-500/10' : 'border-zinc-800 bg-zinc-900/50 hover:border-zinc-700 hover:bg-zinc-900'}
+          ${file ? 'border-green-500/50 bg-green-500/5' : ''}
         `}
       >
         <input 
@@ -55,34 +57,37 @@ export default function Step1_Upload({ onNext }: Step1Props) {
         />
         
         {file ? (
-          <div className="text-green-600">
-            <CheckCircle className="w-16 h-16 mb-4 mx-auto" />
-            <p className="text-xl font-semibold">{file.name}</p>
-            <p className="text-sm mt-2 text-green-500">Upload Complete</p>
+          <div className="text-center z-10 animate-in fade-in zoom-in duration-300">
+            <div className="w-16 h-16 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center mx-auto mb-4">
+               <CheckCircle size={32} />
+            </div>
+            <p className="text-lg font-medium text-zinc-200">{file.name}</p>
+            <p className="text-xs text-green-500 mt-1 font-mono">READY FOR ANALYSIS</p>
           </div>
         ) : (
-          <label htmlFor="file-upload" className="cursor-pointer w-full h-full flex flex-col items-center">
-            <Upload className="w-16 h-16 text-gray-400 mb-4" />
-            <p className="text-xl font-semibold text-gray-700">Drag & drop or click to upload</p>
-            <p className="text-sm text-gray-500 mt-2">MP4, MOV, AVI (Max 500MB)</p>
+          <label htmlFor="file-upload" className="cursor-pointer w-full h-full flex flex-col items-center justify-center p-10">
+            <div className="w-16 h-16 rounded-full bg-zinc-800 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Upload className="text-zinc-400 group-hover:text-orange-500 transition-colors" size={28} />
+            </div>
+            <p className="text-lg font-medium text-zinc-300 group-hover:text-zinc-100">Drag & drop video source</p>
+            <p className="text-xs text-zinc-500 mt-2">MP4, MOV, AVI (Max 500MB)</p>
           </label>
         )}
       </div>
 
-      <div className="mt-8">
+      <div className="mt-8 w-full flex justify-center">
         <button
           onClick={onNext}
           disabled={!file}
-          className={`px-8 py-3 rounded-lg font-bold text-white transition-all
+          className={`px-8 py-3 rounded-full font-medium text-sm transition-all w-full max-w-xs
             ${file 
-              ? 'bg-blue-600 hover:bg-blue-700 shadow-lg transform hover:-translate-y-1' 
-              : 'bg-gray-300 cursor-not-allowed'}
+              ? 'bg-orange-500 hover:bg-orange-600 text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:shadow-[0_0_30px_rgba(249,115,22,0.5)]' 
+              : 'bg-zinc-800 text-zinc-500 cursor-not-allowed'}
           `}
         >
-          Analyze Video & Start Research
+          {file ? 'Analyze & Extract Metadata' : 'Upload to Continue'}
         </button>
       </div>
     </div>
   );
 }
-

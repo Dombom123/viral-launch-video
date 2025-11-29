@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Play, Pause, SkipBack, SkipForward, Volume2, Scissors, Layers, CheckCircle } from 'lucide-react';
+import { Play, Pause, Volume2, Scissors, Layers, CheckCircle, Download, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Step5_Editor() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -16,20 +16,20 @@ export default function Step5_Editor() {
 
   if (finished) {
     return (
-      <div className="max-w-2xl mx-auto text-center py-20">
-        <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-          <CheckCircle className="w-12 h-12 text-green-600" />
+      <div className="h-full flex flex-col items-center justify-center text-center p-8">
+        <div className="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mb-6 border border-green-500/20">
+          <CheckCircle className="w-10 h-10 text-green-500" />
         </div>
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">Video Exported Successfully!</h2>
-        <p className="text-gray-600 mb-8">Your viral video is ready to launch.</p>
-        <div className="flex justify-center gap-4">
-           <button className="px-8 py-3 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 shadow-lg">
-             Download MP4
+        <h2 className="text-2xl font-bold text-zinc-100 mb-2">Trailer Ready</h2>
+        <p className="text-zinc-500 mb-8 text-sm">Your viral video has been compiled, color graded, and exported.</p>
+        <div className="flex flex-col sm:flex-row gap-3">
+           <button className="px-6 py-2.5 bg-zinc-100 text-zinc-900 rounded-lg font-medium text-sm hover:bg-white shadow-lg flex items-center gap-2 justify-center">
+             <Download size={16} /> Download MP4 (1080p)
            </button>
            <button 
             onClick={() => window.location.reload()}
-            className="px-8 py-3 bg-white border border-gray-300 text-gray-700 rounded-lg font-bold hover:bg-gray-50">
-             Create Another
+            className="px-6 py-2.5 bg-zinc-900 border border-zinc-800 text-zinc-300 rounded-lg font-medium text-sm hover:bg-zinc-800 hover:text-white transition-colors">
+             Create New Project
            </button>
         </div>
       </div>
@@ -37,86 +37,110 @@ export default function Step5_Editor() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto">
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold">AI Video Editor</h2>
-        <div className="flex items-center gap-2">
-          <span className="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full uppercase">Auto-Edit Active</span>
-          <span className="px-3 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded-full uppercase">Music Synced</span>
+    <div className="w-full max-w-6xl mx-auto flex flex-col h-[calc(100vh-140px)]">
+      
+      {/* Top Toolbar */}
+      <div className="flex justify-between items-center mb-4 shrink-0">
+        <div className="flex items-center gap-3">
+          <span className="text-zinc-100 font-medium text-sm">Master Sequence</span>
+          <span className="px-2 py-0.5 bg-green-500/10 text-green-500 text-[10px] font-bold rounded uppercase border border-green-500/20">Auto-Edit</span>
         </div>
-      </div>
-
-      {/* Preview Player */}
-      <div className="bg-black rounded-xl overflow-hidden shadow-2xl aspect-video relative mb-6">
-         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <h3 className="text-white/20 text-4xl font-bold uppercase tracking-widest">Final Preview</h3>
-         </div>
-         
-         {/* Mock Controls Overlay */}
-         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
-            <div className="flex items-center justify-between">
-               <div className="flex items-center gap-4 text-white">
-                  <button onClick={() => setIsPlaying(!isPlaying)} className="hover:text-blue-400 transition-colors">
-                    {isPlaying ? <Pause size={24} /> : <Play size={24} fill="currentColor" />}
-                  </button>
-                  <div className="text-xs font-mono text-gray-300">00:12 / 00:30</div>
-               </div>
-               <div className="flex items-center gap-4 text-white">
-                  <Volume2 size={20} />
-               </div>
-            </div>
-            {/* Progress Bar */}
-            <div className="w-full bg-gray-700 h-1.5 rounded-full mt-4 overflow-hidden cursor-pointer hover:h-2 transition-all">
-              <div className="bg-blue-500 h-full w-1/3 relative">
-                 <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-sm"></div>
-              </div>
-            </div>
-         </div>
-      </div>
-
-      {/* Timeline Interface */}
-      <div className="bg-gray-900 rounded-xl p-4 border border-gray-800 shadow-lg">
-         <div className="flex items-center justify-between mb-4 border-b border-gray-800 pb-2">
-           <div className="flex gap-4 text-gray-400 text-sm">
-              <div className="flex items-center gap-1 hover:text-white cursor-pointer"><Scissors size={14} /> Split</div>
-              <div className="flex items-center gap-1 hover:text-white cursor-pointer"><Layers size={14} /> Tracks</div>
-           </div>
-           <div className="text-xs text-gray-500 font-mono">00:00:00:00</div>
-         </div>
-         
-         <div className="space-y-2">
-            {/* Video Track */}
-            <div className="h-16 bg-gray-800 rounded border border-gray-700 relative overflow-hidden flex">
-              <div className="bg-blue-600/80 h-full border-r border-blue-800 w-1/4 flex items-center justify-center text-xs text-white/90 font-medium truncate px-2">Scene 1</div>
-              <div className="bg-blue-600/80 h-full border-r border-blue-800 w-1/4 flex items-center justify-center text-xs text-white/90 font-medium truncate px-2">Scene 2</div>
-              <div className="bg-blue-600/80 h-full border-r border-blue-800 w-1/4 flex items-center justify-center text-xs text-white/90 font-medium truncate px-2">Scene 3</div>
-              <div className="bg-blue-600/80 h-full border-r border-blue-800 w-1/4 flex items-center justify-center text-xs text-white/90 font-medium truncate px-2">Scene 4</div>
-            </div>
-            {/* Audio Track */}
-            <div className="h-10 bg-gray-800 rounded border border-gray-700 relative overflow-hidden flex items-center">
-               <div className="w-full h-6 mx-2 bg-green-900/50 rounded flex items-center">
-                  <svg className="w-full h-full text-green-500" viewBox="0 0 100 10" preserveAspectRatio="none">
-                     <path d="M0 5 Q 10 0, 20 5 T 40 5 T 60 5 T 80 5 T 100 5" stroke="currentColor" strokeWidth="1" fill="none" />
-                  </svg>
-               </div>
-            </div>
-         </div>
-      </div>
-
-      <div className="mt-8 flex justify-end">
         <button 
           onClick={handleExport}
           disabled={isExporting}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-3 rounded-lg font-bold shadow-lg flex items-center gap-2 transition-all"
+          className="bg-zinc-100 hover:bg-white text-zinc-900 px-4 py-1.5 rounded text-xs font-bold shadow flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isExporting ? (
-            <>Processing...</>
-          ) : (
-            <>Export Final Video</>
-          )}
+          {isExporting ? 'Rendering...' : 'Export Trailer'}
         </button>
+      </div>
+
+      {/* Main Editor Area */}
+      <div className="flex-1 flex gap-4 min-h-0">
+         {/* Left: Preview */}
+         <div className="flex-[2] bg-black rounded-xl border border-zinc-800 relative overflow-hidden group flex flex-col">
+            {/* Video Display */}
+            <div className="flex-1 relative">
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <h3 className="text-zinc-700 text-4xl font-bold uppercase tracking-widest opacity-20">Preview</h3>
+                </div>
+                {/* Overlay UI */}
+                <div className="absolute inset-0 flex flex-col justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                   <div className="flex justify-between items-start">
+                      <span className="bg-black/50 text-white text-[10px] px-1.5 py-0.5 rounded font-mono">REC.709</span>
+                   </div>
+                </div>
+            </div>
+            
+            {/* Player Controls */}
+            <div className="h-12 bg-zinc-900 border-t border-zinc-800 flex items-center justify-between px-4 shrink-0">
+                <div className="flex items-center gap-4 text-zinc-400">
+                   <button onClick={() => setIsPlaying(!isPlaying)} className="hover:text-white transition-colors">
+                     {isPlaying ? <Pause size={16} fill="currentColor" /> : <Play size={16} fill="currentColor" />}
+                   </button>
+                   <div className="text-[10px] font-mono">00:00:12 / 00:00:30</div>
+                </div>
+                <div className="flex items-center gap-3 text-zinc-400">
+                   <Volume2 size={16} />
+                </div>
+            </div>
+         </div>
+
+         {/* Right: Asset/Tools Panel (Placeholder for "Editor Tools") */}
+         <div className="flex-1 bg-zinc-900 rounded-xl border border-zinc-800 p-3 overflow-y-auto hidden lg:block">
+            <h4 className="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-3">Scene Bin</h4>
+            <div className="grid grid-cols-2 gap-2">
+               {[1,2,3,4].map(i => (
+                 <div key={i} className="aspect-video bg-zinc-950 rounded border border-zinc-800 relative opacity-60 hover:opacity-100 cursor-grab active:cursor-grabbing">
+                    <div className="absolute bottom-1 right-1 text-[8px] bg-black/80 text-white px-1 rounded">00:04</div>
+                 </div>
+               ))}
+            </div>
+         </div>
+      </div>
+
+      {/* Bottom: Timeline */}
+      <div className="h-32 bg-zinc-900 rounded-xl border border-zinc-800 mt-4 p-3 shrink-0 flex flex-col">
+         <div className="flex items-center justify-between mb-2 pb-2 border-b border-zinc-800">
+           <div className="flex gap-3 text-zinc-500 text-xs">
+              <button className="flex items-center gap-1 hover:text-zinc-200 transition-colors"><Scissors size={12} /> Split</button>
+              <button className="flex items-center gap-1 hover:text-zinc-200 transition-colors"><Layers size={12} /> Tracks</button>
+           </div>
+           <div className="text-[10px] text-zinc-600 font-mono">TIMECODE: 01:00:00:00</div>
+         </div>
+         
+         <div className="flex-1 relative overflow-x-auto overflow-y-hidden">
+            {/* Ruler */}
+            <div className="h-4 flex items-end mb-1 border-b border-zinc-800/50 w-[200%]">
+               {[...Array(20)].map((_, i) => (
+                 <div key={i} className="flex-1 border-r border-zinc-800 h-2 text-[8px] text-zinc-600 pl-1">00:0{i}</div>
+               ))}
+            </div>
+
+            {/* Tracks */}
+            <div className="space-y-1 w-[200%]">
+               {/* Video Track */}
+               <div className="h-8 bg-zinc-950 rounded border border-zinc-800 flex relative overflow-hidden">
+                  <div className="w-[15%] bg-blue-900/40 border-r border-blue-500/20 flex items-center justify-center text-[9px] text-blue-200 font-medium truncate">S1</div>
+                  <div className="w-[25%] bg-blue-900/40 border-r border-blue-500/20 flex items-center justify-center text-[9px] text-blue-200 font-medium truncate">S2</div>
+                  <div className="w-[20%] bg-blue-900/40 border-r border-blue-500/20 flex items-center justify-center text-[9px] text-blue-200 font-medium truncate">S3</div>
+                  <div className="w-[40%] bg-blue-900/40 border-r border-blue-500/20 flex items-center justify-center text-[9px] text-blue-200 font-medium truncate">S4</div>
+               </div>
+               {/* Audio Track */}
+               <div className="h-6 bg-zinc-950 rounded border border-zinc-800 relative flex items-center px-1">
+                   <div className="w-full h-3 bg-green-900/20 rounded flex items-center overflow-hidden">
+                      <svg className="w-full h-full text-green-500/40" viewBox="0 0 100 10" preserveAspectRatio="none">
+                         <path d="M0 5 Q 2 0, 5 5 T 10 5 T 15 5 T 20 5 T 100 5" stroke="currentColor" strokeWidth="1" fill="none" />
+                      </svg>
+                   </div>
+               </div>
+            </div>
+
+            {/* Playhead */}
+            <div className="absolute top-0 bottom-0 left-[30%] w-px bg-red-500 z-10 shadow-[0_0_5px_rgba(239,68,68,0.5)]">
+               <div className="w-2 h-2 bg-red-500 -ml-1 rotate-45 -mt-1"></div>
+            </div>
+         </div>
       </div>
     </div>
   );
 }
-

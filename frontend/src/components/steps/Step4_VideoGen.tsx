@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Play, Download, RefreshCw, ArrowRight } from 'lucide-react';
+import { Play, Download, RefreshCw, ArrowRight, Cpu } from 'lucide-react';
 
 interface Step4Props {
   onNext: () => void;
@@ -17,69 +17,73 @@ export default function Step4_VideoGen({ onNext }: Step4Props) {
           setCompleted(true);
           return 100;
         }
-        return prev + 2; // Simulate progress
+        return prev + 1; 
       });
-    }, 100);
+    }, 80);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="max-w-4xl mx-auto text-center">
-      <h2 className="text-3xl font-bold mb-8">Video Generation</h2>
+    <div className="w-full max-w-4xl mx-auto pb-20 text-center">
 
       {!completed ? (
-        <div className="bg-white p-12 rounded-xl shadow-sm border border-gray-200">
-          <div className="w-24 h-24 rounded-full border-4 border-blue-100 border-t-blue-600 animate-spin mx-auto mb-8"></div>
-          <h3 className="text-2xl font-bold text-gray-800 mb-2">Rendering Scenes...</h3>
-          <p className="text-gray-500 mb-6">AI is animating your storyboard. This may take a moment.</p>
-          
-          <div className="w-full max-w-md mx-auto bg-gray-200 rounded-full h-2.5">
-            <div className="bg-blue-600 h-2.5 rounded-full transition-all duration-300" style={{ width: `${progress}%` }}></div>
+        <div className="flex flex-col items-center justify-center py-20">
+          <div className="relative w-32 h-32 flex items-center justify-center mb-8">
+             <div className="absolute inset-0 rounded-full border-4 border-zinc-800"></div>
+             <div className="absolute inset-0 rounded-full border-4 border-t-green-500 border-r-transparent border-b-transparent border-l-transparent animate-spin"></div>
+             <span className="text-2xl font-bold text-zinc-200 font-mono">{progress}%</span>
           </div>
-          <p className="text-sm text-gray-500 mt-2">{progress}% Complete</p>
+          
+          <h3 className="text-xl font-medium text-zinc-200 mb-2">Rendering Neural Frames</h3>
+          <p className="text-zinc-500 text-sm mb-8 max-w-md mx-auto">The Swarm is synthesizing video from the approved storyboard references. High-fidelity upscaling in progress.</p>
+          
+          <div className="flex gap-1">
+             {[...Array(20)].map((_, i) => (
+                <div 
+                  key={i} 
+                  className={`w-2 h-8 rounded-sm transition-colors duration-300
+                    ${i < (progress / 5) ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]' : 'bg-zinc-800'}
+                  `}
+                ></div>
+             ))}
+          </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-           <div className="bg-black rounded-xl overflow-hidden shadow-lg relative aspect-video group">
-             <img src="https://placehold.co/600x340/000000/FFF?text=Generated+Clip+1" alt="Video 1" className="w-full h-full object-cover opacity-80" />
-             <div className="absolute inset-0 flex items-center justify-center">
-               <button className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
-                 <Play size={32} fill="white" />
-               </button>
-             </div>
-             <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                <p className="text-white font-medium">Scene 1: The Reveal</p>
-             </div>
+        <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+           <div className="flex items-center justify-between mb-6">
+              <h2 className="text-lg font-semibold text-zinc-200 flex items-center gap-2">
+                <Cpu size={18} className="text-green-500" /> Render Complete
+              </h2>
+              <div className="flex gap-2">
+                 <button className="px-3 py-1.5 bg-zinc-900 border border-zinc-800 text-zinc-400 text-xs font-medium rounded hover:text-white hover:border-zinc-600 flex items-center gap-1.5">
+                   <RefreshCw size={12} /> Regenerate All
+                 </button>
+              </div>
            </div>
 
-           <div className="bg-black rounded-xl overflow-hidden shadow-lg relative aspect-video group">
-             <img src="https://placehold.co/600x340/000000/FFF?text=Generated+Clip+2" alt="Video 2" className="w-full h-full object-cover opacity-80" />
-             <div className="absolute inset-0 flex items-center justify-center">
-               <button className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
-                 <Play size={32} fill="white" />
-               </button>
-             </div>
-             <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                <p className="text-white font-medium">Scene 2: In Action</p>
-             </div>
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+             {[1, 2].map((id) => (
+               <div key={id} className="bg-black rounded-xl overflow-hidden border border-zinc-800 relative aspect-video group">
+                 <img src={`https://placehold.co/600x340/18181b/FFF?text=Generated+Clip+${id}`} alt={`Video ${id}`} className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" />
+                 <div className="absolute inset-0 flex items-center justify-center">
+                   <button className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 hover:scale-110 transition-transform">
+                     <Play size={24} fill="currentColor" className="ml-1" />
+                   </button>
+                 </div>
+                 <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 to-transparent flex justify-between items-end">
+                    <p className="text-zinc-300 text-xs font-medium">Scene {id}</p>
+                    <button className="text-zinc-500 hover:text-white"><Download size={14} /></button>
+                 </div>
+               </div>
+             ))}
            </div>
            
-           {/* Controls */}
-           <div className="md:col-span-2 flex justify-center gap-4 mt-4">
-             <button className="px-6 py-2 bg-white border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 flex items-center gap-2">
-               <RefreshCw size={18} /> Regenerate Clips
-             </button>
-             <button className="px-6 py-2 bg-white border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 flex items-center gap-2">
-               <Download size={18} /> Download Raws
-             </button>
-           </div>
-
-           <div className="md:col-span-2 mt-8">
+           <div className="flex justify-center">
               <button
                 onClick={onNext}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-lg font-bold shadow-lg text-lg flex items-center gap-2 mx-auto"
+                className="bg-zinc-100 hover:bg-white text-zinc-900 px-8 py-3 rounded-lg font-medium text-sm shadow-lg flex items-center gap-2"
               >
-                Go to AI Editor <ArrowRight size={24} />
+                Proceed to Editor <ArrowRight size={16} />
               </button>
            </div>
         </div>
@@ -87,4 +91,3 @@ export default function Step4_VideoGen({ onNext }: Step4Props) {
     </div>
   );
 }
-
