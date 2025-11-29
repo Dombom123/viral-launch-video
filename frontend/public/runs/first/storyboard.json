@@ -5,7 +5,7 @@
       {
         "id": "char_01",
         "name": "Tech User",
-        "image_url": "/sample-inputs/character1.png",
+        "image_url": "/runs/first/characters/char_01.png",
         "status": "approved"
       }
     ],
@@ -13,13 +13,13 @@
       {
         "id": "obj_01",
         "name": "EcoBottle 3000",
-        "image_url": "/sample-inputs/object_bottle.png",
+        "image_url": "/runs/first/objects/obj_01.png",
         "status": "approved"
       },
       {
         "id": "obj_02",
         "name": "Dirty Bottle",
-        "image_url": "/sample-inputs/object_dirty_bottle.png",
+        "image_url": "/runs/first/objects/obj_02.png",
         "status": "approved"
       }
     ],
@@ -27,13 +27,13 @@
       {
         "id": "env_01",
         "name": "Dark Lab",
-        "image_url": "/sample-inputs/env_lab.png",
+        "image_url": "/runs/first/environments/env_01.png",
         "status": "approved"
       },
       {
         "id": "env_02",
         "name": "Modern Loft",
-        "image_url": "/sample-inputs/env_loft.png",
+        "image_url": "/runs/first/environments/env_02.png",
         "status": "approved"
       }
     ]
@@ -43,21 +43,21 @@
       "frame_id": 1,
       "scene_id": 1,
       "description": "Extreme macro shot of dirty bottle rim.",
-      "image_url": "/sample-inputs/scene1.png",
+      "image_url": "/runs/first/frames/frame1.png",
       "audio_prompt": "Stop. Look at your water bottle rim."
     },
     {
       "frame_id": 2,
       "scene_id": 2,
       "description": "EcoBottle 3000 cap glowing Blue vs bacteria.",
-      "image_url": "/sample-inputs/scene2.png",
+      "image_url": "/runs/first/frames/frame2.png",
       "audio_prompt": "This is the solution."
     },
     {
       "frame_id": 3,
       "scene_id": 3,
       "description": "Finger taps cap. Bacteria disintegrate.",
-      "image_url": "/sample-inputs/scene3.png",
+      "image_url": "/runs/first/frames/frame3.png",
       "audio_prompt": "One tap. 99.9% eliminated."
     }
   ]
