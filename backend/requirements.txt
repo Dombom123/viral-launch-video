@@ -5,4 +5,6 @@ google-cloud-aiplatform
 python-dotenv
 fastapi
 uvicorn
+pydantic-ai
+pydantic-graph
 
