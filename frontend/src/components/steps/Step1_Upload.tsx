@@ -44,8 +44,8 @@ export default function Step1_Upload({ onNext }: Step1Props) {
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
         className={`w-full aspect-video rounded-2xl border-2 border-dashed flex flex-col items-center justify-center transition-all cursor-pointer group relative overflow-hidden
-          ${isDragging ? 'border-orange-500 bg-orange-500/10' : 'border-zinc-800 bg-zinc-900/50 hover:border-zinc-700 hover:bg-zinc-900'}
-          ${file ? 'border-green-500/50 bg-green-500/5' : ''}
+          ${isDragging ? 'border-primary bg-primary/10' : 'border-zinc-800 bg-zinc-900/50 hover:border-zinc-700 hover:bg-zinc-900'}
+          ${file ? 'border-primary/50 bg-primary/5' : ''}
         `}
       >
         <input 
@@ -58,16 +58,16 @@ export default function Step1_Upload({ onNext }: Step1Props) {
         
         {file ? (
           <div className="text-center z-10 animate-in fade-in zoom-in duration-300">
-            <div className="w-16 h-16 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto mb-4">
                <CheckCircle size={32} />
             </div>
             <p className="text-lg font-medium text-zinc-200">{file.name}</p>
-            <p className="text-xs text-green-500 mt-1 font-mono">READY FOR ANALYSIS</p>
+            <p className="text-xs text-primary mt-1 font-mono">READY FOR ANALYSIS</p>
           </div>
         ) : (
           <label htmlFor="file-upload" className="cursor-pointer w-full h-full flex flex-col items-center justify-center p-10">
             <div className="w-16 h-16 rounded-full bg-zinc-800 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-              <Upload className="text-zinc-400 group-hover:text-orange-500 transition-colors" size={28} />
+              <Upload className="text-zinc-400 group-hover:text-primary transition-colors" size={28} />
             </div>
             <p className="text-lg font-medium text-zinc-300 group-hover:text-zinc-100">Drag & drop video source</p>
             <p className="text-xs text-zinc-500 mt-2">MP4, MOV, AVI (Max 500MB)</p>
@@ -81,7 +81,7 @@ export default function Step1_Upload({ onNext }: Step1Props) {
           disabled={!file}
           className={`px-8 py-3 rounded-full font-medium text-sm transition-all w-full max-w-xs
             ${file 
-              ? 'bg-orange-500 hover:bg-orange-600 text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:shadow-[0_0_30px_rgba(249,115,22,0.5)]' 
+              ? 'bg-primary hover:bg-primary/90 text-black shadow-[0_0_20px_rgba(138,206,0,0.3)] hover:shadow-[0_0_30px_rgba(138,206,0,0.5)]' 
               : 'bg-zinc-800 text-zinc-500 cursor-not-allowed'}
           `}
         >

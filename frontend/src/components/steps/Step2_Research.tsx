@@ -19,14 +19,14 @@ export default function Step2_Research({ onNext }: Step2Props) {
     return (
       <div className="flex flex-col items-center justify-center h-full text-center">
         <div className="relative mb-6">
-           <div className="absolute inset-0 bg-orange-500/20 blur-xl rounded-full animate-pulse"></div>
-           <Loader2 className="w-12 h-12 text-orange-500 animate-spin relative z-10" />
+           <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full animate-pulse"></div>
+           <Loader2 className="w-12 h-12 text-primary animate-spin relative z-10" />
         </div>
         <h3 className="text-xl font-medium text-zinc-200">Analyzing Market Vectors</h3>
         <p className="text-zinc-500 mt-2 text-sm">Scanning viral trends, competitor ads, and audience signals...</p>
         
         <div className="mt-8 w-64 h-1 bg-zinc-800 rounded-full overflow-hidden">
-           <div className="h-full bg-orange-500 animate-[loading_2s_ease-in-out_infinite]"></div>
+           <div className="h-full bg-primary animate-[loading_2s_ease-in-out_infinite]"></div>
         </div>
       </div>
     );
@@ -71,7 +71,7 @@ export default function Step2_Research({ onNext }: Step2Props) {
       </div>
 
       <h2 className="text-lg font-semibold text-zinc-200 mb-4 flex items-center gap-2">
-        <Sparkles size={16} className="text-orange-500" /> Generated Concepts
+        <Sparkles size={16} className="text-primary" /> Generated Concepts
       </h2>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
@@ -81,17 +81,17 @@ export default function Step2_Research({ onNext }: Step2Props) {
             onClick={() => setSelectedScript(script.id)}
             className={`relative cursor-pointer transition-all duration-200 rounded-xl p-5 border 
               ${selectedScript === script.id 
-                ? 'border-orange-500 bg-zinc-900 shadow-[0_0_15px_rgba(249,115,22,0.15)] scale-[1.02] z-10' 
+                ? 'border-primary bg-zinc-900 shadow-[0_0_15px_rgba(138,206,0,0.15)] scale-[1.02] z-10' 
                 : 'border-zinc-800 bg-zinc-900/50 hover:border-zinc-700 hover:bg-zinc-900'}
             `}
           >
             {selectedScript === script.id && (
-              <div className="absolute -top-2 -right-2 bg-orange-500 text-black p-1 rounded-full shadow-lg">
+              <div className="absolute -top-2 -right-2 bg-primary text-black p-1 rounded-full shadow-lg">
                 <Check size={12} strokeWidth={3} />
               </div>
             )}
             <div className="flex items-center gap-2 mb-4">
-              <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${selectedScript === script.id ? 'bg-orange-500/20 text-orange-500' : 'bg-zinc-800 text-zinc-500'}`}>
+              <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${selectedScript === script.id ? 'bg-primary/20 text-primary' : 'bg-zinc-800 text-zinc-500'}`}>
                  <FileText size={16} />
               </div>
               <h3 className="font-medium text-zinc-200 text-sm">{script.title}</h3>
