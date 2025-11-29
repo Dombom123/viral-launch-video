@@ -7,6 +7,10 @@ from video_generator.models import StoryboardInput
 
 # Configuration
 API_KEY = os.environ.get("GOOGLE_API_KEY", "")
+IMAGE_BASE_PATH = os.environ.get(
+    "IMAGE_BASE_PATH",
+    "../frontend/public",
+)
 INPUT_JSON_PATH = "../frontend/public/runs/first/storyboard.json"
 OUTPUT_VIDEO_DIR = "../frontend/public/sample-inputs/"
 OUTPUT_JSON_PATH = "../frontend/public/runs/first/video_generation.json"
@@ -24,6 +28,7 @@ async def main():
         storyboard_input,
         api_key=API_KEY,
         output_dir=OUTPUT_VIDEO_DIR,
+        image_base_path=IMAGE_BASE_PATH,
     )
 
     print("\nStoryboard pipeline finished successfully!")

@@ -149,9 +149,9 @@ def call_gemini(
     max_output_tokens: int = 8192,
 ) -> GeminiCallResult:
 
-    api_key = os.getenv("GEMINI_API_KEY")
+    api_key = os.getenv("GOOGLE_API_KEY")
     if not api_key:
-        raise RuntimeError("Environment variable GEMINI_API_KEY is not set")
+        raise RuntimeError("Environment variable GOOGLE_API_KEY is not set")
 
     api_version = get_api_version(model)
     logger.info("Calling Gemini model %s (%s)", model, api_version)
