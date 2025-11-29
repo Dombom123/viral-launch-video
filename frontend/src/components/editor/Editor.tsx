@@ -432,7 +432,7 @@ export default function Editor(props: { runId: string }) {
         <div className="flex-1 bg-black rounded-2xl border border-zinc-800 overflow-hidden relative flex flex-col shadow-2xl">
           <div className="flex-1 relative group h-full">
             <div ref={containerRef} className="w-full h-full bg-black">
-              <canvas ref={canvasRef} className="w-full h-full bg-red-200" />
+              <canvas ref={canvasRef} className="w-full h-full " />
             </div>
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               {!isPlaying && (
