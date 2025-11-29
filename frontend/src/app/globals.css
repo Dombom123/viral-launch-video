@@ -18,11 +18,11 @@
   --foreground: #ededed;
   --card: #18181b; /* Zinc 900 */
   --card-foreground: #ffffff;
-  --primary: #f97316; /* Orange 500 */
-  --primary-foreground: #ffffff;
+  --primary: #8ACE00; /* Brat Green */
+  --primary-foreground: #000000;
   --secondary: #27272a; /* Zinc 800 */
   --secondary-foreground: #a1a1aa; /* Zinc 400 */
-  --accent: #22c55e; /* Green 500 */
+  --accent: #8ACE00; /* Brat Green */
   --border: #27272a;
 }
 

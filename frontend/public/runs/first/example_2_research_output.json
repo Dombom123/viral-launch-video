@@ -1,0 +1,67 @@
+{
+  "selected_script": {
+    "id": "script_01",
+    "title": "The Microscope Reveal",
+    "hook": "You are drinking 10,000 bacteria right now.",
+    "tone": "Shock & Awe",
+    "assets": {
+      "characters": [
+        {
+          "name": "Tech User",
+          "visual_prompt": "Young adult, diverse, wearing smart casual tech wear, looking concerned then relieved."
+        }
+      ],
+      "objects": [
+        {
+          "name": "Dirty Bottle",
+          "visual_prompt": "Close up of a worn plastic water bottle rim with visible grime and texture."
+        },
+        {
+          "name": "EcoBottle 3000",
+          "visual_prompt": "Sleek matte black smart water bottle with a glowing blue LED ring on the cap."
+        }
+      ],
+      "environments": [
+        {
+          "name": "Dark Lab",
+          "visual_prompt": "Dark moody laboratory setting with blue rim lighting, microscope in background."
+        },
+        {
+          "name": "Modern Loft",
+          "visual_prompt": "Clean, minimalist apartment kitchen with concrete counters and natural light."
+        }
+      ]
+    },
+    "scenes": [
+      {
+        "scene_id": 1,
+        "visual": "Extreme macro shot of dirty bottle rim. Text overlay: 'YOUR BOTTLE IS ALIVE'",
+        "audio": "Stop. Look at your water bottle rim.",
+        "assets": {
+          "objects": ["Dirty Bottle"],
+          "environment": "Dark Lab"
+        }
+      },
+      {
+        "scene_id": 2,
+        "visual": "EcoBottle 3000 cap glowing Blue. Split screen vs bacteria.",
+        "audio": "This is the solution.",
+        "assets": {
+          "objects": ["EcoBottle 3000"],
+          "environment": "Dark Lab"
+        }
+      },
+      {
+        "scene_id": 3,
+        "visual": "Finger taps cap. Bacteria disintegrate.",
+        "audio": "One tap. 99.9% eliminated.",
+        "assets": {
+          "characters": ["Tech User"],
+          "objects": ["EcoBottle 3000"],
+          "environment": "Modern Loft"
+        }
+      }
+    ]
+  }
+}
+
