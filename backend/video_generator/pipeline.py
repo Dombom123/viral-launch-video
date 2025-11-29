@@ -9,18 +9,23 @@ video_generation_graph = Graph(
 )
 
 
-async def run_pipeline(input_data: VideoGenerationInput, api_key: str) -> ProjectOutput:
+async def run_pipeline(
+    input_data: VideoGenerationInput, api_key: str, output_dir: str = None
+) -> ProjectOutput:
     """
     Runs the video generation pipeline.
 
     Args:
         input_data: The structured input for video generation.
         api_key: Google API key for Veo authentication.
+        output_dir: Optional directory to save generated videos.
 
     Returns:
         ProjectOutput: The result containing generated clips.
     """
-    state = VideoGenerationState(input_data=input_data, api_key=api_key)
+    state = VideoGenerationState(
+        input_data=input_data, api_key=api_key, output_dir=output_dir
+    )
     # Start the graph execution with the initial node
     result = await video_generation_graph.run(ValidateInputNode(), state=state)
     return result.output

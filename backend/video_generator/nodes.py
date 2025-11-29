@@ -1,4 +1,5 @@
 from typing import List
+import asyncio
 from pydantic_graph import BaseNode, End
 from .state import VideoGenerationState
 from .models import GeneratedClip, SceneOutput, ProjectOutput
@@ -24,7 +25,7 @@ class GenerateScenesNode(BaseNode[VideoGenerationState]):
         # Initialize VeoClient with API key from state
         veo_client = VeoClient(api_key=ctx.state.api_key)
 
-        for i, scene in enumerate(input_data.storyboard):
+        async def process_scene(scene) -> SceneOutput:
             print(f"Processing Scene {scene.scene_number}: {scene.scene_title}")
             clips: List[GeneratedClip] = []
 
@@ -34,12 +35,34 @@ class GenerateScenesNode(BaseNode[VideoGenerationState]):
                 f"Character: {character_desc}. "
                 f"Action: {scene.action_description}."
             )
-            clip_url = veo_client.generate_clip(prompt, image_url=scene.image)
-            clips.append(GeneratedClip(clip_url=clip_url, prompt_used=prompt))
 
-            ctx.generated_scenes.append(
-                SceneOutput(scene_number=scene.scene_number, clips=clips)
+            # Generate unique video ID
+            import uuid
+
+            video_id = f"scene_{scene.scene_number}_{uuid.uuid4().hex[:8]}"
+
+            # Run blocking Veo client call in a separate thread
+            import asyncio
+
+            clip_url = await asyncio.to_thread(
+                veo_client.generate_clip,
+                prompt,
+                image_url=scene.image,
+                output_dir=ctx.state.output_dir,
+                video_id=video_id,
             )
+
+            clips.append(GeneratedClip(clip_url=clip_url, prompt_used=prompt))
+            return SceneOutput(scene_number=scene.scene_number, clips=clips)
+
+        # Create tasks for all scenes
+        tasks = [process_scene(scene) for scene in input_data.storyboard]
+
+        # Run tasks in parallel
+        generated_scenes = await asyncio.gather(*tasks)
+
+        # Update state with all generated scenes
+        ctx.state.generated_scenes.extend(generated_scenes)
 
         return FinalizeNode()
 
