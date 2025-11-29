@@ -94,6 +94,8 @@ export default function Editor(props: { runId: string }) {
     }
   }, [messages]);
 
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
   // Initialize Pixi
   useEffect(() => {
     if (!containerRef.current) return;
@@ -103,17 +105,15 @@ export default function Editor(props: { runId: string }) {
       if (pixiAppRef.current || !containerRef.current) return;
 
       const app = new PIXI.Application();
+      if (!canvasRef.current) return;
       await app.init({
         width: 1280,
         height: 720,
         backgroundColor: 0x000000,
         preference: "webgl",
         resizeTo: containerRef.current,
+        canvas: canvasRef.current,
       });
-
-      if (containerRef.current) {
-        containerRef.current.appendChild(app.canvas);
-      }
 
       pixiAppRef.current = app;
 
@@ -431,7 +431,9 @@ export default function Editor(props: { runId: string }) {
         {/* Main Player */}
         <div className="flex-1 bg-black rounded-2xl border border-zinc-800 overflow-hidden relative flex flex-col shadow-2xl">
           <div className="flex-1 relative group h-full">
-            <div ref={containerRef} className="w-full h-full bg-black" />
+            <div ref={containerRef} className="w-full h-full bg-black">
+              <canvas ref={canvasRef} className="w-full h-full bg-red-200" />
+            </div>
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               {!isPlaying && (
                 <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
