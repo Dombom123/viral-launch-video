@@ -1,47 +1,53 @@
 from __future__ import annotations
 
-import base64
+import os
 from pathlib import Path
 from typing import Optional
 
-import google.generativeai as genai
+from google import genai
+from google.genai.types import GenerateContentConfig
 from fastapi import HTTPException
 
 
 def generate_image(prompt: str, dest_path: Path) -> str:
     """
-    Generate an image using Gemini image generation.
+    Generate an image using Gemini 3 Pro Image Preview.
     Writes PNG to dest_path and returns the public-facing path ("/runs/...").
     """
-    model = genai.GenerativeModel("models/nano-banana-pro-preview")
+    api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    if not api_key:
+        raise HTTPException(status_code=500, detail="GEMINI_API_KEY not configured")
+
+    client = genai.Client(api_key=api_key)
+    
     try:
-        response = model.generate_image(prompt=prompt)
-    except AttributeError:
-        # Fallback for older SDKs: use content generation with PNG mime type
-        response = model.generate_content(
-            prompt, generation_config={"response_mime_type": "image/png"}
+        response = client.models.generate_content(
+            model="gemini-3-pro-image-preview",
+            contents=f"Generate an image: {prompt}",
+            config=GenerateContentConfig(
+                response_modalities=["IMAGE", "TEXT"],
+            ),
         )
+    except Exception as exc:
+        print(f"[images] Image generation failed: {exc}")
+        raise HTTPException(status_code=500, detail=f"Image generation failed: {exc}") from exc
 
     image_bytes: Optional[bytes] = None
 
-    if hasattr(response, "image") and response.image:
-        image_bytes = response.image
-    elif hasattr(response, "images") and response.images:
-        first = response.images[0]
-        if hasattr(first, "data") and first.data:
-            image_bytes = first.data
-        elif hasattr(first, "image") and first.image:
-            image_bytes = first.image
-    elif hasattr(response, "candidates"):
-        part = response.candidates[0].content.parts[0]
-        if hasattr(part, "data") and part.data:
-            image_bytes = part.data
-        elif hasattr(part, "inline_data") and part.inline_data:
-            image_bytes = base64.b64decode(part.inline_data.data)
+    # Try to extract image from response
+    if response.candidates:
+        for part in response.candidates[0].content.parts:
+            if hasattr(part, "inline_data") and part.inline_data:
+                if part.inline_data.mime_type and part.inline_data.mime_type.startswith("image/"):
+                    image_bytes = part.inline_data.data
+                    break
 
     if not image_bytes:
-        raise HTTPException(status_code=500, detail="Image generation returned no data")
+        print(f"[images] No image in response. Response: {response}")
+        raise HTTPException(status_code=500, detail="Image generation returned no image data")
 
     dest_path.parent.mkdir(parents=True, exist_ok=True)
     dest_path.write_bytes(image_bytes)
-    return "/" + "/".join(dest_path.parts[dest_path.parts.index("public") + 1 :])
+    
+    # Return path relative to public folder
+    return "/" + "/".join(dest_path.parts[dest_path.parts.index("public") + 1:])

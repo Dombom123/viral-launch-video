@@ -1,57 +1,70 @@
 {
-    "script_id": "script_01",
-    "assets": {
-        "characters": [
-            {
-                "id": "char_01",
-                "name": "Tech User",
-                "image_url": "/sample-inputs/character1.png",
-                "status": "approved"
-            }
-        ],
-        "objects": [
-            {
-                "id": "obj_01",
-                "name": "EcoBottle 3000",
-                "image_url": "/sample-inputs/object_bottle.png",
-                "status": "approved"
-            },
-            {
-                "id": "obj_02",
-                "name": "Dirty Bottle",
-                "image_url": "/sample-inputs/object_dirty_bottle.png",
-                "status": "approved"
-            }
-        ],
-        "environments": [
-            {
-                "id": "env_01",
-                "name": "Dark Lab",
-                "image_url": "/sample-inputs/env_lab.png",
-                "status": "approved"
-            },
-            {
-                "id": "env_02",
-                "name": "Modern Loft",
-                "image_url": "/sample-inputs/env_loft.png",
-                "status": "approved"
-            }
-        ]
-    },
-    "storyboard_frames": [
-        {
-            "frame_id": 1,
-            "scene_id": 1,
-            "description": "We open on a cluttered, dimly lit home office. Rusty is slumped over his laptop, defeated. Piles of crumpled paper litter the floor. He bangs his head gently against the keyboard. A 'Writer's Block' cloud hangs over him. He is lonely and stuck.",
-            "image_url": "https://raw.githubusercontent.com/Dombom123/viral-launch-video/refs/heads/main/frontend/public/sample-inputs/scene1.png",
-            "audio_prompt": "The raccoon says: 'I need help! I'm stuck in my writer's block.'"
-        },
-        {
-            "frame_id": 2,
-            "scene_id": 2,
-            "description": "The raccoon's eyes widen as he spots a holographic projection of an AI agent. The agent is a sleek, futuristic robot with a warm, inviting smile. It waves hello and offers to help Rusty with his writer's block. Rusty is skeptical at first, but the agent's friendly demeanor and helpful demeanor soon win him over.",
-            "image_url": "https://raw.githubusercontent.com/Dombom123/viral-launch-video/refs/heads/main/frontend/public/sample-inputs/scene2.png",
-            "audio_prompt": "The raccoon says: 'Thank you! I'm so grateful for your help.'"
-        }
+  "script_id": "script_test_01",
+  "assets": {
+    "characters": [
+      {
+        "id": "char_01",
+        "name": "Alex",
+        "image_url": "/runs/first/characters/char_01.png",
+        "status": "approved"
+      }
+    ],
+    "objects": [
+      {
+        "id": "testwidget-device",
+        "name": "TestWidget Device",
+        "image_url": "/runs/first/objects/testwidget-device.png",
+        "status": "approved"
+      },
+      {
+        "id": "legacy-system",
+        "name": "Legacy System",
+        "image_url": "/runs/first/objects/legacy-system.png",
+        "status": "approved"
+      }
+    ],
+    "environments": [
+      {
+        "id": "env_01",
+        "name": "Modern Open-Plan Office",
+        "image_url": "/runs/first/environments/env_01.png",
+        "status": "approved"
+      },
+      {
+        "id": "env_02",
+        "name": "Professional Home Studio",
+        "image_url": "/runs/first/environments/env_02.png",
+        "status": "approved"
+      },
+      {
+        "id": "env_03",
+        "name": "Creative Innovation Lab",
+        "image_url": "/runs/first/environments/env_03.png",
+        "status": "approved"
+      }
     ]
+  },
+  "storyboard_frames": [
+    {
+      "frame_id": 1,
+      "scene_id": 1,
+      "description": "Split screen: cluttered old setup vs clean new workflow",
+      "image_url": "/runs/first/frames/scene-1.png",
+      "audio_prompt": "Remember when your desk looked like this?"
+    },
+    {
+      "frame_id": 2,
+      "scene_id": 2,
+      "description": "TestWidget Device activating with smooth animation",
+      "image_url": "/runs/first/frames/scene-2.png",
+      "audio_prompt": "Meet TestWidget Pro. Your new command center."
+    },
+    {
+      "frame_id": 3,
+      "scene_id": 3,
+      "description": "User working seamlessly across devices",
+      "image_url": "/runs/first/frames/scene-3.png",
+      "audio_prompt": "One tap. Everything synced. Everywhere."
+    }
+  ]
 }
