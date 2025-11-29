@@ -36,17 +36,30 @@
       {
         "scene_id": 1,
         "visual": "Extreme macro shot of dirty bottle rim. Text overlay: 'YOUR BOTTLE IS ALIVE'",
-        "audio": "Stop. Look at your water bottle rim."
+        "audio": "Stop. Look at your water bottle rim.",
+        "assets": {
+          "objects": ["Dirty Bottle"],
+          "environment": "Dark Lab"
+        }
       },
       {
         "scene_id": 2,
         "visual": "EcoBottle 3000 cap glowing Blue. Split screen vs bacteria.",
-        "audio": "This is the solution."
+        "audio": "This is the solution.",
+        "assets": {
+          "objects": ["EcoBottle 3000"],
+          "environment": "Dark Lab"
+        }
       },
       {
         "scene_id": 3,
         "visual": "Finger taps cap. Bacteria disintegrate.",
-        "audio": "One tap. 99.9% eliminated."
+        "audio": "One tap. 99.9% eliminated.",
+        "assets": {
+          "characters": ["Tech User"],
+          "objects": ["EcoBottle 3000"],
+          "environment": "Modern Loft"
+        }
       }
     ]
   }
