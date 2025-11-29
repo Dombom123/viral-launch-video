@@ -5,13 +5,15 @@ import Step2_Research from './steps/Step2_Research';
 import Step3_Storyboard from './steps/Step3_Storyboard';
 import Step4_VideoGen from './steps/Step4_VideoGen';
 import Step5_Editor from './steps/Step5_Editor';
+import Step6_Launch from './steps/Step6_Launch';
 
 const STEPS = [
   { id: 1, label: "Brief" },
   { id: 2, label: "Research" },
   { id: 3, label: "Storyboard" },
-  { id: 4, label: "Render" },
-  { id: 5, label: "Launch" },
+  { id: 4, label: "Preparation" },
+  { id: 5, label: "Editing" },
+  { id: 6, label: "Launch" },
 ];
 
 export default function Wizard() {
@@ -123,8 +125,9 @@ export default function Wizard() {
                 {currentStep === 1 && <Step1_Upload onNext={handleNext} />}
                 {currentStep === 2 && <Step2_Research onNext={handleNext} />}
                 {currentStep === 3 && <Step3_Storyboard onNext={handleNext} />}
-                {currentStep === 4 && <Step4_VideoGen onNext={handleNext} />}
-                {currentStep === 5 && <Step5_Editor />}
+                {currentStep === 4 && <Step4_VideoGen onNext={() => setCurrentStep(5)} />}
+                {currentStep === 5 && <Step5_Editor onNext={handleNext} />}
+                {currentStep === 6 && <Step6_Launch />}
              </div>
           </div>
 

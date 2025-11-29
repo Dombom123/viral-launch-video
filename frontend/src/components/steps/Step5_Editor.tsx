@@ -1,146 +1,234 @@
-import React, { useState } from 'react';
-import { Play, Pause, Volume2, Scissors, Layers, CheckCircle, Download, ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Play, Pause, Volume2, CheckCircle, Download, Send, Bot, User, Loader2, Sparkles, Film, Music, Rocket } from 'lucide-react';
 
-export default function Step5_Editor() {
+interface Message {
+  id: number;
+  role: 'user' | 'assistant';
+  content: string;
+  type?: 'text' | 'video_render';
+  videoUrl?: string;
+  timestamp: string;
+}
+
+interface Step5Props {
+  onNext: () => void;
+}
+
+export default function Step5_Editor({ onNext }: Step5Props) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isExporting, setIsExporting] = useState(false);
-  const [finished, setFinished] = useState(false);
+  const [isRendering, setIsRendering] = useState(false);
+  const [chatInput, setChatInput] = useState("");
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      id: 1,
+      role: 'assistant',
+      content: "I've assembled the first cut based on your storyboard. The pacing is set to 'Viral/Fast'. How does it look?",
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    }
+  ]);
 
-  const handleExport = () => {
-    setIsExporting(true);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [messages]);
+
+  const handleSendMessage = () => {
+    if (!chatInput.trim()) return;
+
+    const newMessage: Message = {
+      id: Date.now(),
+      role: 'user',
+      content: chatInput,
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    };
+
+    setMessages(prev => [...prev, newMessage]);
+    setChatInput("");
+
+    // Simulate AI Response
     setTimeout(() => {
-      setIsExporting(false);
-      setFinished(true);
-    }, 3000);
+      const aiMsg: Message = {
+        id: Date.now() + 1,
+        role: 'assistant',
+        content: "Understood. I'm regenerating the transition between scene 2 and 3 to be smoother.",
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      };
+      setMessages(prev => [...prev, aiMsg]);
+    }, 1000);
   };
 
-  if (finished) {
-    return (
-      <div className="h-full flex flex-col items-center justify-center text-center p-8">
-        <div className="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mb-6 border border-green-500/20">
-          <CheckCircle className="w-10 h-10 text-green-500" />
-        </div>
-        <h2 className="text-2xl font-bold text-zinc-100 mb-2">Trailer Ready</h2>
-        <p className="text-zinc-500 mb-8 text-sm">Your viral video has been compiled, color graded, and exported.</p>
-        <div className="flex flex-col sm:flex-row gap-3">
-           <button className="px-6 py-2.5 bg-zinc-100 text-zinc-900 rounded-lg font-medium text-sm hover:bg-white shadow-lg flex items-center gap-2 justify-center">
-             <Download size={16} /> Download MP4 (1080p)
-           </button>
-           <button 
-            onClick={() => window.location.reload()}
-            className="px-6 py-2.5 bg-zinc-900 border border-zinc-800 text-zinc-300 rounded-lg font-medium text-sm hover:bg-zinc-800 hover:text-white transition-colors">
-             Create New Project
-           </button>
-        </div>
-      </div>
-    );
-  }
+  const handleRender = () => {
+    setIsRendering(true);
+    
+    // Simulate Render Process
+    setTimeout(() => {
+      setIsRendering(false);
+      const renderMsg: Message = {
+        id: Date.now(),
+        role: 'assistant',
+        content: "Render complete! I've analyzed the output: brightness levels are consistent, and audio levels are normalized. Ready for review.",
+        type: 'video_render',
+        videoUrl: "https://placehold.co/600x340/000000/FFF?text=Final+Render+v2",
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      };
+      setMessages(prev => [...prev, renderMsg]);
+    }, 2500);
+  };
 
   return (
-    <div className="w-full max-w-6xl mx-auto flex flex-col h-[calc(100vh-140px)]">
+    <div className="w-full h-full flex gap-6 max-h-[calc(100vh-140px)]">
       
-      {/* Top Toolbar */}
-      <div className="flex justify-between items-center mb-4 shrink-0">
-        <div className="flex items-center gap-3">
-          <span className="text-zinc-100 font-medium text-sm">Master Sequence</span>
-          <span className="px-2 py-0.5 bg-green-500/10 text-green-500 text-[10px] font-bold rounded uppercase border border-green-500/20">Auto-Edit</span>
-        </div>
-        <button 
-          onClick={handleExport}
-          disabled={isExporting}
-          className="bg-zinc-100 hover:bg-white text-zinc-900 px-4 py-1.5 rounded text-xs font-bold shadow flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {isExporting ? 'Rendering...' : 'Export Trailer'}
-        </button>
-      </div>
-
-      {/* Main Editor Area */}
-      <div className="flex-1 flex gap-4 min-h-0">
-         {/* Left: Preview */}
-         <div className="flex-[2] bg-black rounded-xl border border-zinc-800 relative overflow-hidden group flex flex-col">
-            {/* Video Display */}
-            <div className="flex-1 relative">
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <h3 className="text-zinc-700 text-4xl font-bold uppercase tracking-widest opacity-20">Preview</h3>
-                </div>
-                {/* Overlay UI */}
-                <div className="absolute inset-0 flex flex-col justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                   <div className="flex justify-between items-start">
-                      <span className="bg-black/50 text-white text-[10px] px-1.5 py-0.5 rounded font-mono">REC.709</span>
-                   </div>
-                </div>
-            </div>
-            
-            {/* Player Controls */}
-            <div className="h-12 bg-zinc-900 border-t border-zinc-800 flex items-center justify-between px-4 shrink-0">
-                <div className="flex items-center gap-4 text-zinc-400">
-                   <button onClick={() => setIsPlaying(!isPlaying)} className="hover:text-white transition-colors">
-                     {isPlaying ? <Pause size={16} fill="currentColor" /> : <Play size={16} fill="currentColor" />}
-                   </button>
-                   <div className="text-[10px] font-mono">00:00:12 / 00:00:30</div>
-                </div>
-                <div className="flex items-center gap-3 text-zinc-400">
-                   <Volume2 size={16} />
-                </div>
-            </div>
-         </div>
-
-         {/* Right: Asset/Tools Panel (Placeholder for "Editor Tools") */}
-         <div className="flex-1 bg-zinc-900 rounded-xl border border-zinc-800 p-3 overflow-y-auto hidden lg:block">
-            <h4 className="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-3">Scene Bin</h4>
-            <div className="grid grid-cols-2 gap-2">
-               {[1,2,3,4].map(i => (
-                 <div key={i} className="aspect-video bg-zinc-950 rounded border border-zinc-800 relative opacity-60 hover:opacity-100 cursor-grab active:cursor-grabbing">
-                    <div className="absolute bottom-1 right-1 text-[8px] bg-black/80 text-white px-1 rounded">00:04</div>
+      {/* LEFT: Canvas / Preview */}
+      <div className="flex-[2] flex flex-col min-w-0 gap-4">
+         {/* Main Player */}
+         <div className="flex-1 bg-black rounded-2xl border border-zinc-800 overflow-hidden relative flex flex-col shadow-2xl">
+             <div className="flex-1 relative group">
+                 <img 
+                    src="https://placehold.co/1920x1080/18181b/FFF?text=Main+Preview" 
+                    className="w-full h-full object-contain opacity-80" 
+                    alt="Preview" 
+                 />
+                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                     {!isPlaying && <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center"><Play fill="white" className="text-white ml-1" /></div>}
                  </div>
-               ))}
+                 
+                 {/* Overlay Controls */}
+                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="flex items-center gap-4">
+                       <button onClick={() => setIsPlaying(!isPlaying)} className="text-white hover:text-orange-500 transition-colors">
+                          {isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" />}
+                       </button>
+                       <div className="flex-1 h-1 bg-zinc-700 rounded-full overflow-hidden">
+                          <div className="w-1/3 h-full bg-orange-500"></div>
+                       </div>
+                       <span className="text-xs font-mono text-zinc-300">00:05 / 00:15</span>
+                       <Volume2 size={18} className="text-zinc-400" />
+                    </div>
+                 </div>
+             </div>
+         </div>
+
+         {/* Asset Bin (Mini) */}
+         <div className="h-32 bg-zinc-900/50 rounded-xl border border-zinc-800 p-3 flex gap-3 overflow-x-auto">
+             {[1, 2, 3, 4].map((i) => (
+               <div key={i} className="aspect-video h-full bg-zinc-950 rounded-lg border border-zinc-800 relative shrink-0 overflow-hidden group cursor-pointer hover:border-zinc-600 transition-colors">
+                  <img src={`https://placehold.co/300x170/000000/FFF?text=Clip+${i}`} className="w-full h-full object-cover opacity-60 group-hover:opacity-100" />
+                  <div className="absolute bottom-1 right-1 bg-black/80 text-[8px] text-white px-1 rounded">0:03</div>
+               </div>
+             ))}
+             <div className="aspect-video h-full bg-zinc-800/50 rounded-lg border border-zinc-700 border-dashed flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 hover:border-zinc-500 cursor-pointer transition-all shrink-0">
+                <Film size={16} className="mb-1" />
+                <span className="text-[10px]">Add Clip</span>
+             </div>
+         </div>
+      </div>
+
+      {/* RIGHT: Copilot / Chat */}
+      <div className="flex-1 bg-zinc-900 rounded-2xl border border-zinc-800 flex flex-col overflow-hidden shadow-xl">
+         <div className="p-4 border-b border-zinc-800 bg-zinc-900 flex justify-between items-center">
+            <div className="flex items-center gap-2">
+               <div className="w-8 h-8 bg-gradient-to-tr from-orange-500 to-pink-500 rounded-lg flex items-center justify-center text-white">
+                  <Sparkles size={16} fill="currentColor" />
+               </div>
+               <div>
+                  <h3 className="text-sm font-bold text-zinc-100">Editor Copilot</h3>
+                  <p className="text-[10px] text-zinc-500 flex items-center gap-1"><span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span> Online</p>
+               </div>
+            </div>
+            <div className="flex gap-2">
+               <button 
+                 onClick={handleRender}
+                 disabled={isRendering}
+                 className="px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-bold rounded-md border border-zinc-700 transition-colors flex items-center gap-1.5 disabled:opacity-50 disabled:cursor-not-allowed"
+               >
+                 {isRendering ? <Loader2 size={12} className="animate-spin" /> : <Film size={12} />}
+                 {isRendering ? 'Rendering...' : 'Render Preview'}
+               </button>
+               <button 
+                 onClick={onNext}
+                 className="px-3 py-1.5 bg-green-600 hover:bg-green-500 text-white text-xs font-bold rounded-md shadow-sm transition-colors flex items-center gap-1.5"
+               >
+                 <Rocket size={12} fill="currentColor" />
+                 Final Launch
+               </button>
+            </div>
+         </div>
+
+         {/* Messages */}
+         <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-zinc-950/30">
+            {messages.map((msg) => (
+              <div key={msg.id} className={`flex gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}>
+                 <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${msg.role === 'assistant' ? 'bg-zinc-800 text-orange-500' : 'bg-zinc-700 text-zinc-300'}`}>
+                    {msg.role === 'assistant' ? <Bot size={16} /> : <User size={16} />}
+                 </div>
+                 <div className={`flex flex-col gap-1 max-w-[85%] ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
+                    <div className={`p-3 rounded-2xl text-sm leading-relaxed ${
+                       msg.role === 'user' 
+                         ? 'bg-blue-600 text-white rounded-tr-sm' 
+                         : 'bg-zinc-800 text-zinc-200 rounded-tl-sm border border-zinc-700'
+                    }`}>
+                       {msg.content}
+                    </div>
+                    
+                    {/* Rendered Video Attachment */}
+                    {msg.type === 'video_render' && msg.videoUrl && (
+                       <div className="mt-2 w-full bg-black rounded-xl border border-zinc-700 overflow-hidden relative group">
+                          <img src={msg.videoUrl} className="w-full aspect-video object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
+                          <div className="absolute inset-0 flex items-center justify-center">
+                             <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white cursor-pointer hover:scale-110 transition-transform">
+                                <Play size={18} fill="currentColor" className="ml-0.5" />
+                             </div>
+                          </div>
+                          <div className="absolute bottom-2 right-2 flex gap-2">
+                             <button className="p-1.5 bg-black/60 text-white rounded-md hover:bg-black"><Download size={14} /></button>
+                          </div>
+                       </div>
+                    )}
+
+                    <span className="text-[10px] text-zinc-600 px-1">{msg.timestamp}</span>
+                 </div>
+              </div>
+            ))}
+            {isRendering && (
+               <div className="flex gap-3">
+                  <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center shrink-0 text-orange-500">
+                     <Bot size={16} />
+                  </div>
+                  <div className="bg-zinc-800 p-3 rounded-2xl rounded-tl-sm border border-zinc-700 flex items-center gap-2">
+                     <Loader2 size={14} className="animate-spin text-zinc-400" />
+                     <span className="text-xs text-zinc-400">Processing render request...</span>
+                  </div>
+               </div>
+            )}
+         </div>
+
+         {/* Input */}
+         <div className="p-3 bg-zinc-900 border-t border-zinc-800">
+            <div className="relative flex items-center gap-2 bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 focus-within:border-zinc-600 transition-colors shadow-inner">
+               <button className="p-1.5 text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800 rounded-lg transition-colors">
+                  <Music size={18} />
+               </button>
+               <input 
+                 value={chatInput}
+                 onChange={(e) => setChatInput(e.target.value)}
+                 onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
+                 placeholder="Describe changes or ask for edits..." 
+                 className="flex-1 bg-transparent text-sm text-zinc-200 placeholder:text-zinc-600 focus:outline-none"
+               />
+               <button 
+                 onClick={handleSendMessage}
+                 disabled={!chatInput.trim()}
+                 className="p-1.5 bg-orange-600 text-white rounded-lg hover:bg-orange-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg shadow-orange-900/20"
+               >
+                  <Send size={16} />
+               </button>
             </div>
          </div>
       </div>
 
-      {/* Bottom: Timeline */}
-      <div className="h-32 bg-zinc-900 rounded-xl border border-zinc-800 mt-4 p-3 shrink-0 flex flex-col">
-         <div className="flex items-center justify-between mb-2 pb-2 border-b border-zinc-800">
-           <div className="flex gap-3 text-zinc-500 text-xs">
-              <button className="flex items-center gap-1 hover:text-zinc-200 transition-colors"><Scissors size={12} /> Split</button>
-              <button className="flex items-center gap-1 hover:text-zinc-200 transition-colors"><Layers size={12} /> Tracks</button>
-           </div>
-           <div className="text-[10px] text-zinc-600 font-mono">TIMECODE: 01:00:00:00</div>
-         </div>
-         
-         <div className="flex-1 relative overflow-x-auto overflow-y-hidden">
-            {/* Ruler */}
-            <div className="h-4 flex items-end mb-1 border-b border-zinc-800/50 w-[200%]">
-               {[...Array(20)].map((_, i) => (
-                 <div key={i} className="flex-1 border-r border-zinc-800 h-2 text-[8px] text-zinc-600 pl-1">00:0{i}</div>
-               ))}
-            </div>
-
-            {/* Tracks */}
-            <div className="space-y-1 w-[200%]">
-               {/* Video Track */}
-               <div className="h-8 bg-zinc-950 rounded border border-zinc-800 flex relative overflow-hidden">
-                  <div className="w-[15%] bg-blue-900/40 border-r border-blue-500/20 flex items-center justify-center text-[9px] text-blue-200 font-medium truncate">S1</div>
-                  <div className="w-[25%] bg-blue-900/40 border-r border-blue-500/20 flex items-center justify-center text-[9px] text-blue-200 font-medium truncate">S2</div>
-                  <div className="w-[20%] bg-blue-900/40 border-r border-blue-500/20 flex items-center justify-center text-[9px] text-blue-200 font-medium truncate">S3</div>
-                  <div className="w-[40%] bg-blue-900/40 border-r border-blue-500/20 flex items-center justify-center text-[9px] text-blue-200 font-medium truncate">S4</div>
-               </div>
-               {/* Audio Track */}
-               <div className="h-6 bg-zinc-950 rounded border border-zinc-800 relative flex items-center px-1">
-                   <div className="w-full h-3 bg-green-900/20 rounded flex items-center overflow-hidden">
-                      <svg className="w-full h-full text-green-500/40" viewBox="0 0 100 10" preserveAspectRatio="none">
-                         <path d="M0 5 Q 2 0, 5 5 T 10 5 T 15 5 T 20 5 T 100 5" stroke="currentColor" strokeWidth="1" fill="none" />
-                      </svg>
-                   </div>
-               </div>
-            </div>
-
-            {/* Playhead */}
-            <div className="absolute top-0 bottom-0 left-[30%] w-px bg-red-500 z-10 shadow-[0_0_5px_rgba(239,68,68,0.5)]">
-               <div className="w-2 h-2 bg-red-500 -ml-1 rotate-45 -mt-1"></div>
-            </div>
-         </div>
-      </div>
     </div>
   );
 }

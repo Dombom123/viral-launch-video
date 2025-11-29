@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RefreshCw, Image as ImageIcon, ArrowRight, Wand2 } from 'lucide-react';
+import { RefreshCw, Image as ImageIcon, ArrowRight, Wand2, Film } from 'lucide-react';
 import { storyboardData } from '@/lib/mockData';
 
 interface Step3Props {
