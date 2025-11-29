@@ -368,7 +368,7 @@ export default function Editor(props: { runId: string }) {
       // Video Export
       const mp4Buffer = await VideoExporter.export(pixiEditorRef.current, {
         fps: 30,
-        duration: 5, // Preview first 5 seconds
+        duration: duration, // Preview first 5 seconds
         onProgress: (p) => {
           console.log(`Rendering Video: ${(p * 100).toFixed(0)}%`);
         },
