@@ -1,0 +1,106 @@
+{
+  "script_id": "script_01",
+  "assets": {
+    "characters": [],
+    "objects": [
+      {
+        "id": "obj_01",
+        "name": "Car Keys",
+        "image_url": "/runs/third/objects/obj_01.png",
+        "status": "approved"
+      },
+      {
+        "id": "obj_02",
+        "name": "Smartphone App",
+        "image_url": "/runs/third/objects/obj_02.png",
+        "status": "approved"
+      }
+    ],
+    "environments": [
+      {
+        "id": "env_01",
+        "name": "Suburban Driveway",
+        "image_url": "/runs/third/environments/env_01.png",
+        "status": "approved"
+      },
+      {
+        "id": "env_02",
+        "name": "Beach Road",
+        "image_url": "/runs/third/environments/env_02.png",
+        "status": "approved"
+      },
+      {
+        "id": "env_03",
+        "name": "Mountain Highway",
+        "image_url": "/runs/third/environments/env_03.png",
+        "status": "approved"
+      }
+    ]
+  },
+  "storyboard_frames": [
+    {
+      "frame_id": 1,
+      "scene_id": 1,
+      "description": "A frustrated raccoon stands at a traditional car rental counter, looking exhausted. A stern-looking owl clerk points at a huge pile of paperwork. The raccoon's shoulders slump in defeat.",
+      "image_url": "/runs/third/frames/scene-01.png",
+      "audio_prompt": "Elevator music, papers shuffling.",
+      "text_overlay": "Tired of endless paperwork?"
+    },
+    {
+      "frame_id": 2,
+      "scene_id": 2,
+      "description": "A disappointed bear family stands in a parking lot next to a tiny, beat-up economy car. They look at their camping gear that clearly won't fit. The smallest bear cub looks sad.",
+      "image_url": "/runs/third/frames/scene-02.png",
+      "audio_prompt": "Sad trombone sound.",
+      "text_overlay": "Never the car you actually wanted?"
+    },
+    {
+      "frame_id": 3,
+      "scene_id": 3,
+      "description": "A shocked fox stares at a rental bill, his eyes comically wide and jaw dropped. Dollar signs and exclamation marks seem to radiate from the paper he's holding.",
+      "image_url": "/runs/third/frames/scene-03.png",
+      "audio_prompt": "Cash register cha-ching sounds repeatedly.",
+      "text_overlay": "Surprise fees ruining your trip?"
+    },
+    {
+      "frame_id": 4,
+      "scene_id": 4,
+      "description": "A friendly golden retriever in a cozy sweater waves from his driveway, standing next to a beautiful red convertible. The sun is shining, birds are in the sky. He looks welcoming and trustworthy.",
+      "image_url": "/runs/third/frames/scene-04.png",
+      "audio_prompt": "Upbeat cheerful music begins.",
+      "text_overlay": "Meet your neighbors."
+    },
+    {
+      "frame_id": 5,
+      "scene_id": 5,
+      "description": "A happy otter taps on a glowing smartphone screen, scrolling through beautiful cars. His face is lit up with excitement. Each car thumbnail shows a friendly animal owner's profile picture.",
+      "image_url": "/runs/third/frames/scene-05.png",
+      "audio_prompt": "Gentle notification sounds, upbeat music continues.",
+      "text_overlay": "Find the perfect ride nearby."
+    },
+    {
+      "frame_id": 6,
+      "scene_id": 6,
+      "description": "A smiling rabbit hands car keys to an excited deer at a suburban driveway. They shake paws warmly. A shiny SUV is parked behind them. The scene feels neighborly and friendly.",
+      "image_url": "/runs/third/frames/scene-06.png",
+      "audio_prompt": "Warm acoustic guitar music.",
+      "text_overlay": "Real cars from real neighbors."
+    },
+    {
+      "frame_id": 7,
+      "scene_id": 7,
+      "description": "A joyful wolf family cruises down a scenic coastal highway in a convertible. Wind blows through their fur, they all look happy and free. Ocean sparkles in the background.",
+      "image_url": "/runs/third/frames/scene-07.png",
+      "audio_prompt": "Feel-good road trip music.",
+      "text_overlay": "Adventure awaits."
+    },
+    {
+      "frame_id": 8,
+      "scene_id": 8,
+      "description": "Multiple happy animal families in different cars driving through beautiful landscapes - mountains, beaches, forests. All waving and smiling. A warm, community feeling.",
+      "image_url": "/runs/third/frames/scene-08.png",
+      "audio_prompt": "Music crescendos. Voiceover: 'CarShare. Your neighbor's car, your next adventure.'",
+      "text_overlay": "Download CarShare Today"
+    }
+  ]
+}

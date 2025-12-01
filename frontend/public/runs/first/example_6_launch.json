@@ -1,15 +1,19 @@
 {
-  "final_video_url": "/sample-inputs/EcoBottle_Final_Launch.mp4",
-  "thumbnail_url": "/sample-inputs/final_thumb.png",
+  "final_video_url": "/sample-inputs/scene_2.mp4",
+  "thumbnail_url": "/runs/first/frames/scene-2.png",
   "metadata": {
-    "duration": 12,
+    "duration": 15,
     "format": "mp4",
     "resolution": "1080x1920"
   },
+  "script": {
+    "title": "The Capybara's Chill",
+    "hook": "The internet is a wild place. My Zen is stronger than your chaotic DMs."
+  },
   "social_posts": {
-    "twitter": "Stop drinking bacteria. 🦠🚫 Meet the EcoBottle 3000. Self-cleaning tech for the modern nomad. #EcoBottle #Tech #Health",
-    "instagram": "Your water bottle is gross. 🤢\n\nEcoBottle 3000 fixes that with one tap.\n\n✨ UV-C Self Cleaning\n☀️ Solar Powered\n🌡️ Temp Display\n\nLink in bio. #EcoBottle #SustainableTech #Hydration",
-    "linkedin": "Excited to announce the launch of EcoBottle 3000. We're revolutionizing personal hydration with sustainable technology. It's not just a bottle, it's a health device."
+    "twitter": "🧘‍♂️ The internet is chaos. But not for this capybara.\n\nWatch how Boards keeps your sales content zen. 🐹✨\n\n#Boards #SalesLife #ZenMode",
+    "instagram": "POV: You're drowning in DMs and notifications 😰\n\nMeanwhile, this capybara stays unbothered with @BoardsApp 🧘‍♂️\n\n✨ Instant content access\n📱 Works in any app\n🎯 Never fumble again\n\nFind your zen. Link in bio 🔗\n\n#Productivity #SalesHacks #CapybaraVibes",
+    "linkedin": "We all know the feeling: juggling multiple apps, searching for that one document, missing opportunities.\n\nThat's why we built Boards - instant content access from your keyboard.\n\nBe the capybara. Stay calm. Close deals.\n\n#SalesEnablement #Productivity #StartupLife",
+    "tiktok": "POV: you're drowning in notifications but the capybara stays chill 🐹✨ #boardsapp #salestok #productivityhack #capybara"
   }
 }
-

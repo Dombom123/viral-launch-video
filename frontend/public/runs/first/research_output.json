@@ -1,78 +1,92 @@
 {
   "selected_script": {
-    "id": "script_03",
-    "title": "The Capybara's Chill: Surviving the Digital Deluge",
-    "hook": "The internet is a wild place. My Zen is stronger than your chaotic DMs.",
-    "tone": "Serene Chaos",
+    "id": "script_01",
+    "title": "Swipe Right on Love",
+    "hook": "Dating is a jungle out there. Let us help you find your perfect match.",
+    "tone": "Playful Comedy",
     "assets": {
-      "characters": [
-        {
-          "name": "Zen Capybara",
-          "visual_prompt": "A large, calm capybara wearing tiny, stylish sunglasses, with an utterly unbothered expression."
-        },
-        {
-          "name": "Panicked Sales Rep",
-          "visual_prompt": "A human sales rep, dishevelled, multiple phones ringing, tabs open on a laptop, sweat beading, on the verge of a meltdown."
-        }
-      ],
+      "characters": [],
       "objects": [
         {
-          "name": "Tiny Smartphone",
-          "visual_prompt": "A miniature smartphone, perfectly scaled for a capybara's paw, displaying the Boards keyboard."
+          "name": "Smartphone with Dating App",
+          "visual_prompt": "A glowing smartphone showing a colorful dating app interface with heart icons and match notifications, held by animal paws."
         },
         {
-          "name": "Multiple Flashing Screens",
-          "visual_prompt": "Laptop screens, tablet screens, all showing various chaotic social media and messaging app interfaces."
-        },
-        {
-          "name": "Exploding Notifications",
-          "visual_prompt": "Visual effects of chat bubbles, alerts, and emojis rapidly popping up around the scene."
+          "name": "Heart Emojis",
+          "visual_prompt": "Floating pink and red heart emojis and sparkles in various sizes."
         }
       ],
       "environments": [
         {
-          "name": "Overwhelmed Home Office",
-          "visual_prompt": "A cluttered desk in a home office, wires everywhere, half-eaten snacks, general disarray."
+          "name": "Cozy Coffee Shop",
+          "visual_prompt": "A warm, inviting coffee shop interior with soft lighting, wooden tables, and plants, rendered in a colorful Pixar-style 3D animation aesthetic."
         },
         {
-          "name": "Digital Vortex Background",
-          "visual_prompt": "A swirling, colorful, abstract background representing the internet's chaos."
+          "name": "Romantic Park",
+          "visual_prompt": "A beautiful sunset park scene with cherry blossom trees, a wooden bench, and warm golden hour lighting, rendered in colorful Pixar-style 3D animation."
+        },
+        {
+          "name": "Fancy Restaurant",
+          "visual_prompt": "An upscale restaurant with candlelit tables, white tablecloths, and elegant decor, rendered in colorful Pixar-style 3D animation."
         }
       ]
     },
     "scenes": [
       {
         "scene_id": "01",
-        "visual": "Panicked Sales Rep is surrounded by multiple flashing screens and exploding notifications. They are visibly stressed, trying to respond to several apps at once, failing miserably.",
-        "audio": "Chaotic soundscape: multiple phone rings, notification pings, frantic typing, stressed muttering.",
-        "assets": [
-          "Panicked Sales Rep",
-          "Multiple Flashing Screens",
-          "Exploding Notifications",
-          "Overwhelmed Home Office"
-        ]
+        "visual": "A nervous penguin in a tiny bow tie sits alone at a restaurant table, checking his watch repeatedly. Across from him is an empty chair. He looks at the door hopefully, then slumps down sadly as time passes.",
+        "audio": "Soft melancholic piano. Text overlay: 'Tired of getting ghosted?'",
+        "text_overlay": "Tired of getting ghosted?",
+        "assets": ["Fancy Restaurant"]
       },
       {
         "scene_id": "02",
-        "visual": "PULL BACK to reveal Zen Capybara sitting serenely in the foreground, wearing sunglasses, calmly tapping on a tiny smartphone. It opens Boards from its keyboard and effortlessly shares a detailed product video into a chat app on its tiny screen.",
-        "audio": "Sudden shift to calm, lo-fi chillhop music. Gentle keyboard taps.",
-        "assets": [
-          "Zen Capybara",
-          "Tiny Smartphone",
-          "Exploding Notifications",
-          "Digital Vortex Background"
-        ]
+        "visual": "A fluffy golden retriever enthusiastically shows vacation photos on his phone to a bored cat on a coffee date. The cat yawns dramatically, checks her watch, and slowly sinks under the table to escape.",
+        "audio": "Awkward silence punctuated by enthusiastic barking. Text overlay: 'Bad dates happen.'",
+        "text_overlay": "Bad dates happen.",
+        "assets": ["Cozy Coffee Shop"]
       },
       {
         "scene_id": "03",
-        "visual": "Capybara looks directly at the camera, gives a slow, knowing wink, and takes a sip from a tiny, invisible coconut drink. The Panicked Sales Rep in the background suddenly looks calm, having also discovered Boards.",
-        "audio": "Chillhop continues. Sound of a refreshing sip. Voiceover (calm, deep voice): 'The chaos can wait. Your content can't.'",
-        "assets": [
-          "Zen Capybara",
-          "Panicked Sales Rep",
-          "Tiny Smartphone",
-          "Digital Vortex Background"
-        ]
+        "visual": "A peacock spreads his magnificent feathers in a park, trying to impress a small sparrow who looks completely unimpressed and flies away. The peacock's feathers droop in disappointment.",
+        "audio": "Record scratch sound effect. Text overlay: 'Sometimes you try too hard.'",
+        "text_overlay": "Sometimes you try too hard.",
+        "assets": ["Romantic Park"]
+      },
+      {
+        "scene_id": "04",
+        "visual": "Split screen montage: A lonely panda eating noodles alone, a fox swiping left repeatedly on dating profiles looking frustrated, a sloth moving so slowly his date has aged and left.",
+        "audio": "Comedic sad trombone. Text overlay: 'We've all been there.'",
+        "text_overlay": "We've all been there.",
+        "assets": ["Cozy Coffee Shop", "Fancy Restaurant"]
+      },
+      {
+        "scene_id": "05",
+        "visual": "Close-up of furry paws downloading the 'WildMatch' app. The screen glows with warm light. A happy otter's face lights up as matches start appearing with a satisfying 'ding' sound.",
+        "audio": "Upbeat music kicks in. Notification sounds. Text overlay: 'Introducing WildMatch'",
+        "text_overlay": "Introducing WildMatch",
+        "assets": ["Smartphone with Dating App", "Heart Emojis"]
+      },
+      {
+        "scene_id": "06",
+        "visual": "The same penguin from scene 1 now confidently swipes right on another penguin's profile. Hearts explode on screen. Cut to them both arriving at the restaurant at the same time, both wearing matching bow ties.",
+        "audio": "Cheerful orchestral swell. Text overlay: 'Find someone who shows up.'",
+        "text_overlay": "Find someone who shows up.",
+        "assets": ["Smartphone with Dating App", "Fancy Restaurant", "Heart Emojis"]
+      },
+      {
+        "scene_id": "07",
+        "visual": "Montage of happy animal couples: Two flamingos forming a heart shape with their necks, a hedgehog carefully hugging another hedgehog, two owls sharing earbuds watching something on a phone, a giraffe and slightly shorter giraffe nuzzling.",
+        "audio": "Heartwarming indie love song. Text overlay: 'Real connections. Real love.'",
+        "text_overlay": "Real connections. Real love.",
+        "assets": ["Romantic Park", "Heart Emojis"]
+      },
+      {
+        "scene_id": "08",
+        "visual": "The WildMatch logo animates in with hearts surrounding it. All the happy animal couples from previous scenes gather in the park for a group photo, waving at camera. The lonely animals from the beginning are now paired up and happy.",
+        "audio": "Music crescendos. Voiceover (warm, friendly): 'WildMatch. Where every animal finds their person.' Text overlay: 'Download free today.'",
+        "text_overlay": "Download Free Today",
+        "assets": ["Romantic Park", "Smartphone with Dating App", "Heart Emojis"]
       }
     ]
   }

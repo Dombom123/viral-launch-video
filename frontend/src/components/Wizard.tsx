@@ -266,17 +266,15 @@ export default function Wizard() {
         {/* Right Main Area */}
         <main className="flex-1 relative bg-[#09090b] flex flex-col">
           {/* Content Container */}
-          <div className="flex-1 overflow-y-auto p-10 flex items-center justify-center">
-            <div className="w-full max-w-6xl animate-in fade-in slide-in-from-bottom-4 duration-500">
-              {currentStep === 1 && <Step1_Upload onNext={handleNext} />}
-              {currentStep === 2 && <Step2_Research onNext={handleNext} />}
-              {currentStep === 3 && <Step3_Storyboard onNext={handleNext} />}
-              {currentStep === 4 && (
-                <Step4_VideoGen onNext={() => setCurrentStep(5)} />
-              )}
-              {currentStep === 5 && <Step5_Editor onNext={handleNext} runId={runId} />}
-              {currentStep === 6 && <Step6_Launch />}
-            </div>
+          <div className="flex-1 overflow-y-auto p-10 pt-8 flex flex-col">
+             <div className="w-full max-w-6xl mx-auto flex-1 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                {currentStep === 1 && <Step1_Upload onNext={handleNext} />}
+                {currentStep === 2 && <Step2_Research onNext={handleNext} />}
+                {currentStep === 3 && <Step3_Storyboard onNext={handleNext} />}
+                {currentStep === 4 && <Step4_VideoGen onNext={() => setCurrentStep(5)} />}
+                {currentStep === 5 && <Step5_Editor onNext={handleNext} runId={runId} />}
+                {currentStep === 6 && <Step6_Launch />}
+             </div>
           </div>
         </main>
       </div>

@@ -1,0 +1,85 @@
+{
+  "status": "completed",
+  "generated_clips": [
+    {
+      "clip_id": "clip_01",
+      "frame_id": 1,
+      "duration": 8.0,
+      "video_url": "/runs/second/videos/scene_1.mp4",
+      "thumbnail_url": "/runs/second/frames/scene-01.png",
+      "description": "A nervous penguin in a tiny bow tie sits alone at a fancy restaurant table, checking his watch with a worried expression. Across from him is an empty chair with a wilted rose on the plate. He looks sad and disappointed.",
+      "audio_prompt": "Soft melancholic piano.",
+      "text_overlay": "Tired of getting ghosted?"
+    },
+    {
+      "clip_id": "clip_02",
+      "frame_id": 2,
+      "duration": 8.0,
+      "video_url": "/runs/second/videos/scene_2.mp4",
+      "thumbnail_url": "/runs/second/frames/scene-02.png",
+      "description": "A fluffy golden retriever excitedly holds up his phone showing vacation photos to a clearly bored cat sitting across from him at a coffee shop. The cat has her eyes half-closed in a dramatic yawn.",
+      "audio_prompt": "Awkward silence punctuated by enthusiastic barking.",
+      "text_overlay": "Bad dates happen."
+    },
+    {
+      "clip_id": "clip_03",
+      "frame_id": 3,
+      "duration": 8.0,
+      "video_url": "/runs/second/videos/scene_3.mp4",
+      "thumbnail_url": "/runs/second/frames/scene-03.png",
+      "description": "A proud peacock with fully spread magnificent feathers stands in a beautiful park, looking confused as a tiny unimpressed sparrow flies away in the background. The peacock's expression shows disappointment.",
+      "audio_prompt": "Record scratch sound effect.",
+      "text_overlay": "Sometimes you try too hard."
+    },
+    {
+      "clip_id": "clip_04",
+      "frame_id": 4,
+      "duration": 8.0,
+      "video_url": "/runs/second/videos/scene_4.mp4",
+      "thumbnail_url": "/runs/second/frames/scene-04.png",
+      "description": "A sad panda sits alone at a ramen shop counter, slurping noodles with a lonely expression. Empty seats surround him. Steam rises from the bowl. The mood is melancholic but cute.",
+      "audio_prompt": "Comedic sad trombone.",
+      "text_overlay": "We've all been there."
+    },
+    {
+      "clip_id": "clip_05",
+      "frame_id": 5,
+      "duration": 8.0,
+      "video_url": "/runs/second/videos/scene_5.mp4",
+      "thumbnail_url": "/runs/second/frames/scene-05.png",
+      "description": "Close-up of a happy otter holding a glowing smartphone, his face illuminated by the warm light from the screen. His eyes are wide with excitement and joy as pink hearts float around him.",
+      "audio_prompt": "Upbeat music kicks in. Notification sounds.",
+      "text_overlay": "Introducing WildMatch"
+    },
+    {
+      "clip_id": "clip_06",
+      "frame_id": 6,
+      "duration": 8.0,
+      "video_url": "/runs/second/videos/scene_6.mp4",
+      "thumbnail_url": "/runs/second/frames/scene-06.png",
+      "description": "Two adorable penguins in matching bow ties meet at a restaurant entrance, both looking surprised and delighted to see each other. Pink hearts float between them. The scene is romantic and heartwarming.",
+      "audio_prompt": "Cheerful orchestral swell.",
+      "text_overlay": "Find someone who shows up."
+    },
+    {
+      "clip_id": "clip_07",
+      "frame_id": 7,
+      "duration": 8.0,
+      "video_url": "/runs/second/videos/scene_7.mp4",
+      "thumbnail_url": "/runs/second/frames/scene-07.png",
+      "description": "Two elegant flamingos stand in a beautiful sunset lake, their long necks curved together to form a perfect heart shape. Golden light reflects on the water. The scene is romantic and serene.",
+      "audio_prompt": "Heartwarming indie love song.",
+      "text_overlay": "Real connections. Real love."
+    },
+    {
+      "clip_id": "clip_08",
+      "frame_id": 8,
+      "duration": 8.0,
+      "video_url": "/runs/second/videos/scene_8.mp4",
+      "thumbnail_url": "/runs/second/frames/scene-08.png",
+      "description": "A group of happy animal couples gathered in a beautiful park at golden hour - penguins, flamingos, otters, cats and dogs - all looking at the camera with joyful expressions. Confetti and hearts fill the air.",
+      "audio_prompt": "Music crescendos. Voiceover: 'WildMatch. Where every animal finds their person.'",
+      "text_overlay": "Download Free Today"
+    }
+  ]
+}

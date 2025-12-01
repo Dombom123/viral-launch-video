@@ -1,25 +1,29 @@
 {
   "timeline": [
-    { "type": "video", "clip_id": "clip_01", "start_time": 0.0, "end_time": 4.0 },
-    { "type": "video", "clip_id": "clip_02", "start_time": 4.0, "end_time": 7.0 },
-    { "type": "video", "clip_id": "clip_03", "start_time": 7.0, "end_time": 12.0 }
+    { "type": "video", "clip_id": "clip_01", "start_time": 0.0, "end_time": 5.0, "src": "/sample-inputs/scene_1.mp4" },
+    { "type": "video", "clip_id": "clip_02", "start_time": 5.0, "end_time": 10.0, "src": "/sample-inputs/scene_2.mp4" },
+    { "type": "video", "clip_id": "clip_03", "start_time": 10.0, "end_time": 15.0, "src": "/sample-inputs/scene_3.mp4" }
   ],
   "audio_tracks": [
-    { "type": "voiceover", "url": "/sample-inputs/voiceover_full.mp3", "volume": 1.0 },
-    { "type": "music", "url": "/sample-inputs/music_tension.mp3", "volume": 0.3 }
+    { "type": "voiceover", "url": "/sample-inputs/voiceover_capybara.mp3", "volume": 1.0 },
+    { "type": "music", "url": "/sample-inputs/lofi_chill.mp3", "volume": 0.4 }
+  ],
+  "overlays": [
+    { "type": "text", "content": "The internet is a wild place.", "startTime": 0.5, "duration": 2.0 },
+    { "type": "text", "content": "My Zen is stronger than your chaotic DMs.", "startTime": 5.5, "duration": 3.0 },
+    { "type": "text", "content": "Find your Zen. Get Boards.", "startTime": 12.0, "duration": 3.0 }
   ],
   "edit_history": [
     {
-      "timestamp": "2024-05-20T14:45:00Z",
-      "action": "reorder",
-      "details": "Swapped scene 2 and 3"
+      "timestamp": "2024-11-29T14:45:00Z",
+      "action": "generate_overlays",
+      "details": "AI generated text overlays from audio"
     },
     {
-      "timestamp": "2024-05-20T14:48:00Z",
-      "action": "trim",
-      "details": "Shortened clip_01 by 1 second"
+      "timestamp": "2024-11-29T14:48:00Z",
+      "action": "adjust_timing",
+      "details": "Synced overlays with audio cues"
     }
   ],
-  "current_render_url": "/sample-inputs/render_v1.mp4"
+  "current_render_url": "/sample-inputs/scene_2.mp4"
 }
-

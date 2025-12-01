@@ -73,20 +73,23 @@ export default function Editor(props: { runId: string }) {
       const data = await response.json();
       console.log("data", data);
       let startTime = 0;
-      const videos = data.generated_clips.map((clip: any) => {
-        const s = startTime;
-        startTime += clip.duration;
-        // Handle both /public/... paths and direct paths like /sample-inputs/...
-        const videoSrc = clip.video_url.includes('/public') 
-          ? clip.video_url.split('/public')[1] 
-          : clip.video_url;
-        return {
-          type: "video",
-          src: videoSrc,
-          duration: clip.duration,
-          startTime: s,
-        };
-      });
+      // Filter out clips without a valid video_url (e.g., pending clips)
+      const videos = data.generated_clips
+        .filter((clip: any) => clip.video_url)
+        .map((clip: any) => {
+          const s = startTime;
+          startTime += clip.duration;
+          // Handle both /public/... paths and direct paths like /sample-inputs/...
+          const videoSrc = clip.video_url.includes('/public') 
+            ? clip.video_url.split('/public')[1] 
+            : clip.video_url;
+          return {
+            type: "video",
+            src: videoSrc,
+            duration: clip.duration,
+            startTime: s,
+          };
+        });
       setTimeline({ items: videos });
     })();
   }, [setTimeline, props.runId]);

@@ -1,0 +1,87 @@
+{
+  "selected_script": {
+    "id": "script_01",
+    "title": "Your Neighbor's Ride",
+    "hook": "Why rent from strangers when your neighbor has the perfect car?",
+    "tone": "Warm Comedy",
+    "assets": {
+      "characters": [],
+      "objects": [
+        {
+          "name": "Car Keys",
+          "visual_prompt": "Shiny car keys with a colorful keychain being handed from one paw to another, warm lighting."
+        },
+        {
+          "name": "Smartphone App",
+          "visual_prompt": "A glowing smartphone showing a car rental app interface with car icons and a map, held by animal paws."
+        }
+      ],
+      "environments": [
+        {
+          "name": "Suburban Driveway",
+          "visual_prompt": "A charming suburban house driveway with a nice car parked, green lawn, white picket fence, sunny day."
+        },
+        {
+          "name": "Beach Road",
+          "visual_prompt": "A scenic coastal road with ocean views, palm trees, golden sunset lighting, perfect for a road trip."
+        },
+        {
+          "name": "Mountain Highway",
+          "visual_prompt": "A winding mountain road with stunning valley views, pine trees, blue sky with fluffy clouds."
+        }
+      ]
+    },
+    "scenes": [
+      {
+        "scene_id": "01",
+        "visual": "A frustrated raccoon stands at a traditional car rental counter, looking exhausted. A stern-looking owl clerk points at a huge pile of paperwork. The raccoon's shoulders slump in defeat.",
+        "audio": "Elevator music, papers shuffling.",
+        "text_overlay": "Tired of endless paperwork?"
+      },
+      {
+        "scene_id": "02",
+        "visual": "A disappointed bear family stands in a parking lot next to a tiny, beat-up economy car. They look at their camping gear that clearly won't fit. The smallest bear cub looks sad.",
+        "audio": "Sad trombone sound.",
+        "text_overlay": "Never the car you actually wanted?"
+      },
+      {
+        "scene_id": "03",
+        "visual": "A shocked fox stares at a rental bill, his eyes comically wide and jaw dropped. Dollar signs and exclamation marks seem to radiate from the paper he's holding.",
+        "audio": "Cash register cha-ching sounds repeatedly.",
+        "text_overlay": "Surprise fees ruining your trip?"
+      },
+      {
+        "scene_id": "04",
+        "visual": "A friendly golden retriever in a cozy sweater waves from his driveway, standing next to a beautiful red convertible. The sun is shining, birds are in the sky. He looks welcoming and trustworthy.",
+        "audio": "Upbeat cheerful music begins.",
+        "text_overlay": "Meet your neighbors."
+      },
+      {
+        "scene_id": "05",
+        "visual": "A happy otter taps on a glowing smartphone screen, scrolling through beautiful cars. His face is lit up with excitement. Each car thumbnail shows a friendly animal owner's profile picture.",
+        "audio": "Gentle notification sounds, upbeat music continues.",
+        "text_overlay": "Find the perfect ride nearby."
+      },
+      {
+        "scene_id": "06",
+        "visual": "A smiling rabbit hands car keys to an excited deer at a suburban driveway. They shake paws warmly. A shiny SUV is parked behind them. The scene feels neighborly and friendly.",
+        "audio": "Warm acoustic guitar music.",
+        "text_overlay": "Real cars from real neighbors."
+      },
+      {
+        "scene_id": "07",
+        "visual": "A joyful wolf family cruises down a scenic coastal highway in a convertible. Wind blows through their fur, they all look happy and free. Ocean sparkles in the background.",
+        "audio": "Feel-good road trip music.",
+        "text_overlay": "Adventure awaits."
+      },
+      {
+        "scene_id": "08",
+        "visual": "Multiple happy animal families in different cars driving through beautiful landscapes - mountains, beaches, forests. All waving and smiling. A warm, community feeling.",
+        "audio": "Music crescendos. Voiceover: 'CarShare. Your neighbor's car, your next adventure.'",
+        "text_overlay": "Download CarShare Today"
+      }
+    ]
+  }
+}
+
+
